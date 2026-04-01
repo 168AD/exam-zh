@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}[2020/10/01]
 \ProvidesExplClass{xdyydoc}
-  {2022-04-26}{0.1a}{Documentation class for CCNUthesis}
+  {2022-04-26}{0.1a}{Documentation class for examzhthesis}
 \@namedef{ver@thumbpdf.sty}{9999/99/99}
 \LoadClass[a4paper, full]{l3doc}
 \RequirePackage[heading, sub3section, fontset=none]{ctex}
@@ -480,7 +480,7 @@
     \__fdudoc_plain_punct_style:
     \__fdudoc_disable_ecglue:
   }
-\AtBeginEnvironment { ccnusyntax }
+\AtBeginEnvironment { examzhsyntax }
   {
     \cs_set:Npn \lparen { \textup { ( } }
     \cs_set:Npn \rparen { \textup { ) } }
@@ -1031,7 +1031,7 @@
   \lstset{style=style@shell, #1}}{}
 \lstnewenvironment{latexcode}[1][]{%
   \lstset{style=style@latex, breaklines = true, #1}}{}
-\lstnewenvironment{ccnusyntax}[1][]{%
+\lstnewenvironment{examzhsyntax}[1][]{%
   \lstset{style=style@syntax, #1}\vspace{-1.8ex}}{}
 \lstdefinelanguage{mylatex}{
   language={[LaTeX]TeX},

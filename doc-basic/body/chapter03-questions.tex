@@ -11,11 +11,11 @@
 \subsubsection{标题和科目}
 
 \begin{function}{\title,\subject,\maketitle}
-  \begin{ccnusyntax}
+  \begin{examzhsyntax}
     \title(*\marg{标题}*)
     \subject(*\oarg{宽度}\marg{科目}*)
     \maketitle
-  \end{ccnusyntax}
+  \end{examzhsyntax}
 
   设置试卷标题和科目，使用 |\maketitle| 生成。
 \end{function}
@@ -42,9 +42,9 @@
 \subsubsection{学生信息栏}
 
 \begin{function}{\information}
-  \begin{ccnusyntax}
+  \begin{examzhsyntax}
     \information(*\oarg{分隔符}\marg{信息内容}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
 
   创建学生信息填写栏，默认分隔符为 |\quad|。
 \end{function}
@@ -67,12 +67,12 @@
 \subsubsection{注意事项}
 
 \begin{function}{notice 环境}
-  \begin{ccnusyntax}
+  \begin{examzhsyntax}
     \begin{notice}(*\oarg{选项}*)
       \item 注意事项1
       \item 注意事项2
     \end{notice}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
 
   创建注意事项列表，自动加粗标题。
 \end{function}
@@ -183,8 +183,8 @@
 
   % 使用带圈数字
   \begin{choices}[label = \circlednumber*]
-    \item 选项①
-    \item 选项②
+    \item 第一个选项
+    \item 第二个选项
   \end{choices}
 \end{latexcode}
 
@@ -328,9 +328,6 @@
 
   % 正确：用花括号包裹
   区间为 \fillin[{$[2,3)$}]
-
-  % 或使用星号变体
-  区间为 \fillin*{$[2,3)$}
 \end{latexcode}
 
 \textbf{其他特殊符号：}
@@ -362,27 +359,22 @@
 
 \textbf{长答案问题：}
 
-填空题下划线\textbf{不会自动换行}，答案过长会超出页面边界（Issue \#IAXE1N）：
+普通 |\fillin| 适合较短答案；如果答案较长，需要换行时请使用带星号的 |\fillin*|：
 
 \begin{latexcode}
-  % 问题：答案太长会超出页面
-  填空：\fillin[这是一个非常非常长的答案，可能会超出右边界]
+  % 短答案：普通 fillin
+  填空：\fillin[3.14]
 
-  % 解决方案1：手动控制宽度
+  % 长答案：使用星号变体
+  填空：\fillin*[这是一个比较长的答案内容，需要在题目中换行显示]
+
+  % 不显示答案时，也可以配合 width 控制占位宽度
   填空：\fillin[width = 8em][长答案]
-
-  % 解决方案2：分成多个填空
-  前半：\fillin[答案1]，后半：\fillin[答案2]
-
-  % 解决方案3：缩短答案文字
-  填空：\fillin[简短答案]
 \end{latexcode}
-
-详见"已知问题与限制"章节。
 
 \subsubsection{填空样式}
 
-默认是下划线样式，可以改为括号或留白。
+默认是下划线样式，也可以改成括号、圆圈、矩形或纯留白。
 
 \begin{latexcode}
   % 全局设置为括号样式
@@ -397,6 +389,8 @@
 \begin{itemize}
   \item |line|（默认）：下划线 \fillin[答案]
   \item |paren|：括号 \fillin[type=paren][答案]
+  \item |circle|：圆圈 \fillin[type=circle][答案]
+  \item |rectangle|：方框 \fillin[type=rectangle][答案]
   \item |blank|：留白（无线）
 \end{itemize}
 
@@ -414,7 +408,7 @@
   \end{question}
 \end{latexcode}
 
-\textbf{提示：}数学公式答案直接写在 |\fillin| 的方括号中，会自动处理数学模式。
+\textbf{提示：}数学公式答案仍然要放在 |$...$| 中，例如 |\fillin[$x^2 + 1$]|。
 
 
 \subsection{解答题}
@@ -513,23 +507,23 @@
 
 \subsubsection{判断题}
 
-判断题使用 |\TF| 或 |\tf| 命令。
+模板没有单独的“判断题命令”，通常直接用 |\paren| 或 |\fillin| 自定义“对/错”即可。
 
 \begin{latexcode}
   \begin{question}
-    $1 + 1 = 3$。\TF[F]
+    $1 + 1 = 3$。\paren[错]
   \end{question}
 
   \begin{question}
-    圆的面积公式是 $S = \uppi r^2$。\tf[T]
+    圆的面积公式是 $S = \uppi r^2$。\fillin[对]
   \end{question}
 \end{latexcode}
 
 \textbf{说明：}
 \begin{itemize}
-  \item |\TF[T]| 或 |\TF[F]| 生成判断括号，答案默认隐藏
-  \item |\TF| 大写，括号较大；|\tf| 小写，括号较小
-  \item 答案在 |\examsetup{question/show-answer = true}| 时显示
+  \item |\paren[对]|、|\paren[错]| 适合直接在题干后给出判断位
+  \item |\fillin[对]|、|\fillin[错]| 适合需要横线或括号样式的场景
+  \item 答案仍由 |\examsetup{question/show-answer = true}| 控制显示
 \end{itemize}
 
 \subsubsection{列表题}
@@ -544,18 +538,6 @@
       \item $2 + 2 = $ \fillin[4]
       \item $3 + 3 = $ \fillin[6]
     \end{enumerate}
-  \end{question}
-\end{latexcode}
-
-或使用 |subs| 环境（更紧凑）：
-
-\begin{latexcode}
-  \begin{question}
-    计算：
-    \begin{subs}
-      \item $1 + 1 = $ \fillin[2]
-      \item $2 + 2 = $ \fillin[4]
-    \end{subs}
   \end{question}
 \end{latexcode}
 
@@ -601,9 +583,9 @@
 
 \begin{latexcode}
   \examsetup{
-    question/number-format = \arabic*.,  % 1., 2., 3., ...
-    % question/number-format = (\arabic*), % (1), (2), (3), ...
-    % question/number-format = \chinese*、 % 一、二、三、...
+    question/label = \arabic*.,    % 1., 2., 3., ...
+    % question/label = (\arabic*), % (1), (2), (3), ...
+    % question/label = \Alph*.,    % A., B., C., ...
   }
 \end{latexcode}
 

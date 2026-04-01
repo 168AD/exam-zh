@@ -76,9 +76,9 @@
 \cls{exam-zh} 对一些命令环境进行了优化，方便用户使用。
 
 \begin{function}{\vec}
-  \begin{ccnusyntax}[emph={[1]vec}]
+  \begin{examzhsyntax}[emph={[1]vec}]
     \vec(*\marg{content}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   向量命令。当只有一个字符的时候默认加粗斜体，两个及两个以上字符则加箭头。
 \end{function}
 
@@ -189,9 +189,9 @@
 % \end{function}
 
 % \begin{function}{}
-%   \begin{ccnusyntax}[emph={[1]}]
+%   \begin{examzhsyntax}[emph={[1]}]
     
-%   \end{ccnusyntax}
+%   \end{examzhsyntax}
 % \end{function}
 
 
@@ -212,9 +212,9 @@
 \subsubsection{抬头}   \label{subsubsec:抬头}
 
 \begin{function}[added = 2022-07-03]{\information}
-  \begin{ccnusyntax}[emph={[1]information}]
+  \begin{examzhsyntax}[emph={[1]information}]
     \information(*\oarg{分隔符}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   水平的学生信息输入命令。\opt{分隔符} 默认为 |\quad|。使用示例：
   \begin{latexcode}[gobble=4]
     \information{
@@ -225,9 +225,9 @@
 \end{function}
 
 \begin{function}[added = 2022-07-03]{\warning}
-  \begin{ccnusyntax}[emph={[1]warning}]
+  \begin{examzhsyntax}[emph={[1]warning}]
     \warning(*\marg{警告}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   警告命令。居中、黑体。使用示例：
   \begin{latexcode}[gobble=4]
     \warning{（在此卷上答题无效）}
@@ -235,70 +235,70 @@
 \end{function}
 
 \begin{function}[updated = 2022-07-03]{\secret}
-  \begin{ccnusyntax}[emph={[1]secret}]
+  \begin{examzhsyntax}[emph={[1]secret}]
     \secret(*\oarg{格式命令}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   “绝密 $\bigstar$ 启用前”。格式命令默认为 |\bfseries|。
 \end{function}
 
 % \begin{function}[updated = 2022-07-03]{\goodluck}
-%   \begin{ccnusyntax}[emph={[1]goodluck}]
+%   \begin{examzhsyntax}[emph={[1]goodluck}]
 %     \goodluck(*\oarg{祝福语}*)
-%   \end{ccnusyntax}
+%   \end{examzhsyntax}
 %   祝福语命令。祝福语默认为 |祝考试顺利|。
 % \end{function}
 
 \begin{function}[updated = 2022-07-26]{notice 环境}
-  \begin{ccnusyntax}[emph={[2]notice}]
+  \begin{examzhsyntax}[emph={[2]notice}]
     \begin{notice}(*\oarg{键值列表 1}\oarg{键值列表 2}*)
       \item ...
       \item ...
     \end{notice}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   注意事项环境，是 \env{enumerate} 环境的包装，\meta{键值列表 2} 是传递给 \env{enumerate} 环境的可选参数。\meta{键值列表 1} 如下。
 \end{function}
 
 \begin{function}[added = 2022-07-26]{notice/label}
-  \begin{ccnusyntax}[emph={[1]label}]
+  \begin{examzhsyntax}[emph={[1]label}]
     label = (*\meta{label}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{notice} 环境的 \meta{label} 内容。默认为 |注意事项：|。
 \end{function}
 
 \begin{function}[added = 2022-07-26]{notice/label-format}
-  \begin{ccnusyntax}[emph={[1]label-format}]
+  \begin{examzhsyntax}[emph={[1]label-format}]
     label-format = (*\meta{format}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{notice} 环境的 \meta{label} 格式。默认为 |\sffamily \bfseries|。
 \end{function}
 
 \begin{function}[added = 2022-07-26]{notice/top-sep,notice/bottom-sep}
-  \begin{ccnusyntax}[emph={[1]top-sep,bottom-sep}]
+  \begin{examzhsyntax}[emph={[1]top-sep,bottom-sep}]
     top-sep = (*\meta{skip}*)
     bottom-sep = (*\meta{skip}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{notice} 环境的上下方的弹性间距。默认均为 |.25em plus .25em minus .1em|。
 \end{function}
 
 
 \begin{function}{\title}
-  \begin{ccnusyntax}[emph={[1]title}]
+  \begin{examzhsyntax}[emph={[1]title}]
     \title(*\marg{标题}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   标题。在 \tn{maketitle} 前使用。参数控制见~\ref{subsubsec:参数-抬头} 节。
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{\subject}
-  \begin{ccnusyntax}[emph={[1]subject}]
+  \begin{examzhsyntax}[emph={[1]subject}]
     \subject(*\oarg{宽度}\marg{科目}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   科目。在 \tn{maketitle} 前使用。可以为空或不写。\meta{科目} 内容在 \meta{宽度} 盒子内均匀分散。\meta{宽度} 默认为 \meta{科目} 宽度。参数控制见~\ref{subsubsec:参数-抬头} 节。
 \end{function}
 
 \begin{function}{\maketitle}
-  \begin{ccnusyntax}[emph={[1]maketitle}]
+  \begin{examzhsyntax}[emph={[1]maketitle}]
     \maketitle
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   生成标题和科目。
 \end{function}
 
@@ -306,20 +306,20 @@
 \subsubsection{题干}  \label{subsubsec:命令环境-题干}
 
 \begin{function}{question 环境}
-  \begin{ccnusyntax}[emph={[2]question}]
+  \begin{examzhsyntax}[emph={[2]question}]
     \begin{question}(*\oarg{键值列表}*)
       <题干>
     \end{question}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   选择题和填空题题干环境。键值列表设置见~\ref{subsubsec:参数-题干} 节
 \end{function}
 
 \begin{function}{problem 环境}
-  \begin{ccnusyntax}[emph={[2]problem}]
+  \begin{examzhsyntax}[emph={[2]problem}]
     \begin{problem}(*\oarg{键值列表}*)
       <题干>
     \end{problem}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   解答题题干环境。键值列表设置见~\ref{subsubsec:参数-题干} 节
 \end{function}
 
@@ -356,9 +356,9 @@
   }
 \ExplSyntaxOff
 \begin{function}{\paren}
-  \begin{ccnusyntax}[emph={[2]\paren}]
+  \begin{examzhsyntax}[emph={[2]\paren}]
     \paren(*\oarg{答案}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   括号。\meta{答案} 可以受下面介绍的 \cmd{show-answer} 键值控制隐藏。会自动到行末尾，若单行内容较长会自动到下一行末尾
 \end{function}
 
@@ -377,9 +377,9 @@
 
 
 \begin{function}[added = 2022-07-20]{\AddQuestionCounter}
-  \begin{ccnusyntax}[emph={[2]\AddQuestionCounter}]
+  \begin{examzhsyntax}[emph={[2]\AddQuestionCounter}]
     \AddQuestionCounter(*\marg{LaTeX command}*)(*\marg{internal command}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   如果用户需要使用其它形式的数字作为 \env{question} 环境和 \env{problem} 的标签，需要使用 \tn{AddQuestionCounter} 命令将其添加进 \opt{label} 选项的识别范围内（类似 \pkg{enumitem} 宏包的 \tn{AddEnumerateCounter} ）。其中 \meta{LaTeX command} 是在 \opt{label} 选项中的形式，\meta{internal command} 是内部的实现，\meta{widest label} 是最宽的标签。比如带圈数字的添加方法：
   \begin{latexcode}[gobble=4]
     \AddQuestionCounter{\circlednumber}{\__examzh_question_circled_number:n}
@@ -391,20 +391,20 @@
 \subsubsection{选择题} \label{subsubsec:命令环境-选择题}
 
 \begin{function}{choices 环境}
-  \begin{ccnusyntax}[emph={[2]choices}]
+  \begin{examzhsyntax}[emph={[2]choices}]
     \begin{choices}(*\oarg{键值列表}*)
       \item (*\meta{选项1}*)
       \item (*\meta{选项2}*)
       ...
     \end{choices}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   选择题选项排版环境。\meta{键值列表} 见~\ref{subsubsec:参数-选择题}。
 \end{function}
 
 \begin{function}{\setchoices}
-  \begin{ccnusyntax}[emph={[2]\setchoices}]
+  \begin{examzhsyntax}[emph={[2]\setchoices}]
     \setchoices(*\marg{键值列表}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{choices} 环境的参数设置。和
   \begin{latexcode}[gobble=4]
     \examsetup{
@@ -417,9 +417,9 @@
 \end{function}
 
 \begin{function}{\AddChoicesCounter}
-  \begin{ccnusyntax}[emph={[2]\AddChoicesCounter}]
+  \begin{examzhsyntax}[emph={[2]\AddChoicesCounter}]
     \AddChoicesCounter(*\marg{LaTeX command}*)(*\marg{internal command}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   如果用户需要使用其它形式的数字作为 \env{choices} 环境的标签，需要使用 \tn{AddChoicesCounter} 命令将其添加进 \opt{label} 选项的识别范围内（类似 \pkg{enumitem} 宏包的 \tn{AddEnumerateCounter} ）。其中 \meta{LaTeX command} 是在 \opt{label} 选项中的形式，\meta{internal command} 是内部的实现，\meta{widest label} 是最宽的标签。比如带圈数字的添加方法：
   \begin{latexcode}[gobble=4]
     \AddChoicesCounter{\circlednumber}{\__examzh_choices_circled_number:n}
@@ -444,10 +444,10 @@
 
 
 \begin{function}[updated = 2022-07-21]{\circlednumber,\circlednumber*}
-  \begin{ccnusyntax}[emph={[2]\circlednumber,\circlednumber*}]
+  \begin{examzhsyntax}[emph={[2]\circlednumber,\circlednumber*}]
     \circlednumber(*\meta{数字或计数器名字}*)
     \circlednumber*(*\meta{数字或计数器名字}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   带圈数字命令。不带星号的基于字体开发，带星号的基于 \TikZ 开发。|\circlednumber| 仅接受 0～50 的输入值，而 |\circlednumber*| 无限制。
   \begin{latexexample}{\tn{circlednumber} 的使用示例}
     \circlednumber{1} \circlednumber{2}
@@ -460,10 +460,10 @@
 \subsubsection{填空题}
 
 \begin{function}[updated = 2025-11-07]{\fillin}
-  \begin{ccnusyntax}[emph={[2]\fillin}]
+  \begin{examzhsyntax}[emph={[2]\fillin}]
     \fillin(*\oarg{键值列表}*)(*\oarg{答案}*)
     \fillin*(*\oarg{键值列表}*)(*\oarg{答案}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   填空命令，可生成下划线或括号等形式。\meta{答案} 可以受~\ref{subsubsec:参数-题干} 节的 \cmd{question/show-answer} 键值控制显示或隐藏。\meta{键值列表} 见~\ref{subsubsec:参数-填空题} 节。
 
   \paragraph{换行行为说明}
@@ -536,9 +536,9 @@
 
 
 \begin{function}[added = 2022-07-21]{\AddFillinCounter}
-  \begin{ccnusyntax}[emph={[1]\AddFillinCounter}]
+  \begin{examzhsyntax}[emph={[1]\AddFillinCounter}]
     \AddFillinCounter(*\marg{LaTeX command}*)(*\marg{internal command}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   如果用户需要使用其它形式的数字作为 \kvopt{fillin/no-answer-type}{counter} 下 \opt{counter} 的标签，需要使用 \tn{AddFillinCounter} 命令将其添加进 \opt{label} 选项的识别范围内（类似 \pkg{enumitem} 宏包的 \tn{AddEnumerateCounter} ）。其中 \meta{LaTeX command} 是在 \opt{label} 选项中的形式，\meta{internal command} 是内部的实现，\meta{widest label} 是最宽的标签。比如带圈数字的添加方法：
   \begin{latexcode}[gobble=4]
     \AddFillinCounter{\circlednumber}{\__examzh_fillin_circled_number:n}
@@ -613,11 +613,11 @@
 \subsubsection{解答题}
 
 \begin{function}[added = 2022-07-01, updated = 2022-07-19]{solution 环境}
-  \begin{ccnusyntax}[emph={[2]solution}]
+  \begin{examzhsyntax}[emph={[2]solution}]
     \begin{solution}(*\oarg{键值列表}*)
       ...
     \end{solution}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   解答题解答环境。\meta{键值列表} 见~\ref{subsubsec:参数-解答题} 节。
 \end{function}
 
@@ -639,9 +639,9 @@
 \end{latexexample}
 
 \begin{function}[added = 2022-07-01]{\score}
-  \begin{ccnusyntax}[emph={[1]score}]
+  \begin{examzhsyntax}[emph={[1]score}]
     \score(*\marg{分数}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{solution} 环境中得分点的得分命令。若在行间公式使用，则需要编译两次产生虚线。
 \end{function}
 
@@ -659,32 +659,32 @@
 \subsubsection{几个列表环境}
 
 \begin{function}[added = 2022-07-04]{step 环境}
-  \begin{ccnusyntax}[emph={[2]step}]
+  \begin{examzhsyntax}[emph={[2]step}]
     \begin{step}
       \item ...
       \item ...
     \end{step}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   “步骤”列表环境。
 \end{function}
 
 \begin{function}[added = 2022-07-04]{method 环境}
-  \begin{ccnusyntax}[emph={[2]method}]
+  \begin{examzhsyntax}[emph={[2]method}]
     \begin{method}
       \item ...
       \item ...
     \end{method}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   “方法”列表环境。
 \end{function}
 
 \begin{function}[added = 2022-07-04]{case 环境}
-  \begin{ccnusyntax}[emph={[2]case}]
+  \begin{examzhsyntax}[emph={[2]case}]
     \begin{case}
       \item ...
       \item ...
     \end{case}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   “情形”列表环境。
 \end{function}
 
@@ -695,9 +695,9 @@
 \subsubsection{草稿纸}
 
 \begin{function}[added = 2022-07-03]{\draftpaper}
-  \begin{ccnusyntax}[emph={[1]draftpaper}]
+  \begin{examzhsyntax}[emph={[1]draftpaper}]
     \draftpaper(*\oarg{参数列表}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   草稿纸命令。使用一次产生一页的草稿纸。参数列表见~\ref{subsubsec:参数-草稿纸}
 \end{function}
 
@@ -707,19 +707,19 @@
 在密封线或者 \tn{information} 命令所输出的个人信息中，可能会需要输出方格（如 2021 年数学高考原卷），于是开发了下面的 \tn{examsquare} 命令。
 
 \begin{function}[added = 2022-07-04]{\examsquare}
-  \begin{ccnusyntax}[emph={[1]examsquare}]
+  \begin{examzhsyntax}[emph={[1]examsquare}]
     \examsquare(*\oarg{参数列表}\marg{方格个数}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   方格命令。参数列表见~\ref{subsubsec:参数-方格}
 \end{function}
 
 \subsubsection{评分框}
 
 \begin{function}[added = 2022-07-04]{\scoringbox,\scoringbox*}
-  \begin{ccnusyntax}[emph={[1]scoringbox}]
+  \begin{examzhsyntax}[emph={[1]scoringbox}]
     \scoringbox
     \scoringbox*
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   评分框命令。可单独使用。相关键值见~\ref{subsubsec:参数-评分框}
 \end{function}
 
@@ -748,14 +748,14 @@
 % 本节主要介绍 \file{exam-zh-chinese.sty} 模块中的命令环境的使用。要注意的是，此模块中大部分命令环境设计灵感和原因一般来自于语文学科，但是具体使用起来一般不限制于语文学科。
 
 \begin{function}[added = 2022-07-19,updated = 2022-07-23]{select 环境}
-  \begin{ccnusyntax}[emph={[2]select}]
+  \begin{examzhsyntax}[emph={[2]select}]
     \begin{select}(*\oarg{键值列表}*)
       \sitem (*\meta{未标记的选项}*)
       \sitem (*\meta{未标记的选项}*)
       \sitem* (*\meta{标记的选项}*)
       ...
     \end{select}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   选择标记环境。\meta{键值列表} 见~\ref{subsubsec:参数-选择标记题型} 节。
 \end{function}
 
@@ -779,7 +779,7 @@
 \subsubsection{连线题型}
 
 \begin{function}[added = 2022-07-19]{lineto 环境,\linelistset,\lineconnect}
-  \begin{ccnusyntax}[emph={[2]lineto,linelistset,lineconnect}]
+  \begin{examzhsyntax}[emph={[2]lineto,linelistset,lineconnect}]
     \begin{lineto}(*\oarg{键值列表}*)
       \linelistset(*\oarg{键值列表}\marg{list}*)
       \linelistset(*\oarg{键值列表}\marg{list}*)
@@ -788,7 +788,7 @@
       \lineconnect(*\oarg{键值列表}\marg{list}*)
       ...
     \end{lineto}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{lineto} 环境为连线环境，一个 \tn{linelistset} 命令设置一组内容，\tn{lineconnect} 连线。（\meta{list} 之间是西文逗号）
   \begin{itemize}
     \item \env{lineto} 环境： \meta{键值列表} 接口为 \env{tikzpicture} 环境的可选参数接口；
@@ -811,11 +811,11 @@
 
 
 \begin{function}[added = 2022-07-24]{material 环境}
-  \begin{ccnusyntax}[emph={[2]material}]
+  \begin{examzhsyntax}[emph={[2]material}]
     \begin{material}(*\oarg{键值列表}*)
       <content>
     \end{material}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   语文的材料/文章环境。\oarg{键值列表} 见~\ref{subsubsec:参数-语文} 节。
 \end{function}
 
@@ -830,19 +830,19 @@
 
 
 \begin{function}[added = 2022-07-24,updated = 2022-07-26]{poem 环境}
-  \begin{ccnusyntax}[emph={[2]poem}]
+  \begin{examzhsyntax}[emph={[2]poem}]
     \begin{poem}(*\oarg{键值列表}*)
       <content>
     \end{poem}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   语文古诗环境。整体居中。\meta{content} 内置于 \env{tabular} 环境，所以建议用 |\\| 分行，且每行距离不能过长。\meta{键值列表} 见~\ref{subsubsec:参数-语文} 节。
 \end{function}
 
 
 \begin{function}[added = 2022-07-24]{\zhu}
-  \begin{ccnusyntax}[emph={[2]zhu}]
+  \begin{examzhsyntax}[emph={[2]zhu}]
     \zhu(*\meta{注释}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   语文古诗环境的注释命令，只能在 \env{poem} 环境中使用。
 \end{function}
 
@@ -862,11 +862,11 @@
 \subsubsection{英语-作文框}
 
 \begin{function}[added = 2022-07-26]{writingbox 环境}
-  \begin{ccnusyntax}[emph={[2]writingbox}]
+  \begin{examzhsyntax}[emph={[2]writingbox}]
     \begin{writingbox}(*\oarg{键值列表}*)
       <content>
     \end{writingbox}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   英语作文框环境。\meta{键值列表} 接入 \env{tcolorbox} 环境的可选参数。
 \end{function}
 
@@ -892,9 +892,9 @@
 \subsubsection{师生两版}   \label{subsubsec:命令环境-师生两版}
 
 \begin{function}[added = 2022-07-21]{\ExamPrintAnswerSet}
-  \begin{ccnusyntax}[emph={[1]ExamPrintAnswerSet}]
+  \begin{examzhsyntax}[emph={[1]ExamPrintAnswerSet}]
     \ExamPrintAnswerSet(*\oarg{cmd list}\marg{key-val list}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   设置用户对于师生两版的第二个版本 PDF 的导言区设置（可以自由选择第二个版本的键值设置，自由度高）。其中 \meta{cmd list} 和 \meta{key-val list} 的内容均用西文逗号分隔。\emph{注意第二个版本的设置是本 \file{.tex} 文件的设置基础之后加上 \tn{ExamPrintAnswerSet} 生成的，所以键值的使用要注意。（比如本 \file{.tex} 文件中设置了 \kvopt{fillin/show-answer}{true}，如果 \tn{ExamPrintAnswerSet} 不写 \kvopt{fillin/show-answer}{false} 的话，则还是按照 \kvopt{fillin/show-answer}{true} 的设置编译的）}
   \begin{itemize}
     \item \meta{key-val list}：list 的项为 |foo/bar| 形式，为本手册中介绍的键值，会通过 \tn{ExamPrintAnswer} 传递给 \tn{examsetup} 命令；
@@ -916,9 +916,9 @@
 
 
 \begin{function}[added = 2022-07-21]{\ExamPrintAnswer}
-  \begin{ccnusyntax}[emph={[1]ExamPrintAnswer}]
+  \begin{examzhsyntax}[emph={[1]ExamPrintAnswer}]
     \ExamPrintAnswer
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   用于“生效” \tn{ExamPrintAnswerSet} 中的设置。可以在导言区使用，但是一般不需要用户单独使用（因为集成在师生两版的代码实现中）。
 \end{function}
 
@@ -953,13 +953,13 @@
 其中，文字绕排一般用于语文英语等文字较多的情形。
 
 \begin{function}[added = 2022-08-28]{multifigures 环境}
-  \begin{ccnusyntax}[emph={[2]multifigures}]
+  \begin{examzhsyntax}[emph={[2]multifigures}]
     \begin{multifigures}(*\oarg{键值列表}*)
       \item[标签1] (*\meta{内容1}*)
       \item[标签2] (*\meta{内容2}*)
       ...
     \end{multifigures}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   多张图片（无超链接引用）排版环境。\meta{键值列表} 见~\ref{subsubsec:参数-图文排版}。
 \end{function}
 
@@ -981,9 +981,9 @@
 
 
 \begin{function}[added = 2022-08-28]{\textfigure}
-  \begin{ccnusyntax}[emph={[2]textfigure}]
+  \begin{examzhsyntax}[emph={[2]textfigure}]
     \textfigure(*\oarg{参数列表}\marg{文本}\marg{图片}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   图文排版命令。\meta{键值列表} 见~\ref{subsubsec:参数-图文排版}。
 \end{function}
 
@@ -1064,13 +1064,13 @@
 \subsubsection{数学-计算题排版}
 
 \begin{function}[added = 2024-02-11]{calculations 环境}
-  \begin{ccnusyntax}[emph={[2]calculations}]
+  \begin{examzhsyntax}[emph={[2]calculations}]
     \begin{calculations}(*\oarg{键值列表}*)
       \item (*\meta{内容1}*)
       \item (*\meta{内容2}*)
       ...
     \end{calculations}
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   计算题排版环境。用户可根据效果实现更多应用。\oarg{键值列表} 见~\ref{subsubsec:参数-计算题排版} 节。
 \end{function}
 
@@ -1097,9 +1097,9 @@
 \subsection{参数设置}
 
 \begin{function}{\examsetup}
-  \begin{ccnusyntax}[morekeywords={\examsetup}]
+  \begin{examzhsyntax}[morekeywords={\examsetup}]
     \examsetup(*\marg{键值列表}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   本模板提供了一系列选项，可由您自行配置。载入文档类之后，以下所有选项均可通过统一的命令 \cs{examsetup} 来设置。
 \end{function}
 
@@ -1153,28 +1153,28 @@
 \subsubsection{风格设置}
 
 \begin{function}[added = 2022-07-20]{style}
-  \begin{ccnusyntax}[emph={[1]style}]
+  \begin{examzhsyntax}[emph={[1]style}]
     style = (*\marg{键值列表}*)
     style/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含许多子项目，具体内容见下。
 \end{function}
 
 \begin{function}[added = 2022-07-20]{style/fullwidth-stop}
-  \begin{ccnusyntax}[emph={[1]fullwidth-stop}]
+  \begin{examzhsyntax}[emph={[1]fullwidth-stop}]
     fullwidth-stop = (*<(catcode)|false>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否将 |。| 映射为 |.|。\opt{catcode} 表示映射；\opt{false} 表示不映射。
 \end{function}
 
 \begin{function}[added = 2022-07-24]{style/footnote-style}
-  % 这里奇怪的东西是用来控制对齐的。ccnusyntax 会吃掉开头的几个空格，因此这里用 X 来占位。
-  \begin{ccnusyntax}[emph={[1]footnote-style}]
+  % 这里奇怪的东西是用来控制对齐的。examzhsyntax 会吃掉开头的几个空格，因此这里用 X 来占位。
+  \begin{examzhsyntax}[emph={[1]footnote-style}]
     footnote-style = (*<plain|\\
       XXXX\mbox{}~~~~~~~~~~~~~~~~~(libertinus)|libertinus*|libertinus-sans|\\
       XXXX\mbox{}~~~~~~~~~~~~~~~~~pifont|pifont*|pifont-sans|pifont-sans*|\\
       XXXX\mbox{}~~~~~~~~~~~~~~~~~xits|xits-sans|xits-sans*>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   设置脚注编号样式。西文字体设置会影响其默认取值。因此，要使得该选项生效，需将其放置在 \opt{font} 选项之后。带有 sans 的为相应的无衬线字体版本。带有 * 的为 阴文样式(即黑底白字)。
 \end{function}
 
@@ -1182,16 +1182,16 @@
 \subsubsection{师生两版}   \label{subsubsec:参数-师生两版}
 
 \begin{function}[added = 2022-07-22]{style/student-version-suffix}
-  \begin{ccnusyntax}[emph={[1]student-version-suffix}]
+  \begin{examzhsyntax}[emph={[1]student-version-suffix}]
     student-version-suffix = (*\meta{suffix}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   师生两版的第二个版本的 PDF 名称的后缀。即第二个 PDF 的名称为 |<jobname><suffix>.pdf|。默认值为 |_student_version|。
 \end{function}
 
 \begin{function}[added = 2022-07-22]{style/student-version-cleanaux}
-  \begin{ccnusyntax}[emph={[1]student-version-cleanaux}]
+  \begin{examzhsyntax}[emph={[1]student-version-cleanaux}]
     student-version-cleanaux = (*\TTF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   师生两版的编译是否自动清除中途文件。
 \end{function}
 
@@ -1201,33 +1201,33 @@
 
 
 \begin{function}{symbols}
-  \begin{ccnusyntax}[emph={[1]symbols}]
+  \begin{examzhsyntax}[emph={[1]symbols}]
     symbols = (*\marg{键值列表}*)
     symbols/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含许多子项目，用于设置中国化符号。具体内容见下。
 \end{function}
 
 \begin{function}{symbols/paralleleq-type}
-  \begin{ccnusyntax}[emph={[1]paralleleq-type}]
+  \begin{examzhsyntax}[emph={[1]paralleleq-type}]
     paralleleq-type = (*<(slant)|perpendicular>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{paralleleq} 命令的效果。\opt{slant} 表示上方的线是倾斜的；\opt{perpendicular} 表示上方的线是垂直的。
 \end{function}
 
 \begin{function}[added = 2022-07-17]{symbols/change-frac-style,symbols/change-dfrac-style}
-  \begin{ccnusyntax}[emph={[1]change-frac-style,change-dfrac-style}]
+  \begin{examzhsyntax}[emph={[1]change-frac-style,change-dfrac-style}]
     change-frac-style = (*<\TFF>*)
     change-dfrac-style = (*<\TFF>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否重定义 \tn{frac} 命令和 \tn{dfrac} 命令。重定义后的 \tn{frac} 或 \tn{dfrac} 的分子分母两边会有额外间距。
 \end{function}
 
 \begin{function}[added = 2022-07-17]{symbols/frac-add,symbols/dfrac-add}
-  \begin{ccnusyntax}[emph={[1]frac-add,dfrac-add}]
+  \begin{examzhsyntax}[emph={[1]frac-add,dfrac-add}]
     frac-add = (*\meta{muskip}*)
     dfrac-add = (*\meta{muskip}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   分别为 \kvopt{symbols/change-frac-style}{true} 和 \kvopt{symbols/change-dfrac-style}{true} 时，\tn{frac} 和 \tn{dfrac} 分子分母左右两边增加的额外间距，左右相同，默认为 |5mu|。
 \end{function}
 
@@ -1235,39 +1235,39 @@
 \subsubsection{页面设置}
 
 \begin{function}{page}
-  \begin{ccnusyntax}[emph={[1]page}]
+  \begin{examzhsyntax}[emph={[1]page}]
     page = (*\marg{键值列表}*)
     page/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含许多子项目，用于设置页面设置。具体内容见下。
 \end{function}
 
 \begin{function}{page/size}
-  \begin{ccnusyntax}[emph={[1]size}]
+  \begin{examzhsyntax}[emph={[1]size}]
     size = (*<a3paper|(a4paper)>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   试卷尺寸。\opt{a4paper} 表示一页为 A4 纸大小；\opt{a3paper} 表示一页为 A3 纸大小，内容为连续两页 A4 拼接。此设置只能放在导言区。
 \end{function}
 
 
 \begin{function}[added = 2022-09-12]{page/show-head}
-  \begin{ccnusyntax}[emph={[1]show-head}]
+  \begin{examzhsyntax}[emph={[1]show-head}]
     show-head = (*\TFF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否显示页眉。
 \end{function}
 
 \begin{function}[added = 2022-09-12]{page/show-foot}
-  \begin{ccnusyntax}[emph={[1]show-foot}]
+  \begin{examzhsyntax}[emph={[1]show-foot}]
     show-foot = (*\TTF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否显示页脚。
 \end{function}
 
 \begin{function}[added = 2022-09-12]{page/head-content}
-  \begin{ccnusyntax}[emph={[1]head-content}]
+  \begin{examzhsyntax}[emph={[1]head-content}]
     head-content = (*\meta{页眉格式}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   页眉内容设置。内容为 \pkg{fancyhdr} 宏包的页眉命令，比如
 \begin{latexcode}
   head-content = {
@@ -1278,16 +1278,16 @@
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{page/foot-type}
-  \begin{ccnusyntax}[emph={[1]foot-type}]
+  \begin{examzhsyntax}[emph={[1]foot-type}]
     foot-type = (*<common|(separate)>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \kvopt{page/size}{a3paper} 时页脚的类型。\opt{common} 表示两页 A4 纸（即一页 A3 纸）共用一个页脚；\opt{separate} 表示两页 A4 纸各自有一个页脚。
 \end{function}
 
 \begin{function}[added = 2022-07-04]{page/foot-content}
-  \begin{ccnusyntax}[emph={[1]foot-content}]
+  \begin{examzhsyntax}[emph={[1]foot-content}]
     foot-content = (*\meta{页脚格式}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   页脚内容设置。
   \begin{itemize}
     \item 若 \meta{页脚格式} 中不含西文分号 |;|，则页脚内容为 \meta{页脚格式} 直接输出；
@@ -1297,24 +1297,24 @@
 \end{function}
 
 \begin{function}[added = 2022-07-04]{page/show-columnline}
-  \begin{ccnusyntax}[emph={[1]show-columnline}]
+  \begin{examzhsyntax}[emph={[1]show-columnline}]
     show-columnline = (*\TTF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \kvopt{page/size}{a3paper} 时是否显示两页 A4 之间的中间竖线。
 \end{function}
 
 \begin{function}[added = 2022-07-04]{page/columnline-width}
-  \begin{ccnusyntax}[emph={[1]columnline-width}]
+  \begin{examzhsyntax}[emph={[1]columnline-width}]
     columnline-width = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \kvopt{page/show-columnline}{true} 时竖线的宽度。默认为 |0.4pt|。
 \end{function}
 
 
 \begin{function}[added = 2022-07-11]{page/show-chapter}
-  \begin{ccnusyntax}[emph={[1]show-chapter}]
+  \begin{examzhsyntax}[emph={[1]show-chapter}]
     show-chapter = (*\TTF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否显示 \tn{chapter} 的内容。\kvopt{show-chapter}{true} 表示 \tn{chapter} 的内容会正常出现以及录入目录并可以通过超链接跳转；\kvopt{show-chapter}{false} 表示 \tn{chapter} 的内容不出现但是会被录入目录并可以通过超链接跳转。
 \end{function}
 
@@ -1322,26 +1322,26 @@
 \subsubsection{密封线} \label{subsubsec:参数-密封线}
 
 \begin{function}{sealline}
-  \begin{ccnusyntax}[emph={[1]sealline}]
+  \begin{examzhsyntax}[emph={[1]sealline}]
     sealline = (*\marg{键值列表}*)
     sealline/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含许多子项目，用于设置密封线。具体内容见下。
 \end{function}
 
 
 \begin{function}{sealline/show}
-  \begin{ccnusyntax}[emph={[1]show}]
+  \begin{examzhsyntax}[emph={[1]show}]
     show = (*\TFF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否显示密封线。
 \end{function}
 
 \begin{function}[updated = 2022-07-26]{sealline/scope,sealline/type}
-  \begin{ccnusyntax}[emph={[1]scope,type}]
+  \begin{examzhsyntax}[emph={[1]scope,type}]
     scope = (*<firstpage|oddpage|(everypage)|first-and-last|mod-2|mod-3|mod-4|mod-6>*)
     type = (*<firstpage|oddpage|(everypage)|first-and-last|mod-2|mod-3|mod-4|mod-6>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   密封线的作用范围。\opt{scope} 和 \opt{type} 同效。\opt{firstpage} 表示仅在第一页有密封线；\opt{oddpage} 表示仅有奇数页有密封线，在页面左侧；\opt{everypage} 表示每页都有密封线，奇数页密封线在页面左侧，偶数页密封线在页面右侧；\opt{first-and-last} 表示只有第一页和最后一页有；\opt{mod-x} 表示满足 $y \mod x \equiv 1$ 的页数 $y$ 中有密封线。
 \end{function}
 
@@ -1371,38 +1371,38 @@
 
 
 \begin{function}{sealline/line-thickness,sealline/odd-line-thickness,sealline/even-line-thickness}
-  \begin{ccnusyntax}[emph={[1]line-thickness,odd-line-thickness,even-line-thickness}]
+  \begin{examzhsyntax}[emph={[1]line-thickness,odd-line-thickness,even-line-thickness}]
     line-thickness = (*\meta{dimension}*)
     odd-line-thickness = (*\meta{dimension}*)
     even-line-thickness = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   密封线的线厚度。
 \end{function}
 
 \begin{function}{sealline/line-xshift,sealline/odd-line-xshift,sealline/even-line-xshift}
-  \begin{ccnusyntax}[emph={[1]line-xshift,odd-line-xshift,even-line-xshift}]
+  \begin{examzhsyntax}[emph={[1]line-xshift,odd-line-xshift,even-line-xshift}]
     line-xshift = (*\meta{dimension}*)
     odd-line-xshift = (*\meta{dimension}*)
     even-line-xshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   密封线的水平偏移量。默认为 |8mm|。\meta{dimension} 为正值时，奇数页密封线往左偏移，偶数页密封线往右偏移。
 \end{function}
 
 \begin{function}{sealline/line-yshift,sealline/odd-line-yshift,sealline/even-line-yshift}
-  \begin{ccnusyntax}[emph={[1]line-yshift,odd-line-yshift,even-line-yshift}]
+  \begin{examzhsyntax}[emph={[1]line-yshift,odd-line-yshift,even-line-yshift}]
     line-yshift = (*\meta{dimension}*)
     odd-line-yshift = (*\meta{dimension}*)
     even-line-yshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   密封线的垂直伸缩量。默认为 |0mm|，奇偶页效果相同。\meta{dimension} 为正值时，密封线上下同时“往内缩 \meta{dimension} 长度”。0mm 的效果是密封线长度为版心高度。
 \end{function}
 
 \begin{function}{sealline/line-type,sealline/odd-line-type,sealline/even-line-type}
-  \begin{ccnusyntax}[emph={[1]line-type,odd-line-type,even-line-type}]
+  \begin{examzhsyntax}[emph={[1]line-type,odd-line-type,even-line-type}]
     line-type = (*\meta{dimension}*)
     odd-line-type = (*\meta{dimension}*)
     even-line-type = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   密封线的类型。参考了 \TikZ 的线类型，主要有以下几种，从名称可以看出几种线的类型和效果，这里就不做解释：
 \end{function}
 \begin{choices}[label = \circlednumber*]
@@ -1423,50 +1423,50 @@
 
 
 \begin{function}{sealline/text,sealline/odd-text,sealline/even-text}
-  \begin{ccnusyntax}[emph={[1]text,odd-text,even-text}]
+  \begin{examzhsyntax}[emph={[1]text,odd-text,even-text}]
     text = (*\meta{content}*)
     odd-text = (*\meta{content}*)
     even-text = (*\meta{content}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   沿着密封线的文字，效果为均匀分散，类似于 \tn{makebox} 的 \cmd{s} 选项。默认值为 |密封线内不得答题|。\meta{content} 中不能有命令，字体设置要通过 \opt{sealline/text-format} 设置。
 \end{function}
 
 \begin{function}[added = 2022-07-24]{sealline/text-width,sealline/odd-text-width,sealline/even-text-width}
-  \begin{ccnusyntax}[emph={[1]text-width,odd-text-width,even-text-width}]
+  \begin{examzhsyntax}[emph={[1]text-width,odd-text-width,even-text-width}]
     text-width = (*\meta{dimension}*)
     odd-text-width = (*\meta{dimension}*)
     even-text-width = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   沿着密封线的文字的宽度（此时以试卷顺时针转 90 度为参考系）。默认值为 |0.8\textheight|。
 \end{function}
 
 
 \begin{function}[added = 2022-07-24]{sealline/text-format,sealline/odd-text-format,sealline/even-text-format}
-  \begin{ccnusyntax}[emph={[1]text-format,odd-text-format,even-text-format}]
+  \begin{examzhsyntax}[emph={[1]text-format,odd-text-format,even-text-format}]
     text-format = (*\meta{font}*)
     odd-text-format = (*\meta{font}*)
     even-text-format = (*\meta{font}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   沿着密封线的文字的字体设置。可以是 \tn{zihao} 或颜色或字体设置等。默认为 |\zihao{4}\sffamily|。
 \end{function}
 
 
 \begin{function}{sealline/text-xshift,sealline/odd-text-xshift,sealline/even-text-xshift}
-  \begin{ccnusyntax}[emph={[1]text-xshift,odd-text-xshift,even-text-xshift}]
+  \begin{examzhsyntax}[emph={[1]text-xshift,odd-text-xshift,even-text-xshift}]
     text-xshift = (*\meta{dimension}*)
     odd-text-xshift = (*\meta{dimension}*)
     even-text-xshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   沿着密封线的文字的水平偏移量。默认为 |11mm|。\meta{dimension} 为正值时，奇数页文字往左偏移，偶数页文字往右偏移。
 \end{function}
 
 
 \begin{function}[updated = 2022-07-24]{sealline/text-yshift,sealline/odd-text-yshift,sealline/even-text-yshift}
-  \begin{ccnusyntax}[emph={[1]text-yshift,odd-text-yshift,even-text-yshift}]
+  \begin{examzhsyntax}[emph={[1]text-yshift,odd-text-yshift,even-text-yshift}]
     text-yshift = (*\meta{dimension}*)
     odd-text-yshift = (*\meta{dimension}*)
     even-text-yshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   沿着密封线的文字的垂直偏移量。默认为 |0pt|。\meta{dimension} 为正时，奇数页的文字往上移动，而偶数页有两种情况：
   \begin{itemize}
     \item \kvopt{sealline/text-direction-vertical}{true} 时，方向和奇数页相同（因为此时文字排版效果奇偶相同）；
@@ -1476,86 +1476,86 @@
 
 
 \begin{function}[added = 2022-07-24]{sealline/text-xscale,sealline/odd-text-xscale,sealline/even-text-xscale}
-  \begin{ccnusyntax}[emph={[1]text-xscale,odd-text-xscale,even-text-xscale}]
+  \begin{examzhsyntax}[emph={[1]text-xscale,odd-text-xscale,even-text-xscale}]
     text-xscale = (*\meta{float point}*)
     odd-text-xscale = (*\meta{float point}*)
     even-text-xscale = (*\meta{float point}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   沿着密封线的文字的水平放缩（以旋转试卷为参考系）。默认为 |1.0|。
 \end{function}
 
 \begin{function}[added = 2022-07-24]{sealline/text-yscale,sealline/odd-text-yscale,sealline/even-text-yscale}
-  \begin{ccnusyntax}[emph={[1]text-yscale,odd-text-yscale,even-text-yscale}]
+  \begin{examzhsyntax}[emph={[1]text-yscale,odd-text-yscale,even-text-yscale}]
     text-yscale = (*\meta{float point}*)
     odd-text-yscale = (*\meta{float point}*)
     even-text-yscale = (*\meta{float point}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   沿着密封线的文字的垂直放缩（以旋转试卷为参考系）。默认为 |0.8|。
 \end{function}
 
 \begin{function}[added = 2022-07-24]{sealline/text-direction-vertical,sealline/odd-text-direction-vertical,sealline/even-text-direction-vertical}
-  \begin{ccnusyntax}[emph={[1]text-direction-vertical,odd-text-direction-vertical,even-text-direction-vertical}]
+  \begin{examzhsyntax}[emph={[1]text-direction-vertical,odd-text-direction-vertical,even-text-direction-vertical}]
     text-direction-vertical = (*\TFF*)
     odd-text-direction-vertical = (*\TFF*)
     even-text-direction-vertical = (*\TFF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   沿着密封线的文字是否垂直从上往下不旋转显示文字内容。\opt{true} 表示奇偶页均为从上往下显示文字，且文字不旋转；\opt{false} 表示奇数页逆时针转 90 度并从下往上（若以旋转试卷为参考，即为从左往右）显示文字内容，偶数页顺时针转 90 度并从上往下显示文字内容。
 \end{function}
 
 
 \begin{function}{sealline/circle-show,sealline/odd-circle-show,sealline/even-circle-show}
-  \begin{ccnusyntax}[emph={[1]circle-show,odd-circle-show,even-circle-show}]
+  \begin{examzhsyntax}[emph={[1]circle-show,odd-circle-show,even-circle-show}]
     circle-show = (*\TTF*)
     odd-circle-show = (*\TTF*)
     even-circle-show = (*\TTF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   密封线上的圆的显示与否。
 \end{function}
 
 \begin{function}{sealline/circle-start,sealline/odd-circle-start,sealline/even-circle-start,sealline/circle-end,sealline/odd-circle-end,sealline/even-circle-end}
-  \begin{ccnusyntax}[emph={[1]circle-start,odd-circle-start,even-circle-start,circle-end,odd-circle-end,even-circle-end}]
+  \begin{examzhsyntax}[emph={[1]circle-start,odd-circle-start,even-circle-start,circle-end,odd-circle-end,even-circle-end}]
     circle-start = (*\meta{float point}*)
     odd-circle-start = (*\meta{float point}*)
     even-circle-start = (*\meta{float point}*)
     circle-end = (*\meta{float point}*)
     odd-circle-end = (*\meta{float point}*)
     even-circle-end = (*\meta{float point}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   密封线上的圈的起始点占线总场的比例，\meta{float point} 的范围为 $[0,1]$。分别默认为 |0.07| 和 |0.92| 。\opt{circle-start} 和 \opt{circle-end} 的值分别表示圆圈的起点和终点在线（以页面垂直的北到南方向为正方向）上的比例。
 \end{function}
 
 \begin{function}{sealline/circle-step,sealline/odd-circle-step,sealline/even-circle-step}
-  \begin{ccnusyntax}[emph={[1]circle-step,odd-circle-step,even-circle-step}]
+  \begin{examzhsyntax}[emph={[1]circle-step,odd-circle-step,even-circle-step}]
     circle-step = (*\meta{dimension}*)
     odd-circle-step = (*\meta{dimension}*)
     even-circle-step = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   密封线上的两个圈之间的距离。默认为 |3.5em|。若倒数第二个圈加上 \opt{circle-step} 的值“超出了密封线的范围”，则最后一个圈并不会显示。
 \end{function}
 
 \begin{function}{sealline/circle-diameter,sealline/odd-circle-diameter,sealline/even-circle-diameter}
-  \begin{ccnusyntax}[emph={[1]circle-diameter,odd-circle-diameter,even-circle-diameter}]
+  \begin{examzhsyntax}[emph={[1]circle-diameter,odd-circle-diameter,even-circle-diameter}]
     circle-diameter = (*\meta{dimension}*)
     odd-circle-diameter = (*\meta{dimension}*)
     even-circle-diameter = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   密封线上的圆的直径。默认为 |3mm|。
 \end{function}
 
 
 \begin{function}{sealline/circle-xshift,sealline/odd-circle-xshift,sealline/even-circle-xshift}
-  \begin{ccnusyntax}[emph={[1]circle-xshift,odd-circle-xshift,even-circle-xshift}]
+  \begin{examzhsyntax}[emph={[1]circle-xshift,odd-circle-xshift,even-circle-xshift}]
     circle-xshift = (*\meta{dimension}*)
     odd-circle-xshift = (*\meta{dimension}*)
     even-circle-xshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   密封线上的圆的水平偏移量。默认为 |8mm|。
 \end{function}
 
 \begin{function}{sealline/odd-info-content}
-  \begin{ccnusyntax}[emph={[1]odd-info-content}]
+  \begin{examzhsyntax}[emph={[1]odd-info-content}]
     odd-info-content = (*\marg{comma list}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   奇数页密封线旁的学生信息。输入内容需要用 |{}| 包起来并用西文逗号隔开。示例（也是默认）如下：
   \begin{latexcode}[gobble=4]
     \examsetup{
@@ -1572,31 +1572,31 @@
 
 
 \begin{function}{sealline/odd-info-separator}
-  \begin{ccnusyntax}[emph={[1]odd-info-separator}]
+  \begin{examzhsyntax}[emph={[1]odd-info-separator}]
     odd-info-separator = (*\meta{separator}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   奇数页密封线旁的学生信息的分隔符。即上方 \cmd{odd-info-content} 几个内容之间的分隔符，默认为 |\hspace*{3em}|，即用 |3em| 的空白分隔。一般为水平空白。
 \end{function}
 
 
 \begin{function}{sealline/odd-info-align}
-  \begin{ccnusyntax}[emph={[1]odd-info-align}]
+  \begin{examzhsyntax}[emph={[1]odd-info-align}]
     odd-info-align = (*<left|(center)|right>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   奇数页密封线旁的学生信息的对齐方式。将试卷顺时针方向旋转 90 度视角后为参考（即此时密封线为水平线）。
 \end{function}
 
 \begin{function}{sealline/odd-info-xshift}
-  \begin{ccnusyntax}[emph={[1]odd-info-xshift}]
+  \begin{examzhsyntax}[emph={[1]odd-info-xshift}]
     odd-info-xshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   奇数页密封线旁的学生信息的水平偏移量。默认值为 |20mm|
 \end{function}
 
 \begin{function}{sealline/odd-info-yshift}
-  \begin{ccnusyntax}[emph={[1]odd-info-yshift}]
+  \begin{examzhsyntax}[emph={[1]odd-info-yshift}]
     odd-info-yshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   奇数页密封线旁的学生信息的垂直偏移量。默认值为 |0mm|，此时若 \kvopt{odd-info-align}{left} 则 \cmd{odd-info-content} 的左侧与版心底部对齐。
 \end{function}
 
@@ -1605,46 +1605,46 @@
 \subsubsection{方格} \label{subsubsec:参数-方格}
 
 \begin{function}{square}
-  \begin{ccnusyntax}[emph={[1]square}]
+  \begin{examzhsyntax}[emph={[1]square}]
     square = (*\marg{键值列表}*)
     square/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含许多子项目，用于设置方格。具体内容见下。
 \end{function}
 
 \begin{function}[added = 2022-07-04,updated = 2022-07-23]{square/x-length}
-  \begin{ccnusyntax}[emph={[1]x-length}]
+  \begin{examzhsyntax}[emph={[1]x-length}]
     x-length = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{examsquare} 命令单位方形的长。默认为 |1.4em|。
 \end{function}
 
 \begin{function}[added = 2022-07-04,updated = 2022-07-23]{square/y-length}
-  \begin{ccnusyntax}[emph={[1]y}]
+  \begin{examzhsyntax}[emph={[1]y}]
     y-length = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{examsquare} 命令单位方形的宽。默认为 |1.2em|。
 \end{function}
 
 
 \begin{function}[added = 2022-07-04,updated = 2022-07-23]{square/baseline}
-  \begin{ccnusyntax}[emph={[1]baseline}]
+  \begin{examzhsyntax}[emph={[1]baseline}]
     baseline = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{examsquare} 命令的基线偏移。默认为 |3pt|。一般长宽有较大的改动的情况才会改此参数。
 \end{function}
 
 \begin{function}[added = 2022-07-04,updated = 2022-07-23]{square/linewidth}
-  \begin{ccnusyntax}[emph={[1]linewidth}]
+  \begin{examzhsyntax}[emph={[1]linewidth}]
     linewidth = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{examsquare} 命令单位方形的线宽。默认为 |0.4pt|。
 \end{function}
 
 \begin{function}[added = 2022-07-04,updated = 2022-07-23]{square/xshift}
-  \begin{ccnusyntax}[emph={[1]xshift}]
+  \begin{examzhsyntax}[emph={[1]xshift}]
     xshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{examsquare} 命令必选参数大于 1 时，后面的方格相对于前面的水平偏移。默认和 \opt{linewidth} 的值相同，一般不需要自己修改。
 \end{function}
 
@@ -1653,16 +1653,16 @@
 
 
 \begin{function}[updated = 2022-08-15]{font}
-  \begin{ccnusyntax}[emph={[1]font}]
+  \begin{examzhsyntax}[emph={[1]font}]
     font = (*(newcm)|lm|times|termes|stix|xits|libertinus|none*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   设置西文字体。具体配置见表~\ref{tab:font}。
 \end{function}
 
 \begin{function}[updated = 2022-08-15]{math-font}
-  \begin{ccnusyntax}[emph={[1]math-font}]
+  \begin{examzhsyntax}[emph={[1]math-font}]
     math-font = (*(newcm)|lm|stix|xits|libertinus|cambria|garamond|pala|asana|none*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   设置数学字体。具体配置见表~\ref{tab:math-font}。
 \end{function}
 
@@ -1730,38 +1730,38 @@
 \subsubsection{抬头} \label{subsubsec:参数-抬头}
 
 \begin{function}{title}
-  \begin{ccnusyntax}[emph={[1]title}]
+  \begin{examzhsyntax}[emph={[1]title}]
     title = (*\marg{键值列表}*)
     title/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含许多子项目，用于设置抬头。具体内容见下。
 \end{function}
 
 \begin{function}[added = 2022-07-03]{title/title-format}
-  \begin{ccnusyntax}[emph={[1]title-format}]
+  \begin{examzhsyntax}[emph={[1]title-format}]
     title-format = (*\meta{格式命令}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{title} 的格式命令。默认为 |\Large|。
 \end{function}
 
 \begin{function}[added = 2022-07-03]{title/subject-format}
-  \begin{ccnusyntax}[emph={[1]subject-format}]
+  \begin{examzhsyntax}[emph={[1]subject-format}]
     subject-format = (*\meta{格式命令}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{subject} 的格式命令。默认为 |\sffamily \bfseries \huge|。
 \end{function}
 
 \begin{function}[added = 2022-07-03]{title/top-sep}
-  \begin{ccnusyntax}[emph={[1]top-sep}]
+  \begin{examzhsyntax}[emph={[1]top-sep}]
     top-sep = (*\meta{弹性长度}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{title} 和 \tn{subject} 的整体上方间距。默认为 |-.5em plus 0.3em minus 0.2em|。
 \end{function}
 
 \begin{function}[added = 2022-07-03]{title/bottom-sep}
-  \begin{ccnusyntax}[emph={[1]bottom-sep}]
+  \begin{examzhsyntax}[emph={[1]bottom-sep}]
     bottom-sep = (*\meta{弹性长度}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{title} 和 \tn{subject} 的整体下方间距。默认为 |0em plus 0.3em minus 0.2em|。
 \end{function}
 
@@ -1769,18 +1769,18 @@
 \subsubsection{题干} \label{subsubsec:参数-题干}
 
 \begin{function}{question}
-  \begin{ccnusyntax}[emph={[1]question}]
+  \begin{examzhsyntax}[emph={[1]question}]
     question = (*\marg{键值列表}*)
     question/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含许多子项目，用于设置 \env{question} 环境。具体内容见下。
 \end{function}
 
 \begin{function}[added = 2022-09-18]{problem}
-  \begin{ccnusyntax}[emph={[1]problem}]
+  \begin{examzhsyntax}[emph={[1]problem}]
     problem = (*\marg{键值列表}*)
     problem/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含许多子项目，用于设置 \env{problem} 环境。具体内容和下面所述的 \opt{question/} 类的键值基本相同，除了有以下区别：\env{problem} 环境
   \begin{enumerate}
     \item 没有 \opt{combine-fillin} 和 \opt{combine-fillin-args} 键
@@ -1790,17 +1790,17 @@
 
 
 \begin{function}[updated = 2022-07-05]{question/show-answer}
-  \begin{ccnusyntax}[emph={[1]show-answer}]
+  \begin{examzhsyntax}[emph={[1]show-answer}]
     show-answer = (*\TFF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   统一控制 \tn{paren} 和 \tn{fillin} 中答案的显示与否。
 \end{function}
 
 
 \begin{function}{question/points}
-  \begin{ccnusyntax}[emph={[1]points}]
+  \begin{examzhsyntax}[emph={[1]points}]
     points = (*\meta{color}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{question} 和 \env{problem} 环境中的分数。出现在题号后，如果不满足格式或位置的，可以自己手动输入 |（xx 分）|。
 \end{function}
 
@@ -1808,41 +1808,41 @@
 \env{question} 和 \env{problem} 环境的参数大部分通过 \tn{examsetup} 和本节的参数控制，但也有一般在 \env{question} 和 \env{problem} 环境的 \oarg{键值列表} 中使用的，比如 \cmd{points}。（很容易理解，每道题的分值很有可能不尽相同，所以一般都是采用“个性化”，而不是 \tn{examsetup} 的“全局化”。除非是选择题和填空题这种一般每道题分数一样的）
 
 \begin{function}{question/show-points}
-  \begin{ccnusyntax}[emph={[1]show-points}]
+  \begin{examzhsyntax}[emph={[1]show-points}]
     show-points = (*true|(auto)|false*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   控制 \env{question} 和 \env{problem} 环境中的分数的显示与否。\opt{auto} 表示 \env{question} 环境的分数不显示（比如选择、填空题，因为每道题一般分数相同），而 \env{problem} 环境的分数显示（比如解答题，每道题一般分数不同）；\opt{true} 和 \opt{false} 分别表示 \env{question} 和 \env{problem} 环境中的分数全都显示和全都不显示。
 \end{function}
 
 \begin{function}{question/points-separate-par}
-  \begin{ccnusyntax}[emph={[1]points-separate-par}]
+  \begin{examzhsyntax}[emph={[1]points-separate-par}]
     points-separate-par = (*\TFF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{question} 和 \env{problem} 环境中的分数是否单独成段。\env{question} 环境默认为 \opt{false}，\env{problem} 环境默认为 \opt{true}。
 \end{function}
 
 
 \begin{function}{question/top-sep,question/bottom-sep}
-  \begin{ccnusyntax}[emph={[1]top-sep,bottom-sep}]
+  \begin{examzhsyntax}[emph={[1]top-sep,bottom-sep}]
     top-sep = (*\meta{skip}*)
     bottom-sep = (*\meta{skip}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{question} 和 \env{problem} 环境的上下方的弹性间距。\opt{top-sep} 默认为 |.25em plus .25em minus .1em|；\opt{bottom-sep} 默认为 |0pt|。
 \end{function}
 
 
 \begin{function}{question/index}
-  \begin{ccnusyntax}[emph={[1]index}]
+  \begin{examzhsyntax}[emph={[1]index}]
     index = (*\meta{integer}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   手动设置 \env{question} 和 \env{problem} 环境的计数器值。一般用于两个环境的 \meta{键值列表} 中。
 \end{function}
 
 
 \begin{function}[added = 2022-07-20]{question/label}
-  \begin{ccnusyntax}[emph={[1]label}]
+  \begin{examzhsyntax}[emph={[1]label}]
     label = (*\meta{label}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{question} 和 \env{problem} 环境的标签的格式。默认值为 |\arabic*.|。\meta{label} 中可以使用的已定义的计数器样式主要有以下几种：
 \end{function}
 
@@ -1860,16 +1860,16 @@
 还可以使用~\ref{subsubsec:命令环境-题干} 节的 \tn{AddQuestionCounter} 命令自定义计数器样式，使用方式和~\ref{subsubsec:命令环境-选择题} 节的 \tn{AddChoicesCounter} 命令一样。
 
 \begin{function}[added = 2022-07-26]{question/combine-fillin}
-  \begin{ccnusyntax}[emph={[1]combine-fillin}]
+  \begin{examzhsyntax}[emph={[1]combine-fillin}]
     combine-fillin = (*\TFF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否将 \tn{fillin} 命令接入 \env{question} 环境。\opt{true} 表示 \tn{fillin} 会在 \env{question} 环境左侧。\kvopt{combine-fillin}{true} 下 \env{question} 和 \env{problem} 环境的缩进效果相同。
 \end{function}
 
 \begin{function}[added = 2022-07-26]{question/combine-fillin-args}
-  \begin{ccnusyntax}[emph={[1]combine-fillin-args}]
+  \begin{examzhsyntax}[emph={[1]combine-fillin-args}]
     combine-fillin-args = (*\meta{\tn{fillin} 命令的参数}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \kvopt{combine-fillin}{true} 下 \tn{fillin} 接收的参数，和正常使用 \tn{fillin} 命令接收的参数相同。在此之前的 \opt{fillin/foo} 的相关键值会正常作用于接入 \env{question} 环境的 \tn{fillin}。
 \end{function}
 
@@ -1890,9 +1890,9 @@
 }
 
 \begin{function}[added = 2022-08-12]{question/hang}
-  \begin{ccnusyntax}[emph={[1]hang}]
+  \begin{examzhsyntax}[emph={[1]hang}]
     hang = (*\TTF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{question} 环境是否是“悬挂效果”。
 \end{function}
 
@@ -1912,27 +1912,27 @@
 
 
 \begin{function}[added = 2022-09-18]{question/points-prelabel,question/points-postlabel}
-  \begin{ccnusyntax}[emph={[1]points-prelabel,points-postlabel}]
+  \begin{examzhsyntax}[emph={[1]points-prelabel,points-postlabel}]
     points-prelabel = (*\meta{points 前面的内容}*)
     points-postlabel = (*\meta{points 后面的内容}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{question} 环境的 \opt{points} 键值的显示前后内容设置，\opt{points-prelabel} 默认为 |（|，\opt{points-postlabel} 默认为 |分）|，即默认为 |（2分）| 效果。
 \end{function}
 
 \subsubsection{选择题} \label{subsubsec:参数-选择题}
 
 \begin{function}{choices}
-  \begin{ccnusyntax}[emph={[1]choices}]
+  \begin{examzhsyntax}[emph={[1]choices}]
     choices = (*\marg{键值列表}*)
     choices/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含许多子项目，用于设置 \env{choices} 环境。具体内容见下，可以通过 \tn{examsetup} 进行统一处理，也可以用于 \env{choices} 环境的 \meta{键值列表} 针对某一 \env{choices} 环境调整。
 \end{function}
 
 \begin{function}{choices/index}
-  \begin{ccnusyntax}[emph={[1]index}]
+  \begin{examzhsyntax}[emph={[1]index}]
     index = (*\meta{integer}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   选项第一项 label 的计数器的起始值。
 \end{function}
 \begin{latexexample}{\opt{choices/index} 示例}
@@ -1951,26 +1951,26 @@
 
 
 \begin{function}{choices/column-sep}
-  \begin{ccnusyntax}[emph={[1]column-sep}]
+  \begin{examzhsyntax}[emph={[1]column-sep}]
     column-sep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   选项列之间的最小间隔。默认为 |1em|。
 \end{function}
 
 
 \begin{function}{choices/columns}
-  \begin{ccnusyntax}[emph={[1]columns}]
+  \begin{examzhsyntax}[emph={[1]columns}]
     columns = (*\meta{integer}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   强制按照该列数排版选项，如果为 0 则自动选择合适的列数。
   % 手动设置 \env{choices} 环境排出的选项的列数，否则会根据选项内容自动计算。一般用于 \env{choices} 环境的 \meta{参数列表}。
 \end{function}
 
 
 \begin{function}{choices/label}
-  \begin{ccnusyntax}[emph={[1]label}]
+  \begin{examzhsyntax}[emph={[1]label}]
     label = (*\meta{label}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   标签的格式。默认值 |\Alph*.|。\meta{label} 中可以使用的已定义的计数器样式主要有以下几种：
 \end{function}
 
@@ -2025,17 +2025,17 @@
 
 
 \begin{function}{choices/label-pos}
-  \begin{ccnusyntax}[emph={[1]label-pos}]
+  \begin{examzhsyntax}[emph={[1]label-pos}]
     label-pos = (*<(auto)|top-left|left|bottom>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   标签相对于选项内容的位置。\opt{auto} 会根据内容高度来判断，当高度到达一定程度时会判断为插图，并将 label 放置于 内容 的 \opt{bottom} 位置；\opt{top-left} 表示在内容左侧并置于顶部；\opt{top-left} 表示在内容左侧并置于中间；\opt{top-left} 表示在内容底部；
 \end{function}
 
 
 \begin{function}{choices/label-align}
-  \begin{ccnusyntax}[emph={[1]label-align}]
+  \begin{examzhsyntax}[emph={[1]label-align}]
     label-align = (*left|center|(right)*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   标签内部的对齐方式。
 \end{function}
 
@@ -2062,82 +2062,82 @@
 
 
 \begin{function}{choices/label-sep}
-  \begin{ccnusyntax}[emph={[1]label-sep}]
+  \begin{examzhsyntax}[emph={[1]label-sep}]
     label-sep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   标签与选项之间的距离。默认为 |0.5em|。
 \end{function}
 
 \begin{function}{choices/label-width}
-  \begin{ccnusyntax}[emph={[1]label-width}]
+  \begin{examzhsyntax}[emph={[1]label-width}]
     label-width = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   标签的宽度。如果宽度不足会自动调整为最长标签的宽度。默认 |0pt|
 \end{function}
 
 \begin{function}{choices/max-columns}
-  \begin{ccnusyntax}[emph={[1]max-columns}]
+  \begin{examzhsyntax}[emph={[1]max-columns}]
     max-columns = (*\meta{integer}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   选项的最大列数。排版选项时会优先尝试该列数，如果无法排下内容，依次将列数除以 2 并取整再进行尝试，直到可以排下全部选项。默认为 |4| 。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{choices/top-sep}
-  \begin{ccnusyntax}[emph={[1]top-sep}]
+  \begin{examzhsyntax}[emph={[1]top-sep}]
     top-sep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{choices} 环境上方弹性间距。默认为 |0pt|。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{choices/bottom-sep}
-  \begin{ccnusyntax}[emph={[1]bottom-sep}]
+  \begin{examzhsyntax}[emph={[1]bottom-sep}]
     bottom-sep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{choices} 环境下方弹性间距。默认为 |0pt|。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{choices/linesep}
-  \begin{ccnusyntax}[emph={[1]linesep}]
+  \begin{examzhsyntax}[emph={[1]linesep}]
     linesep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{choices} 环境的行数多于 1 时的行额外弹性间距。默认为 |0pt plus .5ex|。
 \end{function}
 
 
 
 \begin{function}{paren}
-  \begin{ccnusyntax}[emph={[1]paren}]
+  \begin{examzhsyntax}[emph={[1]paren}]
     paren = (*\marg{键值列表}*)
     paren/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含一个子项目，用于设置 \tn{paren} 命令。具体内容见下。
 \end{function}
 
 \begin{function}[added = 2022-07-05]{paren/show-answer}
-  \begin{ccnusyntax}[emph={[1]show-answer}]
+  \begin{examzhsyntax}[emph={[1]show-answer}]
     show-answer = (*\TFF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   控制 \tn{paren} 答案的显示与否。注意和 \opt{question/show-answer} 的先后顺序可能会影响结果。
 \end{function}
 
 \begin{function}[added = 2022-07-15,updated = 2022-12-25]{paren/show-paren}
-  \begin{ccnusyntax}[emph={[1]show-paren}]
+  \begin{examzhsyntax}[emph={[1]show-paren}]
     show-paren = (*\TTF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否显示 \tn{paren} 命令的括号。
 \end{function}
 
 \begin{function}[added = 2022-07-15]{paren/text-color}
-  \begin{ccnusyntax}[emph={[1]text-color}]
+  \begin{examzhsyntax}[emph={[1]text-color}]
     text-color = (*\meta{color}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   设置 \tn{paren} 中答案的颜色。
 \end{function}
 
 \begin{function}[added = 2022-07-15]{paren/type}
-  \begin{ccnusyntax}[emph={[1]text-color}]
+  \begin{examzhsyntax}[emph={[1]text-color}]
     type = (*<(hfill)|none>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{paren} 产生的括号是否自动排到行尾。\opt{hfill} 表示自动根据行的长度排到行尾；\opt{none} 表示括号紧跟前面内容。
 \end{function}
 
@@ -2182,9 +2182,9 @@
 
 
 \begin{function}[added = 2022-07-26]{question/label-align}
-  \begin{ccnusyntax}[emph={[1]label-align}]
+  \begin{examzhsyntax}[emph={[1]label-align}]
     label-align = (*left|center|(right)*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{question} 标签的对齐方式。
 \end{function}
 
@@ -2194,17 +2194,17 @@
 
 
 \begin{function}{fillin}
-  \begin{ccnusyntax}[emph={[1]fillin}]
+  \begin{examzhsyntax}[emph={[1]fillin}]
     fillin = (*\marg{键值列表}*)
     fillin/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项暂时包含一个子项目，用于设置填空命令 \tn{fillin} 的类型。具体内容见下。
 \end{function}
 
 \begin{function}[updated = 2022-07-15]{fillin/type}
-  \begin{ccnusyntax}[emph={[1]type}]
+  \begin{examzhsyntax}[emph={[1]type}]
     type = (*<(line)|paren|circle|rectangle|blank>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   填空命令 \tn{fillin} 的类型。\opt{line} 表示下划线；\opt{paren} 表示括号；\opt{rectangle} 表示外包一个矩形；\opt{circle} 表示外包一个圆，当内容变多时，圆会“拉伸开变成椭圆”；\opt{blank} 表示没有任何的“装饰”。
 \begin{latexexample}{\tn{fillin} 的三个类型以及参数使用方式}
   答案是 \fillin \fillin[]
@@ -2216,9 +2216,9 @@
 
 
 \begin{function}[added = 2022-07-21]{fillin/no-answer-type}
-  \begin{ccnusyntax}[emph={[1]no-answer-type}]
+  \begin{examzhsyntax}[emph={[1]no-answer-type}]
     no-answer-type = (*<(blacktriangle)|counter|none>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   填空命令 \tn{fillin} 在 \kvopt{show-answer}{false} 的情况下的显示情况：
   \begin{itemize}
     \item \opt{blacktriangle}：内容部分变成黑色三角形（即使已经输入了答案 |\fillin[foo]|）
@@ -2228,16 +2228,16 @@
 \end{function}
 
 \begin{function}[added = 2022-07-21]{fillin/no-answer-counter-index}
-  \begin{ccnusyntax}[emph={[1]no-answer-counter-index}]
+  \begin{examzhsyntax}[emph={[1]no-answer-counter-index}]
     no-answer-counter-index = (*\meta{integer}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   填空命令 \tn{fillin} 在 \kvopt{show-answer}{false} 和 \kvopt{no-answer-type}{counter} 下的计数器的非负整数值。默认为 |1|
 \end{function}
 
 \begin{function}[added = 2022-07-21]{fillin/no-answer-counter-label}
-  \begin{ccnusyntax}[emph={[1]no-answer-counter-label}]
+  \begin{examzhsyntax}[emph={[1]no-answer-counter-label}]
     no-answer-counter-label = (*\meta{label}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   填空命令 \tn{fillin} 在 \kvopt{show-answer}{false} 和 \kvopt{no-answer-type}{counter} 下的计数器的样式。默认为 |\arabic*|。\meta{label} 中可以使用的已定义的计数器样式主要有以下几种：
 \end{function}
 
@@ -2254,23 +2254,23 @@
 
 
 \begin{function}[added = 2022-07-05]{fillin/show-answer}
-  \begin{ccnusyntax}[emph={[1]show-answer}]
+  \begin{examzhsyntax}[emph={[1]show-answer}]
     show-answer = (*\TFF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   控制 \tn{fillin} 答案的显示与否。注意和 \opt{question/show-answer} 的先后顺序可能会影响结果。
 \end{function}
 
 \begin{function}[added = 2022-07-06]{fillin/width}
-  \begin{ccnusyntax}[emph={[1]width}]
+  \begin{examzhsyntax}[emph={[1]width}]
     width = (*<dimension>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   控制 \kvopt{fillin/type}{line/paren/blank} 下 \tn{fillin} 不显示答案时的长度，默认为 |3em|。
 \end{function}
 
 \begin{function}[added = 2022-07-30]{fillin/width-type}
-  \begin{ccnusyntax}[emph={[1]width-type}]
+  \begin{examzhsyntax}[emph={[1]width-type}]
     width-type = (*<(fill)|normal>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \kvopt{show-answer}{false} 且 \kvopt{no-answer-type}{none} 时 \opt{fillin/width} 设置时若 \meta{width} 的长度超过了当前行的剩余长度，则多余部分在下一行的表现。\opt{fill} 表示多余部分只要不超过 \tn{linewidth} 就自动 fill 为 \tn{linewidth} 的长度（此时建议 \opt{width} 的值不是 \tn{linewidth} 的整数倍，而是（以最终一共两行为例）比如 |1.5\linewidth|）；\opt{normal} 表示多余部分严格按照 \meta{width} 的值排版。由于使用了 \pkg{linegoal}，需要编译至少两次才能获得正确的效果。
   % \emph{注意：由于 \kvopt{no-answer-type}{none} 下的算法是基于 \pkg{linegoal} 获取当前行的剩余距离，如果此时同一行出现了两个 \tn{fillin} 就会互相干扰，导致编译异常。所以 \kvopt{no-answer-type}{none} 下尽可能避免同一行出现两个 \tn{fillin} 命令}
 \end{function}
@@ -2292,25 +2292,25 @@
 \end{latexexample}
 
 \begin{function}[added = 2022-07-15, updated = 2023-07-03]{fillin/box-color}
-  \begin{ccnusyntax}[emph={[1]color}]
+  \begin{examzhsyntax}[emph={[1]color}]
     box-color = (*\meta{color}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   设置 \kvopt{fillin/type}{circle/rectangle} 类型的 \tn{fillin} 的边框颜色。
 \end{function}
 
 
 \begin{function}[added = 2022-07-15]{fillin/text-color}
-  \begin{ccnusyntax}[emph={[1]text-color}]
+  \begin{examzhsyntax}[emph={[1]text-color}]
     text-color = (*\meta{color}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   设置 \tn{fillin} 中答案的颜色。
 \end{function}
 
 
 \begin{function}[added = 2022-07-30]{fillin/paren-type}
-  \begin{ccnusyntax}[emph={[1]paren-type}]
+  \begin{examzhsyntax}[emph={[1]paren-type}]
     paren-type = (*<(banjiao)|quanjiao>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   设置 \tn{fillin} 中 \kvopt{type}{paren} 时的括号类型。\opt{banjiao} 表示半角括号；\opt{quanjiao} 表示全角括号。
 \end{function}
 
@@ -2318,47 +2318,47 @@
 \subsubsection{解答题} \label{subsubsec:参数-解答题}
 
 \begin{function}[added = 2022-07-01]{solution}
-  \begin{ccnusyntax}[emph={[1]solution}]
+  \begin{examzhsyntax}[emph={[1]solution}]
     solution = (*\marg{键值列表}*)
     solution/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含许多子项目，用于设置 \env{solution} 环境。具体内容见下，只能通过 \tn{examsetup} 进行处理。
 \end{function}
 
 
 \begin{function}[added = 2022-07-01,updated = 2024-02-11]{solution/show-solution}
-  \begin{ccnusyntax}[emph={[1]show-solution}]
+  \begin{examzhsyntax}[emph={[1]show-solution}]
     show-solution = (*<(hide)|show-stay|show-move>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否显示或移动解答环境 \env{solution} 的内容。\opt{hide} 表示隐藏，\opt{show-stay} 表示显示在原处，\opt{show-move} 表示显示在最后。
 \end{function}
 
 
 \begin{function}[added = 2024-02-22]{solution/pre-analysis}
-  \begin{ccnusyntax}[emph={[1]pre-analysis}]
+  \begin{examzhsyntax}[emph={[1]pre-analysis}]
     pre-analysis = (*\meta{content}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   移动解答环境 \env{solution} 的内容到最后时，解答环境前的内容。默认为 |【解析】|。
 \end{function}
 
 \begin{function}[added = 2022-07-20]{solution/parbreak}
-  \begin{ccnusyntax}[emph={[1]parbreak}]
+  \begin{examzhsyntax}[emph={[1]parbreak}]
     parbreak = (*\TFF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{solution} 环境的内容是否在 |label| （默认为 |解答|）后新起一段开始。
 \end{function}
 
 \begin{function}[added = 2022-07-01]{solution/show-qed}
-  \begin{ccnusyntax}[emph={[1]show-qed}]
+  \begin{examzhsyntax}[emph={[1]show-qed}]
     show-qed = (*\TTF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否显示 \env{solution} 环境结束的结束符号。
 \end{function}
 
 \begin{function}[added = 2022-07-02]{solution/qedsymbol}
-  \begin{ccnusyntax}[emph={[1]qedsymbol}]
+  \begin{examzhsyntax}[emph={[1]qedsymbol}]
     qedsymbol = (*\meta{symbol}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{solution} 环境结束的结束符号。默认为 |$\square$|。可以为文字等。
 \end{function}
 
@@ -2377,9 +2377,9 @@
 \end{latexexample}
 
 \begin{function}[added = 2022-07-01,updated = 2022-07-02]{solution/label-content}
-  \begin{ccnusyntax}[emph={[1]label-content}]
+  \begin{examzhsyntax}[emph={[1]label-content}]
     label-content = (*\meta{content}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{solution} 环境开头的标签内容。默认为 |解答|。若用于 \tn{examsetup} 则作用于之后的所有 \env{solution} 环境。
 
   如果想将标签内容改为证明，并且想使用 |proof| 而不是 |solution|，可以重新定义 \env{proof} 环境:
@@ -2392,31 +2392,31 @@
 \end{function}
 
 \begin{function}[added = 2024-03-23]{solution/label-indentation}
-  \begin{ccnusyntax}[emph={[1]label-indentation}]
+  \begin{examzhsyntax}[emph={[1]label-indentation}]
     label-indentation = (*\TTF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{solution} 环境开头的标签内容是否缩进。默认为缩进。
 \end{function}
 
 
 \begin{function}[added = 2022-07-01,updated = 2022-07-02]{solution/label-punct}
-  \begin{ccnusyntax}[emph={[1]label-punct}]
+  \begin{examzhsyntax}[emph={[1]label-punct}]
     label-punct = (*\meta{punct}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{solution} 环境开头的标签内容后的标点。默认为空。若用于 \tn{examsetup} 则作用于之后的所有 \env{solution} 环境。
 \end{function}
 
 \begin{function}[added = 2022-07-02]{solution/score-pre-content}
-  \begin{ccnusyntax}[emph={[1]score-pre-content}]
+  \begin{examzhsyntax}[emph={[1]score-pre-content}]
     score-pre-content = (*\meta{content}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{score} 命令的前置内容。默认为空。
 \end{function}
 
 \begin{function}[added = 2022-07-02]{solution/score-post-content}
-  \begin{ccnusyntax}[emph={[1]score-post-content}]
+  \begin{examzhsyntax}[emph={[1]score-post-content}]
     score-post-content = (*\meta{content}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{score} 命令的后置内容。默认为 |分|。
 \end{function}
 
@@ -2449,9 +2449,9 @@
 \end{latexexample}
 
 \begin{function}[added = 2022-07-02, updated = 2022-07-03]{solution/score-format}
-  \begin{ccnusyntax}[emph={[1]score-format}]
+  \begin{examzhsyntax}[emph={[1]score-format}]
     score-format = (*\meta{风格设置}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{score} 命令的内容的风格设置，可以是颜色或字体字号命令等。默认为 |\color{red}|。
 \end{function}
 
@@ -2473,24 +2473,24 @@
 \end{latexexample}
 
 \begin{function}[added = 2022-07-02]{solution/score-showleader}
-  \begin{ccnusyntax}[emph={[1]score-showleader}]
+  \begin{examzhsyntax}[emph={[1]score-showleader}]
     score-showleader = (*\TTF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{score} 命令的引导线显示与否。
 \end{function}
 
 \begin{function}[added = 2022-07-15]{solution/text-color}
-  \begin{ccnusyntax}[emph={[1]text-color}]
+  \begin{examzhsyntax}[emph={[1]text-color}]
     text-color = (*\meta{color}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{solution} 环境内容的颜色。默认为 |black|。
 \end{function}
 
 
 \begin{function}[added = 2022-07-19]{solution/blank-type}
-  \begin{ccnusyntax}[emph={[1]blank-type}]
+  \begin{examzhsyntax}[emph={[1]blank-type}]
     blank-type = (*<(none)|manual|hide>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \kvopt{solution/show-solution}{false} 的时候是否增加一段垂直空白。比如可以留白给学生答题。
   \begin{itemize}
     \item \opt{none}: 不增加；
@@ -2500,9 +2500,9 @@
 \end{function}
 
 \begin{function}[added = 2022-07-19]{solution/blank-vsep}
-  \begin{ccnusyntax}[emph={[1]blank-vsep}]
+  \begin{examzhsyntax}[emph={[1]blank-vsep}]
     blank-vsep = (*\meta{skip}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \kvopt{solution/blank-type}{manual} 的时候增加的垂直空白长度，可以是弹性长度。默认为 |12ex plus 1ex minus 1ex|。
 \end{function}
 
@@ -2517,28 +2517,28 @@
 \subsubsection{几个列表环境} \label{subsubsec:参数-列表环境}
 
 \begin{function}[added = 2022-07-04]{list}
-  \begin{ccnusyntax}[emph={[1]list}]
+  \begin{examzhsyntax}[emph={[1]list}]
     list = (*\marg{键值列表}*)
     list/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含许多子项目。用于设置 \env{step}、\env{method}、\env{case} 环境。仅通过 \tn{examsetup} 进行统一处理。具体内容见下。
 \end{function}
 
 \begin{function}[added = 2022-07-04]{list/step-name,list/method-name,list/case-name}
-  \begin{ccnusyntax}[emph={[1]step-name,method-name,case-name}]
+  \begin{examzhsyntax}[emph={[1]step-name,method-name,case-name}]
     step-name   = (*\meta{step 环境 label 名}*)
     method-name = (*\meta{method 环境 label 名}*)
     case-name   = (*\meta{case 环境 label 名}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   分别设置 \env{step}、\env{method}、\env{case} 环境的 label 名，分别默认为 |步骤|、|方法|、|情形|。
 \end{function}
 
 \begin{function}[added = 2022-07-04]{list/step-punct,list/method-punct,list/case-punct}
-  \begin{ccnusyntax}[emph={[1]step-punct,method-punct,case-punct}]
+  \begin{examzhsyntax}[emph={[1]step-punct,method-punct,case-punct}]
     step-punct   = (*\meta{step 环境 label 后的标点}*)
     method-punct = (*\meta{method 环境 label 后的标点}*)
     case-punct   = (*\meta{case 环境 label 后的标点}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   分别设置 \env{step}、\env{method}、\env{case} 环境的 label 后的标点，分别默认为 |.|、|{}|（无标点）、|.|。
 \end{function}
 
@@ -2547,10 +2547,10 @@
 \subsubsection{草稿纸} \label{subsubsec:参数-草稿纸}
 
 \begin{function}[added = 2022-07-03, updated = 2025-11-07]{draft}
-  \begin{ccnusyntax}[emph={[1]draft}]
+  \begin{examzhsyntax}[emph={[1]draft}]
     draft = (*\marg{键值列表}*)
     draft/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含许多子项目。用于设置 \tn{draftpaper} 命令。\emph{v0.2.6 起支持多层级键值设置}，可使用 |draft = { ... }| 或 |draft/key = value| 两种等价写法。例如：
   \begin{latexcode}
 % 方式 1：使用嵌套键值列表
@@ -2571,24 +2571,24 @@
 
 
 \begin{function}[added = 2022-07-03]{draft/watermark-size}
-  \begin{ccnusyntax}[emph={[1]watermark-size}]
+  \begin{examzhsyntax}[emph={[1]watermark-size}]
     watermark-size = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{draftpaper} 命令的“草稿纸”水印的尺寸。A4 尺寸下默认为 |100pt|，A3 尺寸下默认为 |180pt|。
 \end{function}
 
 \begin{function}[added = 2022-07-03]{draft/show-watermark}
-  \begin{ccnusyntax}[emph={[1]show-watermark}]
+  \begin{examzhsyntax}[emph={[1]show-watermark}]
     show-watermark = (*\TTF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否显示\tn{draftpaper} 命令的“草稿纸”水印。若为 \opt{true}，最多需要编译两次即可得到水印。
 \end{function}
 
 
 \begin{function}[added = 2022-07-03]{draft/show-draft}
-  \begin{ccnusyntax}[emph={[1]show-draft}]
+  \begin{examzhsyntax}[emph={[1]show-draft}]
     show-draft = (*<auto|(manual)>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否在文档最后自动添加两页的草稿纸。此键值只用于导言区的 \tn{examsetup} 命令。\opt{auto} 表示自动在末尾添加两页草稿纸，\opt{manual} 表示不在末尾添加草稿纸，如用户不需要草稿纸，或者是需要不止两页草稿纸的话，则需要改成 \opt{manual}，后者需求则需要用户自己手动在文档末尾添加所需要的 \tn{draftpaper} 命令即可。注意，密封线的作用范围包括了草稿纸。根据经验看，试卷的草稿纸一般也有相应的密封线，所以暂时没有单独去掉草稿纸的密封线范围。但是可以实现一种效果：正文密封线正常，草稿纸页完全空白：
   \begin{enumerate}
     \item 先在导言区使用 \tn{examsetup} 用~\ref{subsubsec:参数-密封线} 节的 |sealline| 相应接口正常编译所需要的密封线
@@ -2601,25 +2601,25 @@
 \subsubsection{评分框} \label{subsubsec:参数-评分框}
 
 \begin{function}[added = 2022-07-04]{scoringbox}
-  \begin{ccnusyntax}[emph={[1]scoringbox}]
+  \begin{examzhsyntax}[emph={[1]scoringbox}]
     scoringbox = (*\marg{键值列表}*)
     scoringbox/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含一个子项目。用于设置评分框。仅可以通过 \tn{examsetup} 进行处理。
 \end{function}
 
 \begin{function}[added = 2022-07-04]{scoringbox/type}
-  \begin{ccnusyntax}[emph={[1]type}]
+  \begin{examzhsyntax}[emph={[1]type}]
     type = (*<onecolumn|twocolumn|(none)>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该键值用于重定义 \tn{section} 命令，使得 \tn{scoringbox} 和 \tn{section} 结合起来。\opt{onecolumn} 表示单栏（即只有“得分”）的评分框和 \tn{section} 绑定，评分框置于左边；\opt{twocolumn} 表示双栏（即有“得分”和“评卷人”）的评分框和 \tn{section} 绑定，评分框置于左边；\opt{none} 表示不重定义 \tn{section} 命令，即不显示评分框。
 \end{function}
 
 
 \begin{function}[added = 2022-07-24]{scoringbox/position}
-  \begin{ccnusyntax}[emph={[1]position}]
+  \begin{examzhsyntax}[emph={[1]position}]
     position = (*<(left)|right>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \kvopt{scoringbox/type}{onecolumn} 或 \kvopt{scoringbox/type}{twocolumn} 时，评分框相对于 \tn{section} 的位置。\opt{left} 表示评分框在 \tn{section} 的左边； \opt{right} 表示评分框在 \tn{section} 的右边。
 \end{function}
 
@@ -2627,17 +2627,17 @@
 \subsubsection{选择标记题型}  \label{subsubsec:参数-选择标记题型}
 
 \begin{function}[added = 2022-07-19]{select}
-  \begin{ccnusyntax}[emph={[1]chinese}]
+  \begin{examzhsyntax}[emph={[1]chinese}]
     select = (*\marg{键值列表}*)
     select/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含一个子项目。用于设置 \env{select} 环境。
 \end{function}
 
 \begin{function}[added = 2022-07-19]{chinese/mark-symbol}
-  \begin{ccnusyntax}[emph={[1]mark-symbol}]
+  \begin{examzhsyntax}[emph={[1]mark-symbol}]
     mark-symbol = (*\meta{symbol}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{select} 环境的标记符号。默认为 |$\checkmark$|。
 \end{function}
 
@@ -2650,51 +2650,51 @@
 \end{latexexample}
 
 \begin{function}[added = 2022-07-21]{chinese/show-mark}
-  \begin{ccnusyntax}[emph={[1]show-mark}]
+  \begin{examzhsyntax}[emph={[1]show-mark}]
     show-mark = (*\TFF*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   是否显示 \env{select} 环境的标记符号。
 \end{function}
 
 \begin{function}[added = 2022-07-19, updated = 2022-07-24]{chinese/mark-position}
-  \begin{ccnusyntax}[emph={[1]mark-position}]
+  \begin{examzhsyntax}[emph={[1]mark-position}]
     mark-position = (*top|above|below|bottom|left|(right)>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{select} 环境的标记符号相对于内容的位置。\opt{right} 表示 \opt{mark-symbol} 在内容的右侧，其余的含义同理。其中 \opt{top} 和 \opt{above} 等效，\opt{below} 和 \opt{bottom} 等效。
 \end{function}
 
 \begin{function}[added = 2022-07-19]{chinese/mark-xshift}
-  \begin{ccnusyntax}[emph={[1]mark-xshift}]
+  \begin{examzhsyntax}[emph={[1]mark-xshift}]
     mark-xshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{select} 环境的标记符号的水平偏移量。
 \end{function}
 
 \begin{function}[added = 2022-07-19]{chinese/mark-yshift}
-  \begin{ccnusyntax}[emph={[1]mark-yshift}]
+  \begin{examzhsyntax}[emph={[1]mark-yshift}]
     mark-yshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{select} 环境的标记符号的垂直偏移量。
 \end{function}
 
 \begin{function}[added = 2022-07-19]{chinese/separator}
-  \begin{ccnusyntax}[emph={[1]separator}]
+  \begin{examzhsyntax}[emph={[1]separator}]
     separator = (*\meta{symbol}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{select} 环境内容的间隔符。
 \end{function}
 
 \begin{function}[added = 2022-07-19]{chinese/pre-content}
-  \begin{ccnusyntax}[emph={[1]pre-content}]
+  \begin{examzhsyntax}[emph={[1]pre-content}]
     pre-content = (*\meta{content}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{select} 环境的内容 \emph{前} 的内容。
 \end{function}
 
 \begin{function}[added = 2022-07-19]{chinese/post-content}
-  \begin{ccnusyntax}[emph={[1]post-content}]
+  \begin{examzhsyntax}[emph={[1]post-content}]
     post-content = (*\meta{content}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{select} 环境的内容 \emph{后} 的内容。
 \end{function}
 
@@ -2719,31 +2719,31 @@
 \subsubsection{连线题型}  \label{subsubsec:参数-连线题型}
 
 \begin{function}[updated = 2022-07-19]{lineto}
-  \begin{ccnusyntax}[emph={[1]lineto}]
+  \begin{examzhsyntax}[emph={[1]lineto}]
     lineto = (*\marg{键值列表}*)
     lineto/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含一个子项目。用于设置 \env{lineto} 环境。
 \end{function}
 
 \begin{function}{lineto/xsep}
-  \begin{ccnusyntax}[emph={[1]xsep}]
+  \begin{examzhsyntax}[emph={[1]xsep}]
     xsep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   设置 \env{lineto} 环境两列之间的距离。默认为 |0.25\linewidth|。只在 \tn{examsetup} 中设置。
 \end{function}
 
 \begin{function}{lineto/ysep}
-  \begin{ccnusyntax}[emph={[1]ysep}]
+  \begin{examzhsyntax}[emph={[1]ysep}]
     ysep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   设置 \env{lineto} 环境两行之间的距离。默认为 |1cm|。只在 \tn{examsetup} 中设置。
 \end{function}
 
 \begin{function}{lineto/name}
-  \begin{ccnusyntax}[emph={[1]name}]
+  \begin{examzhsyntax}[emph={[1]name}]
     name = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{lineto} 环境中 \tn{linelistset} 命令设置的一组的名称。只在 \tn{lineconnect} 的 \oarg{键值列表} 中设置。默认为小写罗马数字，即第一次使用 \tn{lineconnect} 则该组数据的名称为 |i-*|，第二次使用的该组数据名称为 |ii-*|，其中 |*| 为该项在 \tn{linelistset} 的必选参数的列表的第几项（阿拉伯数字），比如 |i-1|，|ii-3|。
 \end{function}
 
@@ -2771,183 +2771,183 @@
 \subsubsection{语文相关} \label{subsubsec:参数-语文}
 
 \begin{function}[updated = 2022-07-24]{material}
-  \begin{ccnusyntax}[emph={[1]material}]
+  \begin{examzhsyntax}[emph={[1]material}]
     material = (*\marg{键值列表}*)
     material/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含多个子项目。用于设置 \env{material} 环境。可以在 \tn{examsetup} 中使用，也可以在 \env{material} 环境的可选参数中使用。
 \end{function}
 
 
 \begin{function}[updated = 2022-07-24]{material/title}
-  \begin{ccnusyntax}[emph={[1]title}]
+  \begin{examzhsyntax}[emph={[1]title}]
     title = (*\meta{标题}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{material} 环境的上方标题的 \emph{内容}。可以为空或不写。
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{material/title-format}
-  \begin{ccnusyntax}[emph={[1]title-format}]
+  \begin{examzhsyntax}[emph={[1]title-format}]
     title-format = (*\meta{格式}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{material} 环境的上方标题的 \emph{格式}。默认为 |\zihao{4}|。
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{material/author}
-  \begin{ccnusyntax}[emph={[1]author}]
+  \begin{examzhsyntax}[emph={[1]author}]
     author = (*\meta{作者}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{material} 环境的上方作者的 \emph{作者名}。可以为空或不写。
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{material/author-format}
-  \begin{ccnusyntax}[emph={[1]author-format}]
+  \begin{examzhsyntax}[emph={[1]author-format}]
     author-format = (*\meta{格式}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{material} 环境的上方作者的 \emph{格式}。默认为 |\small|。
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{material/title-author-sep}
-  \begin{ccnusyntax}[emph={[1]title-author-sep}]
+  \begin{examzhsyntax}[emph={[1]title-author-sep}]
     title-author-sep = (*\meta{弹性长度}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{material} 环境的上方标题和作者之间的距离。默认为 |2em|。
 \end{function}
 
 
 \begin{function}[updated = 2022-07-24]{material/format}
-  \begin{ccnusyntax}[emph={[1]format}]
+  \begin{examzhsyntax}[emph={[1]format}]
     format = (*\meta{格式}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{material} 环境内容的格式。默认为 |\kaishu|。
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{material/source}
-  \begin{ccnusyntax}[emph={[1]source}]
+  \begin{examzhsyntax}[emph={[1]source}]
     source = (*\meta{来源出处}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{material} 环境下方的来源出处。会新起一行并右对齐。
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{material/source-format}
-  \begin{ccnusyntax}[emph={[1]source-format}]
+  \begin{examzhsyntax}[emph={[1]source-format}]
     source-format = (*\meta{格式}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{material} 环境下方的来源出处的格式。
 \end{function}
 
 \begin{function}[added = 2022-07-24]{material/top-sep}
-  \begin{ccnusyntax}[emph={[1]top-sep}]
+  \begin{examzhsyntax}[emph={[1]top-sep}]
     top-sep = (*\meta{弹性长度}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{material} 环境和标题（如果有）的整体上方间距。默认为 |0pt|。
 \end{function}
 
 \begin{function}[added = 2022-07-24]{material/bottom-sep}
-  \begin{ccnusyntax}[emph={[1]bottom-sep}]
+  \begin{examzhsyntax}[emph={[1]bottom-sep}]
     bottom-sep = (*\meta{弹性长度}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{material} 环境的下方间距。默认为 |0pt|。
 \end{function}
 
 \begin{function}[added = 2022-07-24]{material/title-material-sep}
-  \begin{ccnusyntax}[emph={[1]title-material-sep}]
+  \begin{examzhsyntax}[emph={[1]title-material-sep}]
     title-material-sep = (*\meta{弹性长度}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{material} 环境和标题（如果有）的间距。默认为 |0pt|。
 \end{function}
 
 
 \begin{function}[updated = 2022-07-24]{poem}
-  \begin{ccnusyntax}[emph={[1]material}]
+  \begin{examzhsyntax}[emph={[1]material}]
     poem = (*\marg{键值列表}*)
     poem/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含多个子项目。用于设置 \env{poem} 环境。可以在 \tn{examsetup} 中使用，也可以在 \env{poem} 环境的可选参数中使用。
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{poem/title}
-  \begin{ccnusyntax}[emph={[1]title}]
+  \begin{examzhsyntax}[emph={[1]title}]
     title = (*\meta{标题}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{poem} 环境的上方标题的 \emph{内容}。可以为空或不写。
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{poem/title-format}
-  \begin{ccnusyntax}[emph={[1]title-format}]
+  \begin{examzhsyntax}[emph={[1]title-format}]
     title-format = (*\meta{格式}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{poem} 环境的上方标题的 \emph{格式}。默认为 |\zihao{5}|。
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{poem/author}
-  \begin{ccnusyntax}[emph={[1]author}]
+  \begin{examzhsyntax}[emph={[1]author}]
     author = (*\meta{作者}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{poem} 环境的上方作者的 \emph{作者名}。可以为空或不写。
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{poem/author-format}
-  \begin{ccnusyntax}[emph={[1]author-format}]
+  \begin{examzhsyntax}[emph={[1]author-format}]
     author-format = (*\meta{格式}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{poem} 环境的上方作者的 \emph{格式}。默认为 |\small|。
 \end{function}
 
 \begin{function}[updated = 2022-07-24]{poem/title-author-sep}
-  \begin{ccnusyntax}[emph={[1]title-author-sep}]
+  \begin{examzhsyntax}[emph={[1]title-author-sep}]
     title-author-sep = (*\meta{弹性长度}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{poem} 环境的上方标题和作者之间的距离。默认为 |2em|。
 \end{function}
 
 
 \begin{function}[added = 2022-07-24]{poem/format}
-  \begin{ccnusyntax}[emph={[1]format}]
+  \begin{examzhsyntax}[emph={[1]format}]
     format = (*\meta{格式}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{poem} 环境内容的格式。默认为 |\kaishu|。
 \end{function}
 
 \begin{function}[added = 2022-07-26]{poem/align}
-  \begin{ccnusyntax}[emph={[1]align}]
+  \begin{examzhsyntax}[emph={[1]align}]
     align = (*<(l)|c|r>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{poem} 环境内容的对齐方式。\opt{l} 表示左对齐；\opt{c} 表示居中对齐；\opt{r} 表示右对齐。
 \end{function}
 
 \begin{function}[added = 2022-07-24]{poem/top-sep}
-  \begin{ccnusyntax}[emph={[1]top-sep}]
+  \begin{examzhsyntax}[emph={[1]top-sep}]
     top-sep = (*\meta{弹性长度}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{poem} 环境和标题（如果有）的整体上方间距。默认为 |0pt|。
 \end{function}
 
 \begin{function}[added = 2022-07-24]{poem/bottom-sep}
-  \begin{ccnusyntax}[emph={[1]bottom-sep}]
+  \begin{examzhsyntax}[emph={[1]bottom-sep}]
     bottom-sep = (*\meta{弹性长度}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{poem} 环境的下方间距。默认为 |0pt|。
 \end{function}
 
 \begin{function}[added = 2022-07-24]{poem/title-poem-sep}
-  \begin{ccnusyntax}[emph={[1]title-poem-sep}]
+  \begin{examzhsyntax}[emph={[1]title-poem-sep}]
     title-poem-sep = (*\meta{弹性长度}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{poem} 环境和标题（如果有）的间距。默认为 |0pt|。
 \end{function}
 
 \begin{function}[added = 2022-07-25]{poem/type}
-  \begin{ccnusyntax}[emph={[1]type}]
+  \begin{examzhsyntax}[emph={[1]type}]
     type = (*<minipage|(chinese)>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{poem} 环境的类型（主要体现在页脚）。\opt{minipage} 表示 \env{poem} 环境的页脚是基于 \env{minipage} 环境形成的，脚注上方有横线，且两条脚注之间是分行的；\opt{chinese} 表示脚注不分行，连着显示，且最前方有 |[注]| 字（设计来源于“2021 年普通高等学校招生全国统一考试”语文真题卷）。
 \end{function}
 
 \begin{function}[added = 2022-07-26]{poem/zhu-circlednumber-base}
-  \begin{ccnusyntax}[emph={[1]zhu-circlednumber-base}]
+  \begin{examzhsyntax}[emph={[1]zhu-circlednumber-base}]
     zhu-circlednumber-base = (*<tikz|(font)>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   在 \kvopt{poem/type}{chinese} 键值下，\tn{zhu} 的带圈数字的源。\opt{tikz} 表示此时带圈数字基于 \TikZ，\opt{font} 表示此时带圈数字基于字体。
 \end{function}
 
@@ -2956,65 +2956,65 @@
 
 
 \begin{function}[updated = 2022-08-28]{multifigures}
-  \begin{ccnusyntax}[emph={[1]multifigures}]
+  \begin{examzhsyntax}[emph={[1]multifigures}]
     multifigures = (*\marg{键值列表}*)
     multifigures/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含多个子项目。用于设置 \env{multifigures} 环境。可以在 \tn{examsetup} 中使用，也可以在 \env{multifigures} 环境的可选参数中使用。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{multifigures/columns}
-  \begin{ccnusyntax}[emph={[1]columns}]
+  \begin{examzhsyntax}[emph={[1]columns}]
     columns = (*\meta{integer}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   每行多少项。默认为 |3|。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{multifigures/fig-pos}
-  \begin{ccnusyntax}[emph={[1]fig-pos}]
+  \begin{examzhsyntax}[emph={[1]fig-pos}]
     fig-pos = (*<top|(above)|bottom|below|left|right>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   图片相对于标签的位置。\opt{top} 和 \opt{above} 同义、\opt{bottom} 和 \opt{below} 同义。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{multifigures/top-sep}
-  \begin{ccnusyntax}[emph={[1]top-sep}]
+  \begin{examzhsyntax}[emph={[1]top-sep}]
     top-sep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{multifigures} 环境上方额外弹性间距。默认为 |1ex plus .5ex minus .5ex|。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{multifigures/bottom-sep}
-  \begin{ccnusyntax}[emph={[1]bottom-sep}]
+  \begin{examzhsyntax}[emph={[1]bottom-sep}]
     bottom-sep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{multifigures} 环境下方额外弹性间距。默认为 |0pt|。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{multifigures/align}
-  \begin{ccnusyntax}[emph={[1]align}]
+  \begin{examzhsyntax}[emph={[1]align}]
     align = (*<t|m|(b)>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   图片和标签的整体对齐方式。\opt{t} 表示顶部对齐、\opt{m} 表示居中对齐、\opt{b} 表示底部对齐。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{multifigures/xshift,multifigures/hshift,multifigures/yshift,multifigures/vshift}
-  \begin{ccnusyntax}[emph={[1]xshift,hshift,yshift,vshift}]
+  \begin{examzhsyntax}[emph={[1]xshift,hshift,yshift,vshift}]
     xshift = (*\meta{dimension}*)
     hshift = (*\meta{dimension}*)
     yshift = (*\meta{dimension}*)
     vshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   图片和标签整体的水平和垂直的偏移量。\opt{xshift} 和 \opt{hshift} 同义，表示水平；\opt{yshift} 和 \opt{vshift} 同义，表示垂直。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{multifigures/label-xshift,multifigures/label-hshift,multifigures/label-yshift,multifigures/label-vshift}
-  \begin{ccnusyntax}[emph={[1]xshift,hshift,yshift,vshift}]
+  \begin{examzhsyntax}[emph={[1]xshift,hshift,yshift,vshift}]
     label-xshift = (*\meta{dimension}*)
     label-hshift = (*\meta{dimension}*)
     label-yshift = (*\meta{dimension}*)
     label-vshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   标签相对图片的水平和垂直的偏移量。\opt{label-xshift} 和 \opt{label-hshift} 同义，表示水平；\opt{label-yshift} 和 \opt{label-vshift} 同义，表示垂直。
 \end{function}
 
@@ -3022,17 +3022,17 @@
 
 
 \begin{function}[updated = 2022-08-28]{textfigure}
-  \begin{ccnusyntax}[emph={[1]textfigure}]
+  \begin{examzhsyntax}[emph={[1]textfigure}]
     textfigure = (*\marg{键值列表}*)
     textfigure/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含多个子项目。用于设置 \tn{textfigure} 命令。可以在 \tn{examsetup} 中使用，也可以在 \tn{textfigure} 命令的可选参数中使用。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{textfigure/fig-pos}
-  \begin{ccnusyntax}[emph={[1]fig-pos}]
+  \begin{examzhsyntax}[emph={[1]fig-pos}]
     fig-pos = (*\meta{postion}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   图片相对于文本的方位。方位可选参数见下列表，默认为 \opt{bottom-right}。
 \end{function}
 \begin{itemize}
@@ -3058,73 +3058,73 @@
 
 
 \begin{function}[added = 2022-08-28]{textfigure/xshift,textfigure/hshift,textfigure/yshift,textfigure/vshift}
-  \begin{ccnusyntax}[emph={[1]xshift,hshift,yshift,vshift}]
+  \begin{examzhsyntax}[emph={[1]xshift,hshift,yshift,vshift}]
     xshift = (*\meta{dimension}*)
     hshift = (*\meta{dimension}*)
     yshift = (*\meta{dimension}*)
     vshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   图片和文本整体的水平和垂直的偏移量。\opt{xshift} 和 \opt{hshift} 同义，表示水平；\opt{yshift} 和 \opt{vshift} 同义，表示垂直。\opt{yshift} 的默认值为 |.5\baselineskip|。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{textfigure/figure-xshift,textfigure/figure-hshift,textfigure/figure-yshift,textfigure/figure-vshift}
-  \begin{ccnusyntax}[emph={[1]xshift,hshift,yshift,vshift}]
+  \begin{examzhsyntax}[emph={[1]xshift,hshift,yshift,vshift}]
     figure-xshift = (*\meta{dimension}*)
     figure-hshift = (*\meta{dimension}*)
     figure-yshift = (*\meta{dimension}*)
     figure-vshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   图片相对于文本的水平和垂直的偏移量。\opt{figure-xshift} 和 \opt{figure-hshift} 同义，表示水平；\opt{figure-yshift} 和 \opt{figure-vshift} 同义，表示垂直。
 \end{function}
 
 
 \begin{function}[added = 2022-08-28]{textfigure/top-sep}
-  \begin{ccnusyntax}[emph={[1]top-sep}]
+  \begin{examzhsyntax}[emph={[1]top-sep}]
     top-sep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{textfigure} 命令上方弹性间距。默认为 |0pt|。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{textfigure/bottom-sep}
-  \begin{ccnusyntax}[emph={[1]bottom-sep}]
+  \begin{examzhsyntax}[emph={[1]bottom-sep}]
     bottom-sep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \tn{textfigure} 命令下方弹性间距。默认为 |1.5ex plus .5ex minus 0.5ex|。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{textfigure/text-width}
-  \begin{ccnusyntax}[emph={[1]text-width}]
+  \begin{examzhsyntax}[emph={[1]text-width}]
     text-width = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   文本部分的 \env{varwidth} 宽度。默认为 |\columnwidth|。但有时需要手动输入 \kvopt{text-width}{\textbackslash columnwidth} 才会变成整行，比如解答题。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{textfigure/figure-width}
-  \begin{ccnusyntax}[emph={[1]figure-width}]
+  \begin{examzhsyntax}[emph={[1]figure-width}]
     figure-width = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   图片部分的 \env{varwidth} 宽度。默认为 |\columnwidth|。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{textfigure/ratio,textfigure/text-ratio}
-  \begin{ccnusyntax}[emph={[1]ratio,text-ratio}]
+  \begin{examzhsyntax}[emph={[1]ratio,text-ratio}]
     ratio = (*\meta{比例}*)
     text-ratio = (*\meta{比例}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   图片部分占比。默认为 |0.95|。有时 |1| 的效果并不是整行，这主要和使用了 \env{varwidth} 环境有关，此时建议改 \opt{text-width}。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{textfigure/top}
-  \begin{ccnusyntax}[emph={[1]top}]
+  \begin{examzhsyntax}[emph={[1]top}]
     top = (*\meta{integer}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \kvopt{fig-pos}{left-top} 时，图片顶部从文本的第几行开始排，效果和 \pkg{wrapstuff} 宏包的 \opt{top} 键值效果类似。
 \end{function}
 
 \begin{function}[added = 2022-09-18]{textfigure/parindent}
-  \begin{ccnusyntax}[emph={[1]parindent}]
+  \begin{examzhsyntax}[emph={[1]parindent}]
     parindent = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   文本部分的缩进长度，默认为 |2em|。
 \end{function}
 
@@ -3132,81 +3132,81 @@
 \subsubsection{数学-计算题排版环境} \label{subsubsec:参数-计算题排版}
 
 \begin{function}[updated = 2024-02-11]{calculations}
-  \begin{ccnusyntax}[emph={[1]calculations}]
+  \begin{examzhsyntax}[emph={[1]calculations}]
     calculations = (*\marg{键值列表}*)
     calculations/(*\meta{key}*) = (*\meta{value}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   该选项包含多个子项目。用于设置 \env{calculations} 环境。可以在 \tn{examsetup} 中使用，也可以在 \env{calculations} 环境的可选参数中使用。
 \end{function}
 
 \begin{function}[added = 2024-02-11]{calculations/index}
-  \begin{ccnusyntax}[emph={[1]index}]
+  \begin{examzhsyntax}[emph={[1]index}]
     index = (*\meta{integer}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   第一个题干的序号。默认为 |1|。
 \end{function}
 
 \begin{function}[added = 2024-02-11]{calculations/columns}
-  \begin{ccnusyntax}[emph={[1]columns}]
+  \begin{examzhsyntax}[emph={[1]columns}]
     columns = (*\meta{integer}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   每行多少项。默认为 |2|。
 \end{function}
 
 \begin{function}[added = 2024-02-11]{calculations/fig-pos}
-  \begin{ccnusyntax}[emph={[1]fig-pos}]
+  \begin{examzhsyntax}[emph={[1]fig-pos}]
     fig-pos = (*<top|above|bottom|below|left|right|(left-top)>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   题干相对于标签的位置。\opt{top} 和 \opt{above} 同义、\opt{bottom} 和 \opt{below} 同义。
 \end{function}
 
 \begin{function}[added = 2024-02-11]{calculations/top-sep}
-  \begin{ccnusyntax}[emph={[1]top-sep}]
+  \begin{examzhsyntax}[emph={[1]top-sep}]
     top-sep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{calculations} 环境上方额外弹性间距。默认为 |1ex plus .5ex minus .5ex|。
 \end{function}
 
 \begin{function}[added = 2024-02-11]{calculations/bottom-sep}
-  \begin{ccnusyntax}[emph={[1]bottom-sep}]
+  \begin{examzhsyntax}[emph={[1]bottom-sep}]
     bottom-sep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \env{calculations} 环境下方额外弹性间距。默认为 |0pt|。
 \end{function}
 
 \begin{function}[added = 2024-02-11, updated = 2025-11-07]{calculations/hsep,calculations/vsep}
-  \begin{ccnusyntax}[emph={[1]hsep,vsep}]
+  \begin{examzhsyntax}[emph={[1]hsep,vsep}]
     hsep = (*\meta{dimension}*)
     vsep = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   \opt{hsep} 表示题干之间的水平间距，\opt{vsep} 表示题干之间的垂直间距。\opt{hsep} 默认为 |2em|，\opt{vsep} 默认为 |0em|。
 
   \emph{注：v0.2.6 起，内部实现优化了双列布局时的列宽计算（从 0.3 倍文本宽度调整为 0.45 倍），改善了排版效果。用户无需修改已有代码。}
 \end{function}
 
 \begin{function}[added = 2024-02-11]{calculations/align}
-  \begin{ccnusyntax}[emph={[1]align}]
+  \begin{examzhsyntax}[emph={[1]align}]
     align = (*<(t)|m|b>*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   题干和标签的整体对齐方式。\opt{t} 表示顶部对齐、\opt{m} 表示居中对齐、\opt{b} 表示底部对齐。
 \end{function}
 
 \begin{function}[added = 2024-02-11]{calculations/xshift,calculations/hshift,calculations/yshift,calculations/vshift}
-  \begin{ccnusyntax}[emph={[1]xshift,hshift,yshift,vshift}]
+  \begin{examzhsyntax}[emph={[1]xshift,hshift,yshift,vshift}]
     xshift = (*\meta{dimension}*)
     hshift = (*\meta{dimension}*)
     yshift = (*\meta{dimension}*)
     vshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   题干和标签整体的水平和垂直的偏移量。\opt{xshift} 和 \opt{hshift} 同义，表示水平；\opt{yshift} 和 \opt{vshift} 同义，表示垂直。
 \end{function}
 
 \begin{function}[added = 2024-02-11]{calculations/label-xshift,calculations/label-hshift,calculations/label-yshift,calculations/label-vshift}
-  \begin{ccnusyntax}[emph={[1]xshift,hshift,yshift,vshift}]
+  \begin{examzhsyntax}[emph={[1]xshift,hshift,yshift,vshift}]
     label-xshift = (*\meta{dimension}*)
     label-hshift = (*\meta{dimension}*)
     label-yshift = (*\meta{dimension}*)
     label-vshift = (*\meta{dimension}*)
-  \end{ccnusyntax}
+  \end{examzhsyntax}
   标签相对题干的水平和垂直的偏移量。\opt{label-xshift} 和 \opt{label-hshift} 同义，表示水平；\opt{label-yshift} 和 \opt{label-vshift} 同义，表示垂直。
 \end{function}

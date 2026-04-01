@@ -1609,7 +1609,7 @@
   {
     show-head    = false,
     show-foot    = true,
-    foot-content = {数学试题第;页（共~;页）}
+    foot-content = {数学试题第;页（共;页）}
   }
 
 \int_new:N \l__examzh_foot_content_count_semicolon_int
