@@ -69,17 +69,18 @@
 
 \subsubsection{页边距调整}
 
-使用 |geometry| 宏包调整页边距：
+`\cls{exam-zh}` 会在导言区末尾设置默认页面参数，所以自定义页边距时建议把 |\geometry| 放进 |\AtEndPreamble|：
 
 \begin{latexcode}[deletetexcs={\documentclass},morekeywords={\documentclass}]
   \documentclass{exam-zh}
 
-  \usepackage{geometry}
-  \geometry{
-    top = 2.5cm,
-    bottom = 2cm,
-    left = 2cm,
-    right = 2cm
+  \AtEndPreamble{
+    \geometry{
+      top = 2.5cm,
+      bottom = 2cm,
+      left = 2cm,
+      right = 2cm
+    }
   }
 \end{latexcode}
 
@@ -103,148 +104,57 @@
 
 \subsection{图文混排详解}
 
-本节介绍如何在试卷中实现图片与文字的混合排版。
+本节介绍 \cls{exam-zh} 自带的图文排版命令。
 
 \subsubsection{基本用法}
 
-\textbf{使用 wrapstuff 环境：}
+\textbf{使用 \cmd{\textfigure}：}
 
 \begin{latexcode}
-  \usepackage{wrapstuff}  % 在文档开头添加
-
-  \begin{question}
-    \begin{wrapstuff}[5]{0.3\textwidth}
-      \includegraphics[width=\linewidth]{triangle.pdf}
-    \end{wrapstuff}
+  \textfigure{
     如图所示，已知三角形 ABC 的三边长分别为 3、4、5，
     求三角形的面积。
-  \end{question}
+  }{
+    \includegraphics[width=3cm]{triangle.pdf}
+  }
 \end{latexcode}
 
-参数说明：
+\textbf{说明：}
 \begin{itemize}
-  \item |[5]|：图片占用 5 行文字的高度（可选，自动计算）
-  \item |{0.3\textwidth}|：图片宽度为文本宽度的 30\%
+  \item 第一个大括号是文字内容
+  \item 第二个大括号是图片内容
+  \item 更细的控制参数可以在完整文档中查询 |textfigure/*| 键值
 \end{itemize}
 
-\subsubsection{使用 minipage 方法}
+\subsubsection{多张图片}
 
-更稳定的替代方案（推荐）：
+如果一题对应多张图片，可以使用 |multifigures| 环境：
 
 \begin{latexcode}
-  \begin{question}
-    \begin{minipage}[t]{0.6\textwidth}
-      如图所示，已知三角形 ABC 的三边长分别为 3、4、5，
-      求三角形的面积。
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[t]{0.35\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{triangle.pdf}
-    \end{minipage}
-  \end{question}
+  \begin{multifigures}[columns = 2]
+    \item[题 1 图] \includegraphics[width=3cm]{fig1.png}
+    \item[题 2 图] \includegraphics[width=3cm]{fig2.png}
+  \end{multifigures}
 \end{latexcode}
 
-\textbf{优点：}
+\textbf{适用场景：}
 \begin{itemize}
-  \item 兼容性好，不会报错
-  \item 精确控制布局
-  \item 可以嵌套使用
+  \item 一段文字配一张图：优先用 |\textfigure|
+  \item 多张题图并排展示：优先用 |multifigures|
+  \item 只想简单插图：直接用 |\includegraphics|
 \end{itemize}
 
-\subsubsection{⚠️ 常见错误和限制}
-
-\textbf{错误 1：在深层嵌套环境中使用 wrapstuff}
-
-\begin{latexcode}
-  % ❌ 错误示例
-  \begin{problem}
-    \begin{enumerate}
-      \item 第一问
-        \begin{enumerate}
-          \item 小问(a)
-            \begin{wrapstuff}  % 此处会报错
-              \includegraphics{fig.png}
-            \end{wrapstuff}
-        \end{enumerate}
-    \end{enumerate}
-  \end{problem}
-\end{latexcode}
-
-\textbf{原因：}|wrapstuff| 在两层以上的 |enumerate| 嵌套中会失效（Issue \#ID3UMZ）。
-
-\textbf{解决：}使用 |minipage| 代替，或减少嵌套层级。
-
-\textbf{错误 2：choices 前直接使用 wrapstuff}
-
-\begin{latexcode}
-  % ❌ 错误示例
-  \begin{question}
-    \begin{wrapstuff}{0.3\textwidth}
-      \includegraphics{fig.png}
-    \end{wrapstuff}
-    题目文字...
-    \begin{choices}  % choices 会错位
-      \item ...
-    \end{choices}
-  \end{question}
-\end{latexcode}
-
-\textbf{解决：}
-\begin{enumerate}
-  \item 图片和选项分开放置
-  \item 或全部使用 |minipage| 布局
-\end{enumerate}
-
-\subsubsection{推荐的安全使用场景}
-
-\textbf{✅ 可以安全使用 wrapstuff 的情况：}
-
-\begin{itemize}
-  \item 在 |question| 或 |problem| 环境内，无嵌套列表
-  \item 纯文字题目配图片
-  \item 单层 |enumerate| 内部（不推荐，但通常可用）
-\end{itemize}
-
-\textbf{⛔ 不推荐使用 wrapstuff 的情况：}
-
-\begin{itemize}
-  \item 两层及以上的 |enumerate| 或 |itemize| 嵌套
-  \item |choices| 环境附近
-  \item 需要精确控制布局的场合
-\end{itemize}
-
-\textbf{建议：}遇到复杂排版，优先使用 |minipage| 方法。
-
-\subsubsection{图片位置和对齐}
+\subsubsection{简单插图}
 
 \textbf{居中显示：}
 
 \begin{latexcode}
-  \begin{question}
-    题目文字...
-
-    \begin{center}
-      \includegraphics[width=0.5\textwidth]{fig.png}
-    \end{center}
-
-    后续文字...
-  \end{question}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth]{fig.png}
+  \end{center}
 \end{latexcode}
 
-\textbf{左右并排：}
-
-\begin{latexcode}
-  \begin{minipage}[t]{0.48\textwidth}
-    \includegraphics[width=\linewidth]{fig1.png}
-  \end{minipage}%
-  \hfill
-  \begin{minipage}[t]{0.48\textwidth}
-    \includegraphics[width=\linewidth]{fig2.png}
-  \end{minipage}
-\end{latexcode}
-
-更多示例见完整文档的"图文排版"章节。
+更多示例见完整文档的“图文排版”章节。
 
 
 \subsection{行距和间距调整}
@@ -279,7 +189,7 @@
   % \doublespacing    % 双倍行距
 \end{latexcode}
 
-\textbf{⚠️ 注意：}
+\textbf{注意：}
 \begin{itemize}
   \item 行距不要低于 0.8，否则阅读困难
   \item 建议范围：0.85--1.2
@@ -292,7 +202,8 @@
 
 \begin{latexcode}
   \examsetup{
-    question/sep = 0.5em,  % 题目间距（默认 1em）
+    question/top-sep = 0.2em,
+    question/bottom-sep = 0.2em,
   }
 \end{latexcode}
 
@@ -300,7 +211,8 @@
 
 \begin{latexcode}
   \examsetup{
-    problem/sep = 1em,  % problem 环境间距
+    problem/top-sep = 0.5em,
+    problem/bottom-sep = 0.5em,
   }
 \end{latexcode}
 
@@ -310,7 +222,7 @@
 
 \begin{latexcode}
   \examsetup{
-    choices/vsep = 0.3em,  % 选项垂直间距（默认 0.5em）
+    choices/linesep = 0.3em,  % 多行选项之间的额外间距
   }
 \end{latexcode}
 
@@ -318,7 +230,7 @@
 
 \begin{latexcode}
   \examsetup{
-    choices/hsep = 1em,  % 选项水平间距
+    choices/column-sep = 1em,  % 列与列之间的最小间距
   }
 \end{latexcode}
 
@@ -358,9 +270,10 @@
 
   % === 题目和选项间距 ===
   \examsetup{
-    question/sep = 0.5em,
-    choices/vsep = 0.3em,
-    choices/hsep = 0.8em,
+    question/top-sep = 0.2em,
+    question/bottom-sep = 0.2em,
+    choices/linesep = 0.3em,
+    choices/column-sep = 0.8em,
   }
 
   % === 段落间距 ===
@@ -378,7 +291,7 @@
   \item 适合练习题或非正式考试
 \end{itemize}
 
-\textbf{⚠️ 注意事项：}
+\textbf{注意事项：}
 \begin{itemize}
   \item 正式考试建议保持默认设置
   \item 紧凑模式可能影响阅读体验
@@ -417,13 +330,10 @@
 
 \subsubsection{方格纸}
 
-添加方格纸（适合作文或作图题）：
+需要一串可填写的小方格时，可以使用 |\examsquare|：
 
 \begin{latexcode}
-  \squarepaper[
-    rows = 20,     % 行数
-    columns = 20   % 列数
-  ]
+  考号：\examsquare{10}
 \end{latexcode}
 
 \subsubsection{评分框}
@@ -431,7 +341,7 @@
 在试卷中添加评分表：
 
 \begin{latexcode}
-  \scorebox
+  \scoringbox
 \end{latexcode}
 
 详细配置见完整文档。
@@ -442,7 +352,7 @@
 
 \begin{latexcode}
   \examsetup{
-    page/show-seal-line = false
+    sealline/show = false
   }
 \end{latexcode}
 
@@ -450,7 +360,7 @@
 
 \begin{latexcode}
   \examsetup{
-    seal-line/text = {密封线内不要答题}
+    sealline/text = {密封线内不要答题}
   }
 \end{latexcode}
 
@@ -476,12 +386,12 @@
 
 \textbf{阅读材料：}
 
-使用 |article| 环境：
+使用 |material| 环境：
 
 \begin{latexcode}
-  \begin{article}{文章标题}
+  \begin{material}[title = {文章标题}, author = {作者}]
     文章内容...
-  \end{article}
+  \end{material}
 \end{latexcode}
 
 \subsubsection{英语试卷}
@@ -489,9 +399,9 @@
 \textbf{作文答题框：}
 
 \begin{latexcode}
-  \compositionbox{
-    height = 15cm  % 框的高度
-  }
+  \begin{writingbox}[title = {My Dream}]
+    \vspace*{10em}
+  \end{writingbox}
 \end{latexcode}
 
 
@@ -513,7 +423,7 @@
     choices/columns = 2,  % 选项排成2列
 
     % === 页面设置 ===
-    page/show-seal-line = false,  % 隐藏密封线
+    sealline/show = false,  % 隐藏密封线
   }
 \end{latexcode}
 

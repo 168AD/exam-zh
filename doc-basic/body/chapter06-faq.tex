@@ -21,7 +21,9 @@
 
 \subsubsection{Q2: 数学公式编译错误}
 
-\textbf{错误原因：}在普通文本中使用了数学符号但没有用 |$| 包裹。编译时会提示 "Missing \$ inserted"。
+\textbf{错误原因：}在普通文本中使用了数学符号但没有用 |$| 包裹。
+
+常见报错是：|Missing \$ inserted|。
 
 \textbf{错误示例：}
 
@@ -126,57 +128,42 @@
     \end{shellcode}
 \end{enumerate}
 
-\subsubsection{Q8: 找不到 LiSu（隶书）字体}
+\subsubsection{Q8: 试卷合集里不想显示 \textbackslash chapter 标题页怎么办？}
 
-\textbf{错误信息：}|! Package fontspec Error: The font "LiSu" cannot be found.|
+如果你把多份试卷放在同一个文件里，并且使用 |\chapter| 分隔每一份试卷，可以通过下面的键值隐藏章节标题页：
 
-\textbf{原因：}系统缺少隶书字体（常见于 Linux 或精简版 Windows）。
-
-\textbf{解决方案：}
-
-\begin{enumerate}
-  \item \textbf{安装字体}（Windows 用户）
-    \begin{itemize}
-      \item 从 C:\textbackslash{}Windows\textbackslash{}Fonts 复制 SIMLI.TTF
-      \item 或从网上下载并安装
-    \end{itemize}
-
-  \item \textbf{更换字体配置}
-    \begin{latexcode}
-  % 在文档开头添加
-  \setCJKfamilyfont{zhli}{SimSun}  % 用宋体替代隶书
-    \end{latexcode}
-
-  \item \textbf{禁用装饰字体}
-    \begin{latexcode}
+\begin{latexcode}
   \examsetup{
-    page/show-chapter-label = false  % 不显示需要隶书的章节标签
+    page/show-chapter = false
   }
-    \end{latexcode}
-\end{enumerate}
+\end{latexcode}
 
-\subsubsection{Q9: 2025-10-09 LaTeX3 更新后 choices 环境失效 ⚠️}
+这样 |\chapter| 仍然会用于分隔试卷并重置题号，但不会额外排出章节标题页。
 
-\textbf{问题：}2025 年 10 月后，选择题选项无法正常排版，编译报错或选项显示异常。
+\subsubsection{Q9: choices 环境排版异常怎么办？}
 
-\textbf{原因：}\LaTeX3 内核更新导致兼容性问题（Issue \#ID3FX0）。
-
-\textbf{临时解决方案：}
+\textbf{先检查这几项：}
 
 \begin{enumerate}
-  \item \textbf{降级 \LaTeX3 核心包}（临时）
-    \begin{shellcode}[morekeywords={tlmgr,install}]
-  # 回退到 2025-09-01 版本
-  tlmgr install l3kernel@2025-09-01
-    \end{shellcode}
-
-  \item \textbf{使用旧版 \TeX{} Live}
-    \begin{itemize}
-      \item 如果可能，使用 \TeX{} Live 2024 或更早版本
-    \end{itemize}
+  \item 是否使用了 \XeLaTeX{} 编译；
+  \item 是否在两层及以上的列表环境里嵌套了 |choices|；
+  \item 是否在 |choices| 前后混用了复杂图文绕排。
 \end{enumerate}
 
-\textbf{注意：}由于项目已停止维护，此问题可能无官方修复。详见"已知问题与限制"章节。
+\textbf{常见解决方法：}
+
+\begin{enumerate}
+  \item 手动指定列数：
+    \begin{latexcode}
+  \begin{choices}[columns = 1]
+    \item ...
+  \end{choices}
+    \end{latexcode}
+
+  \item 把选择题放在较外层，避免深层嵌套列表；
+
+  \item 图文题优先使用 |\textfigure|、|multifigures| 或普通 |\includegraphics|，不要把复杂绕排和 |choices| 混在一起。
+\end{enumerate}
 
 
 \subsection{功能使用问题}
@@ -260,7 +247,7 @@
 
 \begin{latexcode}
   \examsetup{
-    page/show-seal-line = false
+    sealline/show = false
   }
 \end{latexcode}
 
@@ -268,11 +255,10 @@
 
 \begin{latexcode}
   \examsetup{
-    seal-line/odd-show = true,     % 奇数页显示
-    seal-line/even-show = false,   % 偶数页隐藏
-    seal-line/scope = firstpage,   % 只在第一页显示
-    seal-line/line-thickness = 1pt,  % 线条粗细
-    seal-line/text = {密封线内不要答题},  % 文字内容
+    sealline/show = true,
+    sealline/scope = firstpage,         % 只在第一页显示
+    sealline/line-thickness = 1pt,      % 线条粗细
+    sealline/text = {密封线内不要答题},   % 文字内容
   }
 \end{latexcode}
 
@@ -296,7 +282,7 @@
 
 \textbf{需求：}希望选择题答案 |\paren[]| 和填空题答案 |\fillin[]| 能像解答题一样，集中显示在试卷末尾。
 
-\textbf{当前状态：}\cls{exam-zh} 目前\textbf{不支持}此功能（Issue \#ICMVN4, \#I5J7YG）。
+\textbf{当前状态：}\cls{exam-zh} 目前\textbf{不支持}此功能。
 
 \textbf{临时解决方案：}
 
@@ -325,51 +311,49 @@
     然后手动提取注释中的答案。
 \end{enumerate}
 
-\textbf{注意：}由于项目已停止维护，该功能可能不会实现。
-
-
 \subsection{排版问题}
 
 \subsubsection{Q16: 题号对齐不整齐}
 
-\textbf{问题：}题号1和题号10的宽度不同，导致题干对齐不一致。
+\textbf{问题：}想修改题号样式，或者担心题号位看起来不整齐。
 
-\textbf{解决：}设置题号的最宽标签
+\textbf{做法：}使用真实存在的 |question/label| 键值修改题号格式：
 
 \begin{latexcode}
   \examsetup{
-    question/number-format = \arabic*.,  % 题号格式
-    question/label-width = 2.5em,        % 题号宽度（根据最大题号调整）
+    question/label = \arabic*.,   % 1. 2. 3.
+    % question/label = (\arabic*), % (1) (2) (3)
+    % question/label = \Alph*.,    % A. B. C.
   }
 \end{latexcode}
 
+\textbf{说明：}模板会根据题号样式自动设置标签宽度，仓库里没有 |question/label-width| 这个键值。
+
 \subsubsection{Q17: 填空题下划线超出页面边界}
 
-\textbf{问题：}填空题答案较长时，下划线不自动换行，超出页面右边界（Issue \#IAXE1N）。
-
-\textbf{原因：}当前版本填空题下划线不支持自动换行。
+\textbf{问题：}填空内容较长时，普通 |\fillin| 不适合直接放很长的答案。
 
 \textbf{临时解决方案：}
 
 \begin{enumerate}
-  \item \textbf{手动控制宽度}
+  \item \textbf{长答案使用 |\fillin*|}
     \begin{latexcode}
-  计算结果为 \fillin[width = 5em][很长的答案]
+  计算结果为 \fillin*[这是一个比较长的答案内容，需要换行显示]
     \end{latexcode}
 
-  \item \textbf{缩短答案文本}
-    \begin{itemize}
-      \item 教师版显示时可能需要精简答案
-      \item 或使用数学符号代替文字
-    \end{itemize}
-
-  \item \textbf{分多个填空}
+  \item \textbf{手动控制占位宽度}
     \begin{latexcode}
-  前半部分 \fillin[答案1]，后半部分 \fillin[答案2]
+  \fillin[width = 5em][答案]
+    \end{latexcode}
+
+  \item \textbf{不显示答案时配合宽度设置}
+    \begin{latexcode}
+  \examsetup{question/show-answer = false}
+  \fillin[width = 1.2\linewidth][长答案]
     \end{latexcode}
 \end{enumerate}
 
-\textbf{注意：}此问题暂无完美解决方案，见"已知问题与限制"章节。
+\textbf{提示：}如果是数学答案，仍然要写成 |\fillin[$x^2+1$]| 这种数学模式形式。
 
 \subsubsection{Q18: 填空题答案中使用区间符号 [2,3) 报错}
 
@@ -385,12 +369,7 @@
   答案是 \fillin[{$[2,3)$}]
     \end{latexcode}
 
-  \item \textbf{使用星号变体}
-    \begin{latexcode}
-  答案是 \fillin*{$[2,3)$}  % 仅教师版显示
-    \end{latexcode}
-
-  \item \textbf{避免使用方括号}
+  \item \textbf{避免直接写未配对的方括号}
     \begin{latexcode}
   答案是 \fillin[$\{2 \leq x < 3\}$]  % 用集合表示
     \end{latexcode}
@@ -398,7 +377,7 @@
 
 \subsubsection{Q19: wrapstuff 图文绕排在复杂环境中报错}
 
-\textbf{问题：}在 |problem| 环境内使用两层 |enumerate| 后，|\wrapstuff| 命令报错（Issue \#ID3UMZ）。
+\textbf{问题：}在 |problem| 环境内使用两层 |enumerate| 后，图文绕排容易出问题。
 
 \textbf{错误示例：}
 
@@ -434,11 +413,11 @@
   \item \textbf{将图片放在环境外部}：先结束嵌套环境，再插入图片
 \end{enumerate}
 
-\textbf{注意：}此为已知限制，详见"已知问题与限制"章节。
+\textbf{注意：}复杂图文题建议优先使用 |\textfigure|、|multifigures| 或普通 |minipage|。
 
 \subsubsection{Q20: 自动换页后行距变大}
 
-\textbf{问题：}偶尔在自动换页时，新页面的行距异常增大（Issue \#I7QTGG）。
+\textbf{问题：}偶尔在自动换页时，新页面的行距异常增大。
 
 \textbf{原因：}\LaTeX{} 的页面垂直对齐机制导致，无法完全避免。
 
@@ -462,7 +441,7 @@
 
 \subsubsection{Q21: 如何整体缩小行距以节约纸张？}
 
-\textbf{需求：}让试卷排版更紧凑，节约打印纸张（Issue \#I9T0DX）。
+\textbf{需求：}让试卷排版更紧凑，节约打印纸张。
 
 \textbf{全局调整行距：}
 
@@ -481,7 +460,8 @@
 
 \begin{latexcode}
   \examsetup{
-    question/sep = 0.5em,  % 题目之间的间距（默认 1em）
+    question/top-sep = 0.2em,
+    question/bottom-sep = 0.2em,
   }
 \end{latexcode}
 
@@ -489,7 +469,8 @@
 
 \begin{latexcode}
   \examsetup{
-    choices/vsep = 0.3em,  % 选项垂直间距
+    choices/linesep = 0.3em,     % 多行选项之间的额外间距
+    choices/column-sep = 0.8em,  % 列间距
   }
 \end{latexcode}
 
@@ -533,7 +514,7 @@
 
 \subsubsection{Q24: \textbackslash Omega 或 \textbackslash varnothing 等数学符号显示异常}
 
-\textbf{问题：}某些希腊字母或特殊数学符号显示不正确或缺失（Issue \#I6W4DR, \#I6VZ17）。
+\textbf{问题：}某些希腊字母或特殊数学符号显示不正确或缺失。
 
 \textbf{原因：}数学字体配置问题。
 
@@ -545,26 +526,20 @@
   \documentclass{exam-zh}
 
   \examsetup{
-    math-font = xits,  % 或 tex-gyre-termes, lm
+    math-font = xits,  % 也可以改成 stix、libertinus、lm 等
   }
     \end{latexcode}
 
   \item \textbf{使用替代符号}
     \begin{itemize}
       \item |\varnothing| 显示异常时，使用 |\emptyset|
-      \item |\Omega| 有问题时，尝试 |\upOmega| 或 |\mathrm{\Omega}|
+      \item 先确认自己处在数学模式中，例如 |\$\\Omega\$|
     \end{itemize}
-
-  \item \textbf{手动设置字体}（高级）
-    \begin{latexcode}
-  \usepackage{unicode-math}
-  \setmathfont{XITS Math}[range={\Omega,\varnothing}]
-    \end{latexcode}
 \end{enumerate}
 
 \subsubsection{Q25: 概率统计中波浪号 \textasciitilde{} 无法使用}
 
-\textbf{问题：}在数学模式中输入 |X ~ N(0,1)| 时报错或显示异常（Issue \#I6Z0MD）。
+\textbf{问题：}在数学模式中输入 |X ~ N(0,1)| 时报错或显示异常。
 
 \textbf{原因：}|\~| 是特殊字符，表示上标波浪号或不间断空格。
 
@@ -581,34 +556,20 @@
   $X \thicksim N(0,1)$
 \end{latexcode}
 
-\subsubsection{Q26: 向量箭头样式调整}
+\subsubsection{Q26: 向量箭头样式能否按大小写分别设置？}
 
-\textbf{需求：}希望区分大小写字母的向量箭头长度（Issue \#I6NVYF）。
+\textbf{当前状态：}仓库里没有提供“按字母大小写分别设置向量箭头长度”的内置接口。
 
-\textbf{当前状态：}\cls{exam-zh} 使用统一的向量箭头样式。
+\textbf{建议：}
 
-\textbf{自定义解决方案：}
-
-\begin{latexcode}[deletetexcs={\documentclass},morekeywords={\documentclass}]
-  \documentclass{exam-zh}
-
-  \usepackage{esvect}  % 更灵活的向量箭头
-
-  % 重定义 \vec 命令，根据字母大小写判断
-  \ExplSyntaxOn
-  \RenewDocumentCommand{\vec}{m}{
-    \str_if_eq:nVTF {#1} { \str_uppercase:n {#1} }
-      { \vv*{#1} }  % 大写字母用长箭头
-      { \vv{#1} }   % 小写字母用普通箭头
-  }
-  \ExplSyntaxOff
-\end{latexcode}
-
-\textbf{注意：}此为高级用法，需要对 \LaTeX3 有一定了解。
+\begin{itemize}
+  \item 如果只需要默认样式，直接使用 |\vec{a}|；
+  \item 如果确实需要特殊箭头样式，建议在自己的文档里单独重定义，而不要把它当成 \cls{exam-zh} 的内置功能。
+\end{itemize}
 
 \subsubsection{Q27: 与 listings 或其他代码环境冲突}
 
-\textbf{问题：}在选择题或题目中使用 |lstlisting| 等代码环境时报错（Issue \#I78F7X, \#I8QVL9）。
+\textbf{问题：}在选择题或题目中使用 |lstlisting| 等代码环境时报错。
 
 \textbf{解决方案：}
 
@@ -633,34 +594,28 @@ print("Hello")
     \end{latexcode}
 \end{enumerate}
 
-\subsubsection{Q28: 与 siunitx 宏包的兼容性}
+\subsubsection{Q28: 如何切换西文或数学字体？}
 
-\textbf{问题：}同时使用 |\fillin*| 星号变体和 |siunitx| 宏包时冲突（Issue \#I62TYT）。
+\textbf{做法：}使用 |\examsetup| 里的 |font| 和 |math-font| 键值：
 
-\textbf{解决方案：}
+\begin{latexcode}
+  \examsetup{
+    font = times,
+    math-font = xits,
+  }
+\end{latexcode}
 
-\begin{enumerate}
-  \item \textbf{避免星号变体}：使用普通的 |\fillin[]| 命令
-
-  \item \textbf{调整加载顺序}
-    \begin{latexcode}[deletetexcs={\documentclass},morekeywords={\documentclass}]
-  \documentclass{exam-zh}
-
-  % 先加载 exam-zh，再加载 siunitx
-  \usepackage{siunitx}
-    \end{latexcode}
-\end{enumerate}
+\textbf{说明：}可选值以完整文档为准，常见的有 |newcm|、|lm|、|times|、|stix|、|xits|、|libertinus| 等。
 
 \subsubsection{Q29: 如何插入图片？}
 
 \textbf{基本用法：}
 
 \begin{latexcode}
-  \usepackage{graphicx}  % 添加到文档开头
-
-  % 插入图片
   \includegraphics[width=5cm]{图片文件名.jpg}
 \end{latexcode}
+
+\textbf{说明：}\cls{exam-zh} 已经加载了图文相关模块，通常可以直接使用 |\includegraphics|。
 
 \textbf{在题目中使用：}
 
@@ -684,12 +639,13 @@ print("Hello")
 \begin{latexcode}[deletetexcs={\documentclass},morekeywords={\documentclass}]
   \documentclass{exam-zh}
 
-  \usepackage{geometry}
-  \geometry{
-    top = 2.5cm,
-    bottom = 2cm,
-    left = 2cm,
-    right = 2cm
+  \AtEndPreamble{
+    \geometry{
+      top = 2.5cm,
+      bottom = 2cm,
+      left = 2cm,
+      right = 2cm
+    }
   }
 \end{latexcode}
 
