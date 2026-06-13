@@ -8,8 +8,12 @@
 
 ## [Unreleased]
 
+
+## [0.2.7] - 2026-06-13
+
 ### Added
 
+- 新增 `scripts/gitee-release.sh`：Gitee Release 自动创建脚本
 - 新增 `scripts/git-update.sh`：智能 Git 工作流脚本，支持自动按模块分组提交
 - 新增 `scripts/test-build.sh`：测试构建流程验证脚本
 - 新增 `scripts/build-common.sh`：构建脚本公共函数库
@@ -32,8 +36,13 @@
 
 ### Fixed
 
+- 修复入门文档中的笔误和格式问题
 - 移除 `exam-zh-question.sty` 中未使用的答案颜色变量
 - 统一代码格式：清理尾随空格，规范缩进
+
+### Documentation
+
+- 新增 GitHub 仓库链接，保留 Gitee 作为国内镜像
 
 ### Testing
 
