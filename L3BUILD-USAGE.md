@@ -71,6 +71,18 @@ l3build upload
 python scripts/build.py 0.2.7
 ```
 
+#### 方法 C：使用轻量 shell 打包脚本
+
+```bash
+# 只复制已有 PDF 和源码并重新生成 GitHub Release 包
+bash scripts/build-release.sh 0.2.7
+
+# 只复制已有 PDF 和源码并重新生成 CTAN 包
+bash scripts/build-ctan.sh
+```
+
+Shell 脚本不更新版本号，也不重新编译文档和示例；发布前仍应先使用 `make examples examples-basic doc doc-basic` 或 `python scripts/build.py 0.2.7` 生成最新 PDF。
+
 ## 配置详解
 
 ### 版本管理
@@ -79,7 +91,7 @@ python scripts/build.py 0.2.7
 
 ```lua
 version          = "v0.2.6"        -- 当前版本
-date             = "2025-11-07"    -- 发布日期
+date             = "2025-11-12"    -- 发布日期
 maintainer       = "Kangwei Xia"
 email            = "xia.kangwei@outlook.com"
 repository       = "https://github.com/xkwxdyy/exam-zh"
@@ -123,12 +135,12 @@ tagfiles         -- 需要更新版本号的文件
 | 编译示例 | ✅ | ✅ | 两者都支持 |
 | 编译文档 | ✅ doc/ 和 doc-basic/ | ⚠️ 需手动编译 | build.py 功能更全 |
 | 编译 basic 示例 | ✅ | ⚠️ 需手动编译 | build.py 功能更全 |
-| CTAN 打包 | ✅ | ✅ | 两者都支持 |
-| Release 打包 | ✅ | ❌ | build.py 独有 |
+| CTAN 打包 | ✅ | ✅ | shell 脚本也可复用已有 PDF 生成 `CTAN/exam-zh.zip` |
+| Release 打包 | ✅ | ❌ | `scripts/build-release.sh` 可复用已有 PDF 生成 release 包 |
 | 上传 CTAN | ❌ 手动 | ✅ 自动 | l3build 优势 |
 | 本地安装 | ❌ | ✅ | l3build 优势 |
 | 测试套件 | ❌ | ✅ | l3build 优势 |
-| 跨平台 | ⚠️ 硬编码路径 | ✅ | l3build 更通用 |
+| 跨平台 | ✅ 仓库相对路径 | ✅ | 两者均避免本机绝对路径 |
 | 剪贴板支持 | ✅ | ❌ | build.py 独有 |
 
 ## 推荐工作流
@@ -153,11 +165,20 @@ python scripts/build.py 0.2.7
 l3build upload
 ```
 
+如果文档和示例 PDF 已经是最新的，也可以使用轻量打包脚本重新生成 CTAN zip：
+
+```bash
+bash scripts/build-ctan.sh
+```
+
 ### Release 发布
 
 ```bash
 # 使用 build.py（包含 release 和 CTAN 两个包）
 python scripts/build.py 0.2.7
+
+# 或在 PDF 已经最新时，只重新生成 GitHub Release 包
+bash scripts/build-release.sh 0.2.7
 
 # 手动上传 release/exam-zh-v0.2.7.zip 到 GitHub Releases
 # CTAN 包会在 CTAN/exam-zh.zip

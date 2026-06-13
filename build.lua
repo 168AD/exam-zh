@@ -13,7 +13,7 @@
 
 module           = "exam-zh"
 version          = "v0.2.6"
-date             = "2025-11-07"
+date             = "2025-11-12"
 maintainer       = "Kangwei Xia"
 uploader         = maintainer
 email            = "xia.kangwei@outlook.com"
@@ -70,8 +70,7 @@ docfiles = {
   "doc-basic/xdyydoc.cls",
   "doc-basic/exam-zh-doc-basic.pdf",
   "doc-basic/body/*.tex",
-  "doc-basic/back/*.tex",
-  "doc-basic/figures/*"
+  "doc-basic/back/*.tex"
 }
 
 -- Examples for CTAN distribution (basic examples)
