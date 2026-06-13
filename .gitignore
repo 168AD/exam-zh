@@ -1,4 +1,6 @@
 build/
+__pycache__/
+*.py[cod]
 example.pdf
 test.tex
 test.pdf
@@ -341,6 +343,8 @@ CTAN.md
 
 requirements.txt
 
-.claude/
+.claude/*
+!.claude/skills/
+!.claude/skills/**
 
 issues/
