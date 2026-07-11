@@ -8,6 +8,27 @@
 
 ## [Unreleased]
 
+### Added
+
+- 为 `problem` 新增 `hang` 键，并为 `choices` 新增 `item-linesep`、`left-indent`、`right-indent` 与 `margin` 键（Gitee #I6HQ2S、#ID7HWH、#I67JXY）
+
+### Changed
+
+- 解答题内第二层小题默认改用小写罗马数字编号，第三层改用小写字母编号，以匹配 2026 年高考试卷层级样式（Gitee #IK0BLV）
+- 抽取 question、fillin、choices 与 calculations 共用的计数器注册层；新增 `\tikzcirclednumber`，并弃用有歧义的直接调用 `\circlednumber*{...}`（Gitee #IDPOT4）
+
+### Fixed
+
+- 修复题目列表参数被辅助分组提前还原，导致题目后出现额外行间距及缩进异常的问题（Gitee #IK0A55）
+- 修复多份试卷使用 `solution/show-solution=show-move` 时，章节题号重置导致前面试卷答案文件被覆盖的问题（Gitee #IJR78Q）
+- 修复 `question` 和 `problem` 捕获环境正文，导致其中不能使用 `verbatim`、`\verb` 等代码内容的问题（Gitee #I8QVL9）
+- 修复填空宽度恰好等于 `\linewidth` 时未进入可换行分支，仍可能超出版心的问题（Gitee #IAXE1N）
+- 修复 `question`/`problem` 中 `\textfigure` 的首行基线随行内内容高度漂移的问题（Gitee #ICEH9X）
+- 修复 `problem` 没有题干、直接以 `enumerate` 开头时首个小问额外缩进的问题（Gitee #ID9469）
+- 修复 `\vec{\beta}` 等单控制序列被按命令名称字符数判断，错误使用箭头样式的问题（Gitee #IDDOCK）
+- 为独立加载的 `exam-zh-choices` 注册 `tikzcirclednumber` 计数器，并抽取共享的 TikZ 带圈数字实现（Gitee #IDPPJR）
+- 修正文档中 `fillin/width-type` 的默认值标记，使其与源码的 `normal` 一致（Gitee #ID6INO）
+
 
 ## [0.2.7] - 2026-06-13
 

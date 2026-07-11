@@ -234,7 +234,7 @@ exam-zh 提供**两份文档**，请根据需求选择：
 
 `exam-zh-choices` 模块还提供了 `\circlednumber` 命令调用中文字体生成带圈数字，该命令既可以接受 LaTeX2e 计数器的名字（如 `section`）作为参数，也可以接受数值表达式，比如 `\circlednumber{7}`，但仅限 0～50 的整数。而且有的字体可能没有提供 10 以上的字形，建议只对 10 以内的值使用。
 
-如果用户需要使用其他形式的数字作为 `choices` 的标签，需要使用 `\AddChoicesCounter` 命令将其添加进 `label` 选项的识别范围内（类似 `enumitem` 的 `\AddEnumerateCounter`）。它的格式是 `\AddChoicesCounter{⟨LaTeX command⟩}{⟨internal command⟩}`，其中 `⟨LaTeX command⟩` 是在 `label` 选项中的形式，`⟨internal command⟩` 是内部的实现。比如带圈数字的添加方法：`\AddChoicesCounter{\circlednumber}{\__examzh_choices_circled_number:n}`。
+如果用户需要使用其他形式的数字作为 `choices` 的标签，需要使用 `\AddChoicesCounter` 命令将其添加进 `label` 选项的识别范围内（类似 `enumitem` 的 `\AddEnumerateCounter`）。它的格式是 `\AddChoicesCounter{⟨LaTeX command⟩}{⟨internal command⟩}`，其中 `⟨LaTeX command⟩` 是在 `label` 选项中的形式，`⟨internal command⟩` 是内部的实现。比如带圈数字的添加方法：`\AddChoicesCounter{\circlednumber}{\__examzh_font_circled_number:n}`。
 
 
 ### 解答环境 `solution` 和分数命令 `\score`

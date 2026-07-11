@@ -70,7 +70,6 @@
   $\eu \quad \iu \quad \uppi$
 \end{latexexample}
 
-
 \subsubsection{优化的命令环境}
 
 \cls{exam-zh} 对一些命令环境进行了优化，方便用户使用。
@@ -382,7 +381,7 @@
   \end{examzhsyntax}
   如果用户需要使用其它形式的数字作为 \env{question} 环境和 \env{problem} 的标签，需要使用 \tn{AddQuestionCounter} 命令将其添加进 \opt{label} 选项的识别范围内（类似 \pkg{enumitem} 宏包的 \tn{AddEnumerateCounter} ）。其中 \meta{LaTeX command} 是在 \opt{label} 选项中的形式，\meta{internal command} 是内部的实现。比如带圈数字的添加方法：
   \begin{latexcode}[gobble=4]
-    \AddQuestionCounter{\circlednumber}{\__examzh_question_circled_number:n}
+    \AddQuestionCounter{\circlednumber}{\__examzh_font_circled_number:n}
   \end{latexcode}
 \end{function}
 
@@ -422,7 +421,7 @@
   \end{examzhsyntax}
   如果用户需要使用其它形式的数字作为 \env{choices} 环境的标签，需要使用 \tn{AddChoicesCounter} 命令将其添加进 \opt{label} 选项的识别范围内（类似 \pkg{enumitem} 宏包的 \tn{AddEnumerateCounter} ）。其中 \meta{LaTeX command} 是在 \opt{label} 选项中的形式，\meta{internal command} 是内部的实现。比如带圈数字的添加方法：
   \begin{latexcode}[gobble=4]
-    \AddChoicesCounter{\circlednumber}{\__examzh_choices_circled_number:n}
+    \AddChoicesCounter{\circlednumber}{\__examzh_font_circled_number:n}
   \end{latexcode}
 \end{function}
 
@@ -443,15 +442,17 @@
 \end{latexexample}
 
 
-\begin{function}[updated = 2022-07-21]{\circlednumber,\circlednumber*}
-  \begin{examzhsyntax}[emph={[2]\circlednumber,\circlednumber*}]
+\begin{function}[updated = 2026-07-11]{\circlednumber,\tikzcirclednumber}
+  \begin{examzhsyntax}[emph={[2]\circlednumber,\tikzcirclednumber}]
     \circlednumber(*\meta{数字或计数器名字}*)
-    \circlednumber*(*\meta{数字或计数器名字}*)
+    \tikzcirclednumber(*\meta{数字或计数器名字}*)
   \end{examzhsyntax}
-  带圈数字命令。不带星号的基于字体开发，带星号的基于 \TikZ 开发。|\circlednumber| 仅接受 0～50 的输入值，而 |\circlednumber*| 无限制。
+  带圈数字命令。\tn{circlednumber} 基于字体开发，仅接受 0～50 的输入值；\tn{tikzcirclednumber} 基于 \TikZ 开发，无此限制。两者均接受整数表达式或 LaTeX 计数器名。在 \pkg{enumitem} 的 \env{enumerate} 以及本模板的 \env{question}、\env{problem}、\env{choices} 和填空编号中，统一使用末尾星号作为当前项编号占位符，例如 |label=\circlednumber*| 或 |label=\tikzcirclednumber*|。
+
+  旧写法 |\circlednumber*{数字或计数器名字}| 暂时保留兼容，但已弃用；请改用 \tn{tikzcirclednumber}，以免与标签中的星号占位符混淆。
   \begin{latexexample}{\tn{circlednumber} 的使用示例}
     \circlednumber{1} \circlednumber{2}
-    \circlednumber*{1} \circlednumber*{2}
+    \tikzcirclednumber{1} \tikzcirclednumber{2}
     \circlednumber{page} \circlednumber{section}
   \end{latexexample}
 \end{function}
@@ -541,7 +542,7 @@
   \end{examzhsyntax}
   如果用户需要使用其它形式的数字作为 \kvopt{fillin/no-answer-type}{counter} 下 \opt{counter} 的标签，需要使用 \tn{AddFillinCounter} 命令将其添加进 \opt{label} 选项的识别范围内（类似 \pkg{enumitem} 宏包的 \tn{AddEnumerateCounter} ）。其中 \meta{LaTeX command} 是在 \opt{label} 选项中的形式，\meta{internal command} 是内部的实现。比如带圈数字的添加方法：
   \begin{latexcode}[gobble=4]
-    \AddFillinCounter{\circlednumber}{\__examzh_fillin_circled_number:n}
+    \AddFillinCounter{\circlednumber}{\__examzh_font_circled_number:n}
   \end{latexcode}
 \end{function}
 
@@ -1905,6 +1906,23 @@
   \end{question}
 \end{latexexample}
 
+\begin{function}[added = 2026-07-11]{problem/hang}
+  \begin{examzhsyntax}[emph={[1]hang}]
+    hang = (*<true|(false)>*)
+  \end{examzhsyntax}
+  控制 \env{problem} 题干是否采用悬挂缩进。默认值为 \opt{false}，保持解答题题干首行缩进；设为 \opt{true} 后，题干的续行与题号后的首行对齐。该设置不改变内层 \env{enumerate} 的列表层级和缩进。
+\end{function}
+
+\begin{latexexample}{\opt{problem/hang} 的效果}
+  \begin{problem}
+    默认解答题题干保持首行缩进。题干较长并换行时，后续文字从页面左侧开始。
+  \end{problem}
+
+  \begin{problem}[hang = true]
+    悬挂模式下，题干换行后的文字与题号后的首行对齐。
+  \end{problem}
+\end{latexexample}
+
 \examsetup{
   question/index = 1,
 }
@@ -1955,6 +1973,27 @@
   \end{examzhsyntax}
   选项列之间的最小间隔。默认为 |1em|。
 \end{function}
+
+\begin{function}[added = 2026-07-11]{choices/left-indent,choices/right-indent,choices/margin}
+  \begin{examzhsyntax}[emph={[1]left-indent,right-indent,margin}]
+    left-indent  = (*\meta{dimension}*)
+    right-indent = (*\meta{dimension}*)
+    margin       = (*\meta{dimension}*)
+  \end{examzhsyntax}
+  设置整个 \env{choices} 环境相对于当前 \tn{linewidth} 的左右缩进，默认均为 |0pt|。\opt{margin} 同时设置左右缩进；单独设置 \opt{left-indent} 或 \opt{right-indent} 时可以形成不对称版式。缩进会先从可用宽度中扣除，再参与自动列数、每列宽度和图片选项的计算，因此可以安全地与 \env{problem} 或 \env{enumerate} 的现有缩进叠加。
+\end{function}
+
+\begin{latexexample}{\opt{choices/left-indent} 和 \opt{choices/right-indent} 的效果}
+  \begin{enumerate}
+    \item 题干
+      \begin{choices}[left-indent = 1em, right-indent = 1em]
+        \item 选项一
+        \item 选项二
+        \item 选项三
+        \item 选项四
+      \end{choices}
+  \end{enumerate}
+\end{latexexample}
 
 
 \begin{function}{choices/columns}
@@ -2101,6 +2140,20 @@
   \end{examzhsyntax}
   \env{choices} 环境的行数多于 1 时的行额外弹性间距。默认为 |0pt plus .5ex|。
 \end{function}
+
+\begin{function}[added = 2026-07-11]{choices/item-linesep}
+  \begin{examzhsyntax}[emph={[1]item-linesep}]
+    item-linesep = (*\meta{dimension}*)
+  \end{examzhsyntax}
+  多行选项内部相邻文本行的额外间距，默认为 |0pt|。该值同时增加到选项 coffin 内的 \tn{baselineskip} 和公式过高时使用的 \tn{lineskip}；因此不会改变单行选项或图片模式，只会参与多行文字、公式和最终选项高度的计算。它与控制不同选项行之间距离的 \opt{choices/linesep} 相互独立。
+\end{function}
+
+\begin{latexexample}{\opt{choices/item-linesep} 的效果}
+  \begin{choices}[columns = 2, item-linesep = 3pt]
+    \item 这是一个会自动换行的较长选项，用于展示选项内部的额外行距。
+    \item 含有公式 $\displaystyle \frac{a_1+a_2}{b_1+b_2}$ 的多行选项。
+  \end{choices}
+\end{latexexample}
 
 
 
@@ -2268,7 +2321,7 @@
 
 \begin{function}[added = 2022-07-30]{fillin/width-type}
   \begin{examzhsyntax}[emph={[1]width-type}]
-    width-type = (*<(fill)|normal>*)
+    width-type = (*<fill|(normal)>*)
   \end{examzhsyntax}
   \kvopt{show-answer}{false} 且 \kvopt{no-answer-type}{none} 时 \opt{fillin/width} 设置时若 \meta{width} 的长度超过了当前行的剩余长度，则多余部分在下一行的表现。\opt{fill} 表示多余部分只要不超过 \tn{linewidth} 就自动 fill 为 \tn{linewidth} 的长度（此时建议 \opt{width} 的值不是 \tn{linewidth} 的整数倍，而是（以最终一共两行为例）比如 |1.5\linewidth|）；\opt{normal} 表示多余部分严格按照 \meta{width} 的值排版。由于使用了 \pkg{linegoal}，需要编译至少两次才能获得正确的效果。
   % \emph{注意：由于 \kvopt{no-answer-type}{none} 下的算法是基于 \pkg{linegoal} 获取当前行的剩余距离，如果此时同一行出现了两个 \tn{fillin} 就会互相干扰，导致编译异常。所以 \kvopt{no-answer-type}{none} 下尽可能避免同一行出现两个 \tn{fillin} 命令}
