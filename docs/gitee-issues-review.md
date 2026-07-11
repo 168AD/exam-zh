@@ -9,7 +9,7 @@
 - 查询范围：`is:open` 与 `is:progressing`
 - 本轮结果：40 个 open（均为“待办的”），1 个 progressing（“进行中”），合计 41 项
 - GitHub 迁移：[#6](https://github.com/xkwxdyy/exam-zh/issues/6)–[#46](https://github.com/xkwxdyy/exam-zh/issues/46)
-- 当前状态：20 个保持开放，21 个已关闭（其中 2 个 P0、5 个 P1 已于 2026-07-11 修复）
+- 当前状态：12 个保持开放，29 个已关闭（其中 2 个 P0、5 个 P1 已于 2026-07-11 修复）
 
 优先级定义：
 
@@ -43,40 +43,45 @@
 | [ICEH9X](https://gitee.com/xkwxdyy/exam-zh/issues/ICEH9X) | 2025-06-11 | 1 | 已修复：textfigure 改以顶部对齐 varwidth 的首行基线输出 | [#26](https://github.com/xkwxdyy/exam-zh/issues/26) completed |
 | [IAXE1N](https://gitee.com/xkwxdyy/exam-zh/issues/IAXE1N) | 2025-05-23 | 2 | 已修复：宽度达到 `\linewidth` 即进入可换行分支，覆盖等宽越界边界条件 | [#27](https://github.com/xkwxdyy/exam-zh/issues/27) completed |
 
-## P2
+## P2：保持开放
 
 | Gitee | 最后更新 | 评论 | 审查结论 | GitHub |
 | --- | --- | ---: | --- | --- |
 | [IHXNX9](https://gitee.com/xkwxdyy/exam-zh/issues/IHXNX9) | 2026-04-02 | 1 | calculations 同行高低公式缺少统一对齐策略 | [#9](https://github.com/xkwxdyy/exam-zh/issues/9) open |
 | [IHQMPM](https://gitee.com/xkwxdyy/exam-zh/issues/IHQMPM) | 2026-03-26 | 1 | calculations 在 question/problem 宿主中的垂直位置不同 | [#10](https://github.com/xkwxdyy/exam-zh/issues/10) open |
 | [ID823C](https://gitee.com/xkwxdyy/exam-zh/issues/ID823C) | 2026-05-30 | 3 | progressing；为 multifigures 暴露图片间距与整体对齐键，并先文档化 tblr 透传能力 | [#46](https://github.com/xkwxdyy/exam-zh/issues/46) open |
-| [IDPOT4](https://gitee.com/xkwxdyy/exam-zh/issues/IDPOT4) | 2026-02-07 | 0 | circlednumber 与四类 `Add*Counter` 接口不一致 | [#12](https://github.com/xkwxdyy/exam-zh/issues/12) open |
 | [IDBLDN](https://gitee.com/xkwxdyy/exam-zh/issues/IDBLDN) | 2025-12-28 | 6 | 需要安全的自定义纸张/多栏接口及对应页脚模型 | [#14](https://github.com/xkwxdyy/exam-zh/issues/14) open |
-| [ID7HWH](https://gitee.com/xkwxdyy/exam-zh/issues/ID7HWH) | 2025-11-20 | 3 | choices 只有项间距，缺少多行选项内部行距键 | [#18](https://github.com/xkwxdyy/exam-zh/issues/18) open |
 | [ID7G2T](https://gitee.com/xkwxdyy/exam-zh/issues/ID7G2T) | 2025-11-19 | 1 | 16K 油印场景真实存在，需与自定义纸张接口协调 | [#19](https://github.com/xkwxdyy/exam-zh/issues/19) open |
-| [ID6INO](https://gitee.com/xkwxdyy/exam-zh/issues/ID6INO) | 2025-11-13 | 0 | 手册把 width-type 默认值写成 fill，源码实际为 normal | [#21](https://github.com/xkwxdyy/exam-zh/issues/21) open |
 | [ID6D6C](https://gitee.com/xkwxdyy/exam-zh/issues/ID6D6C) | 2025-11-13 | 5 | 参考 cloze 语义重整 fillin；不能引入 LuaLaTeX 依赖 | [#22](https://github.com/xkwxdyy/exam-zh/issues/22) open |
 | [ICMVN4](https://gitee.com/xkwxdyy/exam-zh/issues/ICMVN4) | 2025-11-23 | 1 | 建立跨选择、判断、填空、解答的答案记录与渲染模型 | [#25](https://github.com/xkwxdyy/exam-zh/issues/25) open |
-| [I6HQ2S](https://gitee.com/xkwxdyy/exam-zh/issues/I6HQ2S) | 2025-12-28 | 0 | question 有 hang 键，problem 仍缺少相应公共接口 | [#37](https://github.com/xkwxdyy/exam-zh/issues/37) open |
-| [I67JXY](https://gitee.com/xkwxdyy/exam-zh/issues/I67JXY) | 2025-12-28 | 2 | choices 嵌套时缺少水平缩进控制 | [#38](https://github.com/xkwxdyy/exam-zh/issues/38) open |
 | [I8QVL9](https://gitee.com/xkwxdyy/exam-zh/issues/I8QVL9) | 2024-02-11 | 7 | P1 部分已修复：question/problem 支持 verbatim/verb；choices 尚有 `lstinputlisting` 替代路径，降为 P2 继续设计 | [#30](https://github.com/xkwxdyy/exam-zh/issues/30) open |
 | [I670KF](https://gitee.com/xkwxdyy/exam-zh/issues/I670KF) | 2022-12-21 | 0 | 师生两版不同卷头可先验证 `ExamPrintAnswerSet` 命令注入 | [#39](https://github.com/xkwxdyy/exam-zh/issues/39) open |
 | [I63X3T](https://gitee.com/xkwxdyy/exam-zh/issues/I63X3T) | 2022-12-01 | 2 | paren 前增加可配置 leader/dotfill | [#42](https://github.com/xkwxdyy/exam-zh/issues/42) open |
 | [I5ROOL](https://gitee.com/xkwxdyy/exam-zh/issues/I5ROOL) | 2025-12-28 | 0 | choices 的正确答案标记/着色仍是源码 TODO | [#43](https://github.com/xkwxdyy/exam-zh/issues/43) open |
 
+## P2：已关闭
+
+| Gitee | 最后更新 | 评论 | 关闭结论 | GitHub |
+| --- | --- | ---: | --- | --- |
+| [IDPOT4](https://gitee.com/xkwxdyy/exam-zh/issues/IDPOT4) | 2026-02-07 | 0 | 已抽取共享计数器实现，新增无歧义的 `\tikzcirclednumber` 并保留旧接口兼容 | [#12](https://github.com/xkwxdyy/exam-zh/issues/12) completed |
+| [ID7HWH](https://gitee.com/xkwxdyy/exam-zh/issues/ID7HWH) | 2025-11-20 | 3 | 已为 choices 新增独立控制多行选项内部行距的 `item-linesep` | [#18](https://github.com/xkwxdyy/exam-zh/issues/18) completed |
+| [ID6INO](https://gitee.com/xkwxdyy/exam-zh/issues/ID6INO) | 2025-11-13 | 0 | 已将文档默认值更正为 `normal`，并增加默认行为回归测试 | [#21](https://github.com/xkwxdyy/exam-zh/issues/21) completed |
+| [I6HQ2S](https://gitee.com/xkwxdyy/exam-zh/issues/I6HQ2S) | 2025-12-28 | 0 | 已为 problem 新增默认关闭的 `hang` 键并覆盖嵌套场景 | [#37](https://github.com/xkwxdyy/exam-zh/issues/37) completed |
+| [I67JXY](https://gitee.com/xkwxdyy/exam-zh/issues/I67JXY) | 2025-12-28 | 2 | 已为 choices 新增 `left-indent`、`right-indent` 与 `margin` | [#38](https://github.com/xkwxdyy/exam-zh/issues/38) completed |
+
 ## P3：保持开放
 
 | Gitee | 最后更新 | 评论 | 审查结论 | GitHub |
 | --- | --- | ---: | --- | --- |
-| [ID9MTP](https://gitee.com/xkwxdyy/exam-zh/issues/ID9MTP) | 2025-11-30 | 0 | 明确 solution 推荐嵌套结构和兼容边界 | [#15](https://github.com/xkwxdyy/exam-zh/issues/15) open |
-| [ID83OW](https://gitee.com/xkwxdyy/exam-zh/issues/ID83OW) | 2025-11-23 | 0 | 补充 mtpro2 支持范围与数学符号变更说明 | [#17](https://github.com/xkwxdyy/exam-zh/issues/17) open |
-| [ID7B6Z](https://gitee.com/xkwxdyy/exam-zh/issues/ID7B6Z) | 2025-11-18 | 0 | 模板组成表漏列 `exam-zh-math.sty` | [#20](https://github.com/xkwxdyy/exam-zh/issues/20) open |
 | [I7QT33](https://gitee.com/xkwxdyy/exam-zh/issues/I7QT33) | 2025-12-28 | 1 | 可评估 opt-in 图片宽度自动测量，必须有最小文字宽度回退 | [#33](https://github.com/xkwxdyy/exam-zh/issues/33) open |
 
 ## P3：已关闭
 
 | Gitee | 最后更新 | 评论 | 关闭结论 | GitHub |
 | --- | --- | ---: | --- | --- |
+| [ID9MTP](https://gitee.com/xkwxdyy/exam-zh/issues/ID9MTP) | 2025-11-30 | 0 | 已明确推荐内置 `solution`，记录外置写法兼容边界并补充最小示例 | [#15](https://github.com/xkwxdyy/exam-zh/issues/15) completed |
+| [ID83OW](https://gitee.com/xkwxdyy/exam-zh/issues/ID83OW) | 2025-11-23 | 0 | 已说明 `\varnothing` 的 Asana Math 单符号覆盖，并澄清这不等同于完整支持 mtpro2 | [#17](https://github.com/xkwxdyy/exam-zh/issues/17) completed |
+| [ID7B6Z](https://gitee.com/xkwxdyy/exam-zh/issues/ID7B6Z) | 2025-11-18 | 0 | 完整手册和基础手册均已补充 `exam-zh-math.sty` 及其职责 | [#20](https://github.com/xkwxdyy/exam-zh/issues/20) completed |
 | [IJ00Q0](https://gitee.com/xkwxdyy/exam-zh/issues/IJ00Q0) | 2026-04-16 | 1 | 过度依赖单份版式和私有函数，不纳入核心 | [#8](https://github.com/xkwxdyy/exam-zh/issues/8) not planned |
 | [ID6BN9](https://gitee.com/xkwxdyy/exam-zh/issues/ID6BN9) | 2025-11-13 | 5 | 使用标准 enumerate/resume；额外空白来自手写换行 | [#23](https://github.com/xkwxdyy/exam-zh/issues/23) not planned |
 | [ICONDZ](https://gitee.com/xkwxdyy/exam-zh/issues/ICONDZ) | 2025-07-24 | 1 | 讲义应使用 ctexbook 加载子宏包，不扩展 exam-zh 的 book 语义 | [#24](https://github.com/xkwxdyy/exam-zh/issues/24) not planned |
