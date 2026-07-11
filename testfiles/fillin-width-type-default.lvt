@@ -1,0 +1,17 @@
+\documentclass{article}
+
+\input{regression-test}
+\usepackage{exam-zh-question}
+
+\begin{document}
+\START
+
+% Keep the documented default synchronized with the package default.
+\ExplSyntaxOn
+\bool_if:NTF \l__examzh_fillin_width_fill_bool
+  { \TYPE{fillin-width-type-default=fill} }
+  { \TYPE{fillin-width-type-default=normal} }
+\ExplSyntaxOff
+
+\END
+\end{document}

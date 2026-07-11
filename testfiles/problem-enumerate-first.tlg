@@ -1,6 +1,7 @@
 This is a generated file for the l3build validation system.
 Don't change this file in any respect.
 \l__list_leftmargin_i_dim=\dimen...
+\l__list_leftmargin_ii_dim=\dimen...
 Completed box being shipped out [1]
 \vbox(633.0+0.0)x407.0
 .\hbox(0.0+0.0)x0.0
@@ -278,161 +279,115 @@ Completed box being shipped out [1]
 ....\special{color pop}
 ..\glue 25.0
 ..\glue(\lineskip) 0.0
-..\vbox(550.0+0.0)x345.0, glue set 404.44846fil
+..\vbox(550.0+0.0)x345.0, glue set 449.95195fil
 ...\write-{}
 ...\special{color push gray 0}
-...\glue(\topskip) 3.06
-...\hbox(6.94+4.39993)x325.0, glue set 0.71423, shifted 20.0
-....\hbox(6.66+0.0)x0.0
-.....\glue 0.0
-.....\glue -13.00003
-.....\glue -6.99997
-.....\hbox(6.66+0.0)x13.00003, glue set 6.50002fil
-......\special{color push gray 0}
-......\glue 0.0 plus 1.0fil
+...\glue(\topskip) 2.5
+...\hbox(7.5+2.49998)x308.22, glue set 124.79fil, shifted 36.78
+....\hbox(7.5+2.49998)x0.0
+.....\glue -36.78
+.....\hbox(6.66+0.0)x0.0, glue set - 20.0fil
+......\hbox(6.66+0.0)x20.0
+.......\glue 20.0
+.......\glue -13.00003
+.......\glue -6.99997
+.......\hbox(6.66+0.0)x13.00003, glue set 6.50002fil
+........\special{color push gray 0}
+........\glue 0.0 plus 1.0fil
+........\glue 0.0 plus 1.0fil minus 1.0fil
+........\hbox(6.66+0.0)x0.0, glue set - 7.78fil
+.........\glue 0.0 plus 1.0fil minus 1.0fil
+.........\TU/lmr/m/n/10 1.
+.........\kern -0.0002
+.........\kern 0.0002
+........\special{color pop}
+.......\glue 6.99997
 ......\glue 0.0 plus 1.0fil minus 1.0fil
-......\hbox(6.66+0.0)x0.0, glue set - 7.78fil
+.....\glue 36.78
+.....\glue 0.0
+.....\glue -12.78
+.....\glue -4.0
+.....\hbox(7.5+2.49998)x12.78, glue set 12.78fil
+......\special{color push gray 0}
+......\penalty 10000
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(7.5+2.49998)x0.0, glue set - 12.78fil
 .......\glue 0.0 plus 1.0fil minus 1.0fil
-.......\TU/lmr/m/n/10 1.
+.......\TU/lmr/m/n/10 (1)
 .......\kern -0.0002
 .......\kern 0.0002
 ......\special{color pop}
-.....\glue 6.99997
+.....\glue 4.0
 ....\penalty 0
-....\TU/lmr/m/n/10 Lorem
+....\TU/lmr/m/n/10 First
 ....\glue 3.33 plus 1.665 minus 1.11
-....\special{color push gray 0}
-....\rule(*+*)x0.0
+....\TU/lmr/m/n/10 item
+....\glue 3.33 plus 1.665 minus 1.11
+....\TU/lmr/m/n/10 begins
+....\glue 3.33 plus 1.665 minus 1.11
+....\TU/lmr/m/n/10 where
+....\glue 3.33 plus 1.665 minus 1.11
+....\TU/lmr/m/n/10 later
+....\glue 3.33 plus 1.665 minus 1.11
+....\TU/lmr/m/n/10 items
+....\glue 3.33 plus 1.665 minus 1.11
+....\TU/lmr/m/n/10 begin.
 ....\penalty 10000
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\kern 0.0
-....\hbox(0.0+0.0)x0.0
-.....\kern -0.00005
-.....\kern 0.00005
-.....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 6.99997 plus 5.0 minus 5.0
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 8.99994
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\kern -6.99997
-....\hbox(6.06216+0.0)x6.99997
-.....\kern -0.00005
-.....\kern 0.00005
-.....\hbox(6.06216+0.0)x6.99997
-......\hbox(6.06216+0.0)x6.99997
-.......\glue 0.0
-.......\hbox(0.0+0.0)x0.0
-........\special{pdf:bcontent}
-........\special{pdf:code q }
-........\special{pdf:code 0 G }
-........\special{pdf:code 0 g }
-........\special{pdf:code 0.3985 w }
-........\hbox(0.0+0.0)x0.0
-.........\special{pdf:code q }
-.........\glue 0.0
-.........\glue 0.0
-.........\glue 0.0
-.........\special{pdf:code 0.24905 0.43138 m }
-.........\special{pdf:code 3.2379 5.6082 l }
-.........\special{pdf:code 3.37544 5.84645 3.59845 5.84645 3.73601 5.6082 c }
-.........\special{pdf:code 6.72485 0.43138 l }
-.........\special{pdf:code 6.8624 0.19313 6.75087 0.0 6.47577 0.0 c }
-.........\special{pdf:code 0.49814 0.0 l }
-.........\special{pdf:code 0.22302 0.0 0.1115 0.19313 0.24905 0.43138 c }
-.........\special{pdf:code h }
-.........\special{pdf:code f }
-.........\glue 0.0
-.........\glue 0.0
-.........\special{pdf:code Q }
-.........\glue 0.0 plus 1.0fil minus 1.0fil
-........\special{pdf:code n }
-........\special{pdf:code Q }
-........\special{pdf:econtent}
-........\glue 0.0 plus 1.0fil minus 1.0fil
-.....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 6.99997 plus 5.0 minus 5.0
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\special{color pop}
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 dolor
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 sit
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 amet,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 consectetuer
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 adipiscing
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 elit.
-....\glue 4.44 plus 4.99498 minus 0.37
-....\TU/lmr/m/n/10 Ut
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 purus
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 elit,
+....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
-...\penalty 10451
-...\glue(\baselineskip) 0.55006
-...\hbox(7.05+2.05998)x325.0, glue set 110.34999fil, shifted 20.0
-....\TU/lmr/m/n/10 vestibulum
+...\penalty -51
+...\glue 2.0 plus 1.0 minus 1.0
+...\glue(\parskip) 2.0 plus 1.0 minus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 2.00002
+...\hbox(7.5+2.49998)x308.22, glue set 252.11fil, shifted 36.78
+....\hbox(7.5+2.49998)x0.0
+.....\glue 0.0
+.....\glue -12.78
+.....\glue -4.0
+.....\hbox(7.5+2.49998)x12.78, glue set 12.78fil
+......\special{color push gray 0}
+......\penalty 10000
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(7.5+2.49998)x0.0, glue set - 12.78fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/lmr/m/n/10 (2)
+.......\kern -0.0002
+.......\kern 0.0002
+......\special{color pop}
+.....\glue 4.0
+....\penalty 0
+....\TU/lmr/m/n/10 Second
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 ut,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 placerat
+....\TU/lmr/m/n/10 item.
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\penalty -51
+...\glue 2.0 plus 1.0 minus 1.0
+...\glue(\parskip) 2.0 plus 1.0 minus 1.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 2.00002
+...\hbox(7.5+2.49998)x308.22, glue set 257.62999fil, shifted 36.78
+....\hbox(7.5+2.49998)x0.0
+.....\glue 0.0
+.....\glue -12.78
+.....\glue -4.0
+.....\hbox(7.5+2.49998)x12.78, glue set 12.78fil
+......\special{color push gray 0}
+......\penalty 10000
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(7.5+2.49998)x0.0, glue set - 12.78fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/lmr/m/n/10 (3)
+.......\kern -0.0002
+.......\kern 0.0002
+......\special{color pop}
+.....\glue 4.0
+....\penalty 0
+....\TU/lmr/m/n/10 Third
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 ac,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 adipiscing
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 vitae,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 felis.
+....\TU/lmr/m/n/10 item.
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
@@ -445,12 +400,13 @@ Completed box being shipped out [1]
 ...\penalty -51
 ...\glue 0.0 plus 1.0
 ...\glue 0.0
+...\penalty 10000
 ...\glue(\parskip) 0.0
 ...\glue(\parskip) 0.0
-...\glue(\baselineskip) 3.00002
-...\hbox(6.94+4.39993)x325.0, glue set 0.71423, shifted 20.0
-....\hbox(6.66+0.0)x0.0
-.....\glue 0.0
+...\glue(\baselineskip) 2.34001
+...\hbox(7.16+1.93999)x345.0, glue set 84.69998fil
+....\hbox(6.66+0.0)x20.0
+.....\glue 20.0
 .....\glue -13.00003
 .....\glue -6.99997
 .....\hbox(6.66+0.0)x13.00003, glue set 6.50002fil
@@ -465,584 +421,102 @@ Completed box being shipped out [1]
 ......\special{color pop}
 .....\glue 6.99997
 ....\penalty 0
-....\TU/lmr/m/n/10 Lorem
+....\TU/lmr/m/n/10 A
+....\glue 3.33 plus 1.66331 minus 1.1111
+....\TU/lmr/m/n/10 normal
 ....\glue 3.33 plus 1.665 minus 1.11
-....\special{color push gray 0}
-....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\kern 0.0
-....\hbox(0.0+0.0)x0.0
-.....\kern -0.00005
-.....\kern 0.00005
-.....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 6.99997 plus 5.0 minus 5.0
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 8.99994
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\kern -6.99997
-....\hbox(6.06216+0.0)x6.99997
-.....\kern -0.00005
-.....\kern 0.00005
-.....\hbox(6.06216+0.0)x6.99997
-......\hbox(6.06216+0.0)x6.99997
-.......\glue 0.0
-.......\hbox(0.0+0.0)x0.0
-........\special{pdf:bcontent}
-........\special{pdf:code q }
-........\special{pdf:code 0 G }
-........\special{pdf:code 0 g }
-........\special{pdf:code 0.3985 w }
-........\hbox(0.0+0.0)x0.0
-.........\special{pdf:code q }
-.........\glue 0.0
-.........\glue 0.0
-.........\glue 0.0
-.........\special{pdf:code 0.24905 0.43138 m }
-.........\special{pdf:code 3.2379 5.6082 l }
-.........\special{pdf:code 3.37544 5.84645 3.59845 5.84645 3.73601 5.6082 c }
-.........\special{pdf:code 6.72485 0.43138 l }
-.........\special{pdf:code 6.8624 0.19313 6.75087 0.0 6.47577 0.0 c }
-.........\special{pdf:code 0.49814 0.0 l }
-.........\special{pdf:code 0.22302 0.0 0.1115 0.19313 0.24905 0.43138 c }
-.........\special{pdf:code h }
-.........\special{pdf:code f }
-.........\glue 0.0
-.........\glue 0.0
-.........\special{pdf:code Q }
-.........\glue 0.0 plus 1.0fil minus 1.0fil
-........\special{pdf:code n }
-........\special{pdf:code Q }
-........\special{pdf:econtent}
-........\glue 0.0 plus 1.0fil minus 1.0fil
-.....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 6.99997 plus 5.0 minus 5.0
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\special{color pop}
+....\TU/lmr/m/n/10 problem
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 dolor
+....\TU/lmr/m/n/10 stem
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 sit
+....\TU/lmr/m/n/10 keeps
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 amet,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 consectetuer
+....\TU/lmr/m/n/10 its
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 adipiscing
+....\TU/lmr/m/n/10 first-line
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 elit.
-....\glue 4.44 plus 4.99498 minus 0.37
-....\TU/lmr/m/n/10 Ut
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 purus
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 elit,
-....\glue(\rightskip) 0.0
-...\penalty 10451
-...\glue(\baselineskip) 0.55006
-...\hbox(7.05+2.05998)x325.0, glue set 110.34999fil, shifted 20.0
-....\TU/lmr/m/n/10 vestibulum
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 ut,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 placerat
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 ac,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 adipiscing
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 vitae,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 felis.
+....\TU/lmr/m/n/10 indentation.
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
-...\glue 0.0
-...\glue 2.5 plus 2.5 minus 1.00006
-...\glue 0.0
-...\glue 2.5 plus 2.5 minus 1.00006
-...\glue 0.0
-...\penalty -51
-...\glue 0.0 plus 1.0
-...\glue 0.0
+...\glue 4.0 plus 2.0 minus 1.0
+...\glue -4.0 plus -2.0 minus -1.0
+...\glue 2.0 plus 1.0
+...\glue(\parskip) 2.0 plus 1.0 minus 1.0
 ...\glue(\parskip) 0.0
-...\glue(\parskip) 0.0
-...\glue(\baselineskip) 3.00002
-...\hbox(6.94+4.39993)x325.0, glue set 0.08356, shifted 20.0
-....\hbox(6.66+0.21999)x0.0
+...\glue(\baselineskip) 2.56001
+...\hbox(7.5+2.49998)x308.22, glue set 205.70999fil, shifted 36.78
+....\hbox(7.5+2.49998)x0.0
 .....\glue 0.0
-.....\glue -13.00003
-.....\glue -6.99997
-.....\hbox(6.66+0.21999)x13.00003, glue set 6.50002fil
+.....\glue -12.78
+.....\glue -4.0
+.....\hbox(7.5+2.49998)x12.78, glue set 12.78fil
 ......\special{color push gray 0}
-......\glue 0.0 plus 1.0fil
+......\penalty 10000
 ......\glue 0.0 plus 1.0fil minus 1.0fil
-......\hbox(6.66+0.21999)x0.0, glue set - 7.78fil
+......\hbox(7.5+2.49998)x0.0, glue set - 12.78fil
 .......\glue 0.0 plus 1.0fil minus 1.0fil
-.......\TU/lmr/m/n/10 3.
+.......\TU/lmr/m/n/10 (1)
 .......\kern -0.0002
 .......\kern 0.0002
 ......\special{color pop}
-.....\glue 6.99997
+.....\glue 4.0
 ....\penalty 0
-....\TU/lmr/m/n/10 Lorem
+....\TU/lmr/m/n/10 First
 ....\glue 3.33 plus 1.665 minus 1.11
-....\special{color push gray 0}
-....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\kern 0.0
-....\hbox(0.0+0.0)x0.0
-.....\kern -0.00005
-.....\kern 0.00005
-.....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 6.99997 plus 5.0 minus 5.0
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 28.16997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\kern -26.17
-....\hbox(6.57+1.93999)x26.17
-.....\kern -0.00005
-.....\kern 0.00005
-.....\hbox(6.57+1.93999)x26.17
-......\TU/lmr/m/n/10 ipsum
-......\kern -0.0002
-......\kern 0.0002
-.....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 6.99997 plus 5.0 minus 5.0
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\special{color pop}
+....\TU/lmr/m/n/10 item
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 dolor
+....\TU/lmr/m/n/10 after
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 sit
+....\TU/lmr/m/n/10 a
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 amet,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 consectetuer
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 adipiscing
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 elit.
-....\glue 4.44 plus 4.99498 minus 0.37
-....\TU/lmr/m/n/10 Ut
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 purus
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 elit,
-....\glue(\rightskip) 0.0
-...\penalty 10451
-...\glue(\baselineskip) 0.55006
-...\hbox(7.05+2.05998)x325.0, glue set 110.34999fil, shifted 20.0
-....\TU/lmr/m/n/10 vestibulum
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 ut,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 placerat
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 ac,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 adipiscing
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 vitae,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 felis.
+....\TU/lmr/m/n/10 stem.
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
-...\glue 0.0
-...\glue 2.5 plus 2.5 minus 1.00006
-...\glue 0.0
-...\glue 2.5 plus 2.5 minus 1.00006
-...\glue 0.0
-...\penalty -51
-...\glue 0.0 plus 1.0
-...\glue 0.0
+...\glue 2.0 plus 1.0 minus 1.0
+...\glue(\parskip) 2.0 plus 1.0 minus 1.0
 ...\glue(\parskip) 0.0
-...\glue(\parskip) 0.0
-...\glue(\baselineskip) 3.00002
-...\hbox(6.94+4.39993)x325.0, glue set 0.08356, shifted 20.0
-....\hbox(6.77+0.0)x0.0
+...\glue(\baselineskip) 2.00002
+...\hbox(7.5+2.49998)x308.22, glue set 196.20999fil, shifted 36.78
+....\hbox(7.5+2.49998)x0.0
 .....\glue 0.0
-.....\glue -13.00003
-.....\glue -6.99997
-.....\hbox(6.77+0.0)x13.00003, glue set 6.50002fil
+.....\glue -12.78
+.....\glue -4.0
+.....\hbox(7.5+2.49998)x12.78, glue set 12.78fil
 ......\special{color push gray 0}
-......\glue 0.0 plus 1.0fil
+......\penalty 10000
 ......\glue 0.0 plus 1.0fil minus 1.0fil
-......\hbox(6.77+0.0)x0.0, glue set - 7.78fil
+......\hbox(7.5+2.49998)x0.0, glue set - 12.78fil
 .......\glue 0.0 plus 1.0fil minus 1.0fil
-.......\TU/lmr/m/n/10 4.
+.......\TU/lmr/m/n/10 (2)
 .......\kern -0.0002
 .......\kern 0.0002
 ......\special{color pop}
-.....\glue 6.99997
+.....\glue 4.0
 ....\penalty 0
-....\TU/lmr/m/n/10 Lorem
+....\TU/lmr/m/n/10 Second
 ....\glue 3.33 plus 1.665 minus 1.11
-....\special{color push gray 0}
-....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\kern 0.0
-....\hbox(0.0+0.0)x0.0
-.....\kern -0.00005
-.....\kern 0.00005
-.....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 6.99997 plus 5.0 minus 5.0
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 28.16997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\kern -26.17
-....\hbox(6.57+1.93999)x26.17
-.....\kern -0.00005
-.....\kern 0.00005
-.....\hbox(6.57+1.93999)x26.17
-......\TU/lmr/m/n/10 ipsum
-......\kern -0.0002
-......\kern 0.0002
-.....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 6.99997 plus 5.0 minus 5.0
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\special{color pop}
+....\TU/lmr/m/n/10 item
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 dolor
+....\TU/lmr/m/n/10 after
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 sit
+....\TU/lmr/m/n/10 a
 ....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 amet,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 consectetuer
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 adipiscing
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 elit.
-....\glue 4.44 plus 4.99498 minus 0.37
-....\TU/lmr/m/n/10 Ut
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 purus
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 elit,
-....\glue(\rightskip) 0.0
-...\penalty 10451
-...\glue(\baselineskip) 0.55006
-...\hbox(7.05+2.05998)x325.0, glue set 110.34999fil, shifted 20.0
-....\TU/lmr/m/n/10 vestibulum
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 ut,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 placerat
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 ac,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 adipiscing
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 vitae,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 felis.
+....\TU/lmr/m/n/10 stem.
 ....\penalty 10000
 ....\glue(\parfillskip) 0.0 plus 1.0fil
 ....\glue(\rightskip) 0.0
 ...\penalty -51
-...\glue 0.0
-...\glue 2.5 plus 2.5 minus 1.00006
-...\glue 0.0
-...\glue 2.5 plus 2.5 minus 1.00006
-...\glue 0.0
+...\glue 4.0 plus 2.0 minus 1.0
+...\glue -4.0 plus -2.0 minus -1.0
+...\glue 4.0 plus 1.0 minus 1.0
+...\glue -6.49998 plus -1.0 minus -1.0
 ...\penalty -51
-...\glue 0.0 plus 1.0
-...\glue 0.0
-...\glue(\parskip) 0.0
-...\glue(\parskip) 0.0
-...\glue(\lineskip) 1.0
-...\hbox(11.88838+4.39993)x325.0, glue set 0.5183, shifted 20.0
-....\hbox(6.66+0.21999)x0.0
-.....\glue 0.0
-.....\glue -13.00003
-.....\glue -6.99997
-.....\hbox(6.66+0.21999)x13.00003, glue set 6.50002fil
-......\special{color push gray 0}
-......\glue 0.0 plus 1.0fil
-......\glue 0.0 plus 1.0fil minus 1.0fil
-......\hbox(6.66+0.21999)x0.0, glue set - 7.78fil
-.......\glue 0.0 plus 1.0fil minus 1.0fil
-.......\TU/lmr/m/n/10 5.
-.......\kern -0.0002
-.......\kern 0.0002
-......\special{color pop}
-.....\glue 6.99997
-....\penalty 0
-....\TU/lmr/m/n/10 Lorem
-....\glue 3.33 plus 1.665 minus 1.11
-....\special{color push gray 0}
-....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\kern 0.0
-....\hbox(0.0+0.0)x0.0
-.....\kern -0.00005
-.....\kern 0.00005
-.....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 6.99997 plus 5.0 minus 5.0
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 14.95557
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\kern -12.9556
-....\hbox(11.88838+1.99997)x12.9556
-.....\kern -0.00005
-.....\kern 0.00005
-.....\hbox(11.88838+1.99997)x12.9556
-......\hbox(10.43994+3.44841)x12.9556, shifted -1.44844
-.......\hbox(10.43994+3.44841)x12.9556
-........\mathon
-........\hbox(10.43994+3.44841)x12.9556
-.........\hbox(10.43994+3.44841)x12.9556
-..........\hbox(0.0+0.0)x1.2, shifted -2.5
-..........\vbox(10.43994+3.44841)x10.5556
-...........\hbox(6.47801+0.86195)x10.5556
-............\hbox(0.33998+6.66)x6.56947, shifted -5.79805
-.............\OMS/cmsy/m/n/7 p
-............\vbox(6.47801+0.0)x3.98613
-.............\kern0.33998
-.............\rule(0.33998+0.0)x*
-.............\kern1.28694
-.............\hbox(4.51111+0.0)x3.98613
-..............\OT1/cmr/m/n/7 3
-...........\kern0.39998
-...........\rule(0.39998+0.0)x*
-...........\kern1.2373
-...........\hbox(4.51111+0.0)x10.5556, glue set 3.28474fil
-............\glue 0.0 plus 1.0fil minus 1.0fil
-............\OT1/cmr/m/n/7 2
-............\glue 0.0 plus 1.0fil minus 1.0fil
-..........\hbox(0.0+0.0)x1.2, shifted -2.5
-........\mathoff
-.....\rule(*+*)x0.0
-....\penalty 10000
-....\glue -0.99998
-....\leaders 6.99997 plus 5.0 minus 5.0
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\glue -0.99998
-....\leaders 1.99997
-.....\hbox(0.0+4.39993)x1.99997
-......\hbox(0.4+0.0)x1.99997, shifted 4.39993
-.......\special{pdf:bc [0]}
-.......\rule(0.4+0.0)x1.99997
-.......\special{pdf:ec}
-....\glue -0.99998
-....\special{color pop}
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 dolor
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 sit
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 amet,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 consectetuer
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 adipiscing
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 elit.
-....\glue 4.44 plus 4.99498 minus 0.37
-....\TU/lmr/m/n/10 Ut
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 purus
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 elit,
-....\glue(\rightskip) 0.0
-...\penalty 10451
-...\glue(\baselineskip) 0.55006
-...\hbox(7.05+2.05998)x325.0, glue set 110.34999fil, shifted 20.0
-....\TU/lmr/m/n/10 vestibulum
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 ut,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 placerat
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 ac,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 adipiscing
-....\glue 3.33 plus 1.665 minus 1.11
-....\TU/lmr/m/n/10 vitae,
-....\glue 3.33 plus 2.08124 minus 0.888
-....\TU/lmr/m/n/10 felis.
-....\penalty 10000
-....\glue(\parfillskip) 0.0 plus 1.0fil
-....\glue(\rightskip) 0.0
-...\penalty -51
-...\glue 0.0
+...\glue 2.49998
+...\glue 4.0 plus 1.0 minus 1.0
 ...\glue 2.5 plus 2.5 minus 1.00006
 ...\glue 0.0
 ...\glue 0.0 plus 1.0fil
@@ -1059,4 +533,3 @@ Completed box being shipped out [1]
 ....\glue 0.0 plus 1.0fil
 ...\special{color pop}
 .\kern 0.0
-(question-fill-in.aux)

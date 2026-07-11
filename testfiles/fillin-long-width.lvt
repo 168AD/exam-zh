@@ -1,0 +1,25 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{exam-zh-question}
+
+\begin{document}
+\START
+
+\fillinsetup{show-answer=false,no-answer-type=none}
+
+% Pin the automatic dispatch independently of linegoal's multi-run details.
+\ExplSyntaxOn
+\cs_set:Npn \__examzh_fillin_output_breakable_F:
+  { \TYPE{fillin-route=breakable} }
+\cs_set:Npn \__examzh_fillin_output_unbreakable_F:
+  { \TYPE{fillin-route=unbreakable} }
+\ExplSyntaxOff
+
+\fillin[width=.5\linewidth][short]
+\fillin[width=\linewidth][exact]
+\fillin[width=1.1\linewidth][long]
+
+\END
+\end{document}

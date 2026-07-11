@@ -1,0 +1,33 @@
+\documentclass{article}
+
+\input{regression-test}
+\usepackage{exam-zh-question}
+
+\begin{document}
+\START
+
+\begin{problem}
+  \TYPE{problem-default-itemindent=\the\itemindent}
+  \TYPE{problem-default-listparindent=\the\listparindent}
+  Default problem stem.
+\end{problem}
+
+\begin{problem}[hang=true]
+  \TYPE{problem-hang-itemindent=\the\itemindent}
+  \TYPE{problem-hang-listparindent=\the\listparindent}
+  Hanging problem stem.
+  \begin{enumerate}
+    \item Nested item after a stem.
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}[hang=true]
+  \begin{enumerate}
+    \item First nested item without a stem.
+    \item Second nested item.
+  \end{enumerate}
+\end{problem}
+\TYPE{problem-hang-nested-enumerate=rendered}
+
+\END
+\end{document}

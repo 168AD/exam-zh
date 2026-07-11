@@ -1,0 +1,59 @@
+\documentclass{article}
+
+\input{regression-test}
+\usepackage{exam-zh-question}
+\usepackage{exam-zh-choices}
+
+\newcounter{outer}
+\setcounter{outer}{3}
+
+\ExplSyntaxOn
+\cs_new:Npn \examzhtest_counter:n #1
+  { \TYPE{counter-value=#1} }
+\AddQuestionCounter \examzhtest \examzhtest_counter:n
+\AddFillinCounter \examzhtest \examzhtest_counter:n
+\AddChoicesCounter \examzhtest \examzhtest_counter:n
+\ExplSyntaxOff
+
+\begin{document}
+\START
+
+\ExplSyntaxOn
+\int_gset:Nn \g__examzh_question_index_int { 4 }
+\tl_set:Nn \l__examzh_question_label_tl { \examzhtest* }
+\hbox { \__examzh_question_the_label: }
+
+\tl_set:Nn \l__examzh_question_label_tl { \examzhtest{outer} }
+\hbox { \__examzh_question_the_label: }
+
+\int_gset:Nn \g__examzh_fillin_no_answer_counter_int { 4 }
+\tl_set:Nn \l__examzh_fillin_label_tl { \examzhtest* }
+\hbox { \__examzh_fillin_the_label: }
+
+\tl_set:Nn \l__examzh_choices_label_tl { \examzhtest* }
+\hbox { \__examzh_choices_the_label:n { 3 } }
+\ExplSyntaxOff
+
+\begin{enumerate}[label=\circlednumber*]
+  \item Font circled label.
+\end{enumerate}
+\begin{enumerate}[label=\tikzcirclednumber*]
+  \item TikZ circled label.
+\end{enumerate}
+\TYPE{enumitem-circled-labels=rendered}
+
+\begin{choices}[label=\circlednumber*]
+  \item Font circled label.
+  \item Second label.
+\end{choices}
+\begin{choices}[label=\tikzcirclednumber*]
+  \item TikZ circled label.
+  \item Second label.
+\end{choices}
+\TYPE{choices-circled-labels=rendered}
+
+\hbox{\circlednumber{outer}\tikzcirclednumber{outer}}
+\TYPE{direct-counter-name=rendered}
+
+\END
+\end{document}

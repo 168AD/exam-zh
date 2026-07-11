@@ -1,0 +1,9 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+\l__list_leftmargin_i_dim=\dimen...
+problem-default-itemindent=20.0pt
+problem-default-listparindent=20.0pt
+problem-hang-itemindent=0.0pt
+problem-hang-listparindent=0.0pt
+\l__list_leftmargin_ii_dim=\dimen...
+problem-hang-nested-enumerate=rendered

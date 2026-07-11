@@ -1,0 +1,29 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{exam-zh-question}
+
+\begin{document}
+\START
+
+\begin{question}
+  Inline \verb|# $ % & _ { }| content.
+
+  \begin{verbatim}
+first # line
+
+second { line }
+  \end{verbatim}
+\end{question}
+\TYPE{question-verbatim=passed}
+
+\begin{problem}
+  \begin{verbatim}
+problem #1
+  \end{verbatim}
+\end{problem}
+\TYPE{problem-verbatim=passed}
+
+\END
+\end{document}

@@ -1,0 +1,61 @@
+\documentclass{exam-zh}
+
+\input{regression-test}
+
+\examsetup{solution/show-solution=show-move}
+
+\begin{document}
+\START
+
+\chapter{First paper}
+
+\begin{problem}
+  First problem.
+\end{problem}
+\begin{solution}
+  \TYPE{first-answer=rendered}
+  First solution.
+\end{solution}
+
+\chapter{Second paper}
+
+\begin{problem}
+  Second problem.
+\end{problem}
+\begin{solution}
+  \TYPE{second-answer=rendered}
+  Second solution.
+\end{solution}
+
+\ExplSyntaxOn
+\cs_generate_variant:Nn \str_if_in:nnTF { Vn }
+\TYPE{question-index=\int_use:N \g__examzh_question_index_int}
+\TYPE{solution-index=\int_use:N \g__examzh_solution_aux_index_int}
+
+\int_step_inline:nn { 2 }
+  {
+    \exp_args:Nx \file_if_exist:nTF
+      { \__examzh_solution_aux_file_name:n {#1} }
+      { \TYPE{solution-file-#1=exists} }
+      { \TYPE{solution-file-#1=missing} }
+  }
+
+\exp_args:Nx \file_get:nnN
+  { \__examzh_solution_aux_file_name:n {1} } { } \l_tmpa_tl
+\str_set:Nx \l_tmpa_str { \tl_to_str:V \l_tmpa_tl }
+\str_if_in:VnTF \l_tmpa_str { Firstsolution. }
+  { \TYPE{first-solution=preserved} }
+  { \TYPE{first-solution=missing} }
+
+\exp_args:Nx \file_get:nnN
+  { \__examzh_solution_aux_file_name:n {2} } { } \l_tmpa_tl
+\str_set:Nx \l_tmpa_str { \tl_to_str:V \l_tmpa_tl }
+\str_if_in:VnTF \l_tmpa_str { Secondsolution. }
+  { \TYPE{second-solution=preserved} }
+  { \TYPE{second-solution=missing} }
+
+\__examzh_solution_print_moved_answers:
+\ExplSyntaxOff
+
+\END
+\end{document}

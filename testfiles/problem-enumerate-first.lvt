@@ -1,0 +1,29 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{exam-zh-question}
+
+\begin{document}
+\START
+\showoutput
+
+\begin{problem}
+  \begin{enumerate}[label=(\arabic*)]
+    \item First item begins where later items begin.
+    \item Second item.
+    \item Third item.
+  \end{enumerate}
+\end{problem}
+
+\begin{problem}
+  A normal problem stem keeps its first-line indentation.
+  \begin{enumerate}[label=(\arabic*)]
+    \item First item after a stem.
+    \item Second item after a stem.
+  \end{enumerate}
+\end{problem}
+
+\clearpage
+\END
+\end{document}

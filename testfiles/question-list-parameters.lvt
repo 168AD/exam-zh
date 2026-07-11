@@ -1,0 +1,41 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{exam-zh-question}
+
+\begin{document}
+\START
+
+\ExplSyntaxOn
+
+\begin{question}
+  \TYPE{question-topsep=\dim_use:N \topsep}
+  \TYPE{question-partopsep=\dim_use:N \partopsep}
+  \TYPE{question-itemsep=\dim_use:N \itemsep}
+  \TYPE{question-parsep=\dim_use:N \parsep}
+  \TYPE{question-leftmargin=\dim_use:N \leftmargin}
+  \TYPE{question-itemindent=\dim_use:N \itemindent}
+  Question body.
+\end{question}
+
+\begin{question}[hang=false]
+  \TYPE{question-no-hang-leftmargin=\dim_use:N \leftmargin}
+  \TYPE{question-no-hang-itemindent=\dim_use:N \itemindent}
+  Question body without hanging indentation.
+\end{question}
+
+\begin{problem}
+  \TYPE{problem-topsep=\dim_use:N \topsep}
+  \TYPE{problem-partopsep=\dim_use:N \partopsep}
+  \TYPE{problem-itemsep=\dim_use:N \itemsep}
+  \TYPE{problem-parsep=\dim_use:N \parsep}
+  \TYPE{problem-leftmargin=\dim_use:N \leftmargin}
+  \TYPE{problem-itemindent=\dim_use:N \itemindent}
+  Problem body.
+\end{problem}
+
+\ExplSyntaxOff
+
+\END
+\end{document}
