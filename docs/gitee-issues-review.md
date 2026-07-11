@@ -9,7 +9,7 @@
 - 查询范围：`is:open` 与 `is:progressing`
 - 本轮结果：40 个 open（均为“待办的”），1 个 progressing（“进行中”），合计 41 项
 - GitHub 迁移：[#6](https://github.com/xkwxdyy/exam-zh/issues/6)–[#46](https://github.com/xkwxdyy/exam-zh/issues/46)
-- 当前状态：12 个保持开放，29 个已关闭（其中 2 个 P0、5 个 P1 已于 2026-07-11 修复）
+- 当前状态：8 个保持开放，33 个已关闭（其中 2 个 P0、5 个 P1、4 个 P2 已于 2026-07-11 修复）
 
 优先级定义：
 
@@ -47,22 +47,22 @@
 
 | Gitee | 最后更新 | 评论 | 审查结论 | GitHub |
 | --- | --- | ---: | --- | --- |
-| [IHXNX9](https://gitee.com/xkwxdyy/exam-zh/issues/IHXNX9) | 2026-04-02 | 1 | calculations 同行高低公式缺少统一对齐策略 | [#9](https://github.com/xkwxdyy/exam-zh/issues/9) open |
-| [IHQMPM](https://gitee.com/xkwxdyy/exam-zh/issues/IHQMPM) | 2026-03-26 | 1 | calculations 在 question/problem 宿主中的垂直位置不同 | [#10](https://github.com/xkwxdyy/exam-zh/issues/10) open |
-| [ID823C](https://gitee.com/xkwxdyy/exam-zh/issues/ID823C) | 2026-05-30 | 3 | progressing；为 multifigures 暴露图片间距与整体对齐键，并先文档化 tblr 透传能力 | [#46](https://github.com/xkwxdyy/exam-zh/issues/46) open |
 | [IDBLDN](https://gitee.com/xkwxdyy/exam-zh/issues/IDBLDN) | 2025-12-28 | 6 | 需要安全的自定义纸张/多栏接口及对应页脚模型 | [#14](https://github.com/xkwxdyy/exam-zh/issues/14) open |
 | [ID7G2T](https://gitee.com/xkwxdyy/exam-zh/issues/ID7G2T) | 2025-11-19 | 1 | 16K 油印场景真实存在，需与自定义纸张接口协调 | [#19](https://github.com/xkwxdyy/exam-zh/issues/19) open |
 | [ID6D6C](https://gitee.com/xkwxdyy/exam-zh/issues/ID6D6C) | 2025-11-13 | 5 | 参考 cloze 语义重整 fillin；不能引入 LuaLaTeX 依赖 | [#22](https://github.com/xkwxdyy/exam-zh/issues/22) open |
 | [ICMVN4](https://gitee.com/xkwxdyy/exam-zh/issues/ICMVN4) | 2025-11-23 | 1 | 建立跨选择、判断、填空、解答的答案记录与渲染模型 | [#25](https://github.com/xkwxdyy/exam-zh/issues/25) open |
 | [I8QVL9](https://gitee.com/xkwxdyy/exam-zh/issues/I8QVL9) | 2024-02-11 | 7 | P1 部分已修复：question/problem 支持 verbatim/verb；choices 尚有 `lstinputlisting` 替代路径，降为 P2 继续设计 | [#30](https://github.com/xkwxdyy/exam-zh/issues/30) open |
 | [I670KF](https://gitee.com/xkwxdyy/exam-zh/issues/I670KF) | 2022-12-21 | 0 | 师生两版不同卷头可先验证 `ExamPrintAnswerSet` 命令注入 | [#39](https://github.com/xkwxdyy/exam-zh/issues/39) open |
-| [I63X3T](https://gitee.com/xkwxdyy/exam-zh/issues/I63X3T) | 2022-12-01 | 2 | paren 前增加可配置 leader/dotfill | [#42](https://github.com/xkwxdyy/exam-zh/issues/42) open |
 | [I5ROOL](https://gitee.com/xkwxdyy/exam-zh/issues/I5ROOL) | 2025-12-28 | 0 | choices 的正确答案标记/着色仍是源码 TODO | [#43](https://github.com/xkwxdyy/exam-zh/issues/43) open |
 
 ## P2：已关闭
 
 | Gitee | 最后更新 | 评论 | 关闭结论 | GitHub |
 | --- | --- | ---: | --- | --- |
+| [IHXNX9](https://gitee.com/xkwxdyy/exam-zh/issues/IHXNX9) | 2026-04-02 | 1 | 已修复：同行项目按首行/中部/末行基线统一对齐，高低公式无需再用 `\vphantom` 补齐 | [#9](https://github.com/xkwxdyy/exam-zh/issues/9) completed |
+| [IHQMPM](https://gitee.com/xkwxdyy/exam-zh/issues/IHQMPM) | 2026-03-26 | 1 | 已修复：仅在 calculations 直接作为 list 首段时抵消宿主 `itemindent`，统一 question/problem 位置 | [#10](https://github.com/xkwxdyy/exam-zh/issues/10) completed |
+| [ID823C](https://gitee.com/xkwxdyy/exam-zh/issues/ID823C) | 2026-05-30 | 3 | 已实现 `column-gap` 图片间距键，并补充第二个可选参数透传 `tblr` 的稳定 `colspec` 用法 | [#46](https://github.com/xkwxdyy/exam-zh/issues/46) completed |
+| [I63X3T](https://gitee.com/xkwxdyy/exam-zh/issues/I63X3T) | 2022-12-01 | 2 | 已增加 `paren/type=dotfill`，支持括号前点线填充；复杂自定义 leader 内容不纳入核心接口 | [#42](https://github.com/xkwxdyy/exam-zh/issues/42) completed |
 | [IDPOT4](https://gitee.com/xkwxdyy/exam-zh/issues/IDPOT4) | 2026-02-07 | 0 | 已抽取共享计数器实现，新增无歧义的 `\tikzcirclednumber` 并保留旧接口兼容 | [#12](https://github.com/xkwxdyy/exam-zh/issues/12) completed |
 | [ID7HWH](https://gitee.com/xkwxdyy/exam-zh/issues/ID7HWH) | 2025-11-20 | 3 | 已为 choices 新增独立控制多行选项内部行距的 `item-linesep` | [#18](https://github.com/xkwxdyy/exam-zh/issues/18) completed |
 | [ID6INO](https://gitee.com/xkwxdyy/exam-zh/issues/ID6INO) | 2025-11-13 | 0 | 已将文档默认值更正为 `normal`，并增加默认行为回归测试 | [#21](https://github.com/xkwxdyy/exam-zh/issues/21) completed |
