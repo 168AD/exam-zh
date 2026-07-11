@@ -20,6 +20,7 @@
 - 抽取 question、fillin、choices 与 calculations 共用的计数器注册层；新增 `\tikzcirclednumber`，并弃用有歧义的直接调用 `\circlednumber*{...}`（Gitee #IDPOT4）
 - 文档明确 `\varnothing` 固定使用 Asana Math 字形的范围，并澄清该单符号覆盖不等同于完整支持 `mtpro2`（Gitee #ID83OW）
 - `calculations/align=t|m|b` 现在同时控制同行项目的首行基线、居中和末行基线对齐
+- 文档化通过 `\ExamPrintAnswerSet` 为教师版覆盖标题、科目并隐藏 `\warning`、`notice` 的稳定写法（Gitee #I670KF）
 
 ### Fixed
 

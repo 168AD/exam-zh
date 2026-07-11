@@ -922,6 +922,29 @@
   }
 \end{latexcode}
 
+如果教师版需要使用独立卷头，并隐藏仅面向考生的警告和注意事项，可以把
+这些覆盖命令放入第一个可选参数。它们只会在第二个版本进入
+\env{document} 前执行，不会改变正常编译得到的学生版：
+
+\begin{latexcode}
+  \title{2026 年春季期中考试}
+  \subject{数学}
+
+  \ExamPrintAnswerSet[
+    \title{2026 年春季期中考试参考答案},
+    \subject{},
+    \RenewDocumentCommand \warning { O{} m } {},
+    \RenewDocumentEnvironment { notice } { O{} O{} +b } {} {}
+  ]{
+    solution/show-solution=show-stay,
+    question/show-answer=true
+  }
+\end{latexcode}
+
+其中重新定义 \env{notice} 时需要使用 |+b| 捕获并丢弃环境正文；否则正文中的
+\tn{item} 仍会继续执行。未在 \tn{ExamPrintAnswerSet} 中覆盖的标题、科目和
+其他设置会继承学生版当前值。
+
 
 \begin{function}[added = 2022-07-21]{\ExamPrintAnswer}
   \begin{examzhsyntax}[emph={[1]ExamPrintAnswer}]

@@ -1,0 +1,42 @@
+\documentclass{exam-zh}
+
+\input{regression-test}
+
+\title{Student title}
+\subject{Mathematics}
+
+\ExamPrintAnswerSet[
+  \title{Teacher title},
+  \subject{},
+  \RenewDocumentCommand \warning { O{} m } {},
+  \RenewDocumentEnvironment { notice } { O{} O{} +b } {} {}
+]{
+  question/show-answer=true
+}
+
+\begin{document}
+\START
+
+\ExamPrintAnswer
+
+\ExplSyntaxOn
+\str_if_eq:eeTF { \use:c { @title } } { Teacher~title }
+  { \TYPE{teacher-title=passed} }
+  { \TYPE{teacher-title=failed} }
+\hbox_set:Nn \l_tmpa_box { \l__examzh_subject_tl }
+\dim_compare:nNnTF { \box_wd:N \l_tmpa_box } = { 0pt }
+  { \TYPE{teacher-subject=empty} }
+  { \TYPE{teacher-subject=not-empty} }
+\bool_if:NTF \l__examzh_question_show_paren_answer_bool
+  { \TYPE{teacher-answer-setting=passed} }
+  { \TYPE{teacher-answer-setting=failed} }
+\ExplSyntaxOff
+
+\warning{\TYPE{warning-content-visible}}
+\begin{notice}
+  \item \TYPE{notice-content-visible}
+\end{notice}
+\TYPE{teacher-only-content=hidden}
+
+\END
+\end{document}
