@@ -9,7 +9,7 @@
 - 查询范围：`is:open` 与 `is:progressing`
 - 本轮结果：40 个 open（均为“待办的”），1 个 progressing（“进行中”），合计 41 项
 - GitHub 迁移：[#6](https://github.com/xkwxdyy/exam-zh/issues/6)–[#46](https://github.com/xkwxdyy/exam-zh/issues/46)
-- 当前状态：7 个保持开放，34 个已关闭（其中 2 个 P0、5 个 P1、5 个 P2 已于 2026-07-11 修复）
+- 当前状态：6 个保持开放，35 个已关闭（其中 2 个 P0、5 个 P1、6 个 P2 已于 2026-07-11 修复）
 
 优先级定义：
 
