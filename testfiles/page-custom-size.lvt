@@ -1,0 +1,43 @@
+\documentclass{exam-zh}
+
+\input{regression-test}
+
+\examsetup
+  {
+    page =
+      {
+        size = custom,
+        paper-width = 195mm,
+        paper-height = 270mm,
+        margin = 15mm,
+        headheight = 19.72mm,
+      }
+  }
+
+\begin{document}
+\START
+
+\ExplSyntaxOn
+\bool_if:NTF \g__examzh_page_size_custom_bool
+  { \TYPE{custom-page=true} }
+  { \TYPE{custom-page=false} }
+\dim_compare:nNnTF { \paperwidth } = { 195mm }
+  { \TYPE{paper-width=passed} }
+  { \TYPE{paper-width=failed} }
+\dim_compare:nNnTF { \paperheight } = { 270mm }
+  { \TYPE{paper-height=passed} }
+  { \TYPE{paper-height=failed} }
+\dim_compare:nNnTF { \headheight } = { 19.72mm }
+  { \TYPE{headheight=passed} }
+  { \TYPE{headheight=failed} }
+\ExplSyntaxOff
+\makeatletter
+\if@twocolumn
+  \TYPE{single-column=failed}
+\else
+  \TYPE{single-column=passed}
+\fi
+\makeatother
+
+\END
+\end{document}

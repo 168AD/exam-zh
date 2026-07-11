@@ -13,6 +13,7 @@
 - 为 `problem` 新增 `hang` 键，并为 `choices` 新增 `item-linesep`、`left-indent`、`right-indent` 与 `margin` 键（Gitee #I6HQ2S、#ID7HWH、#I67JXY）
 - 为 `paren/type` 新增 `dotfill` 点线填充模式（Gitee #I63X3T）
 - 为 `multifigures` 新增 `column-gap` 图片列间距键，并文档化底层 `tblr` 的 `colspec` 参数透传方式（Gitee #ID823C）
+- 为 `page` 新增 `custom` 纸张尺寸以及 `paper-width`、`paper-height`、`margin`、`headheight` 键，可配置任意单页纸张（含 16K）（Gitee #IDBLDN、#ID7G2T）
 
 ### Changed
 

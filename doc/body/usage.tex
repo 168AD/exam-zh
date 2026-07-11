@@ -1275,10 +1275,33 @@
 
 \begin{function}{page/size}
   \begin{examzhsyntax}[emph={[1]size}]
-    size = (*<a3paper|(a4paper)>*)
+    size = (*<a3paper|a4paper|(custom)>*)
   \end{examzhsyntax}
-  试卷尺寸。\opt{a4paper} 表示一页为 A4 纸大小；\opt{a3paper} 表示一页为 A3 纸大小，内容为连续两页 A4 拼接。此设置只能放在导言区。
+  试卷尺寸。\opt{a4paper} 表示一页为 A4 纸大小；\opt{a3paper} 表示一页为 A3 纸大小，内容为连续两页 A4 拼接；\opt{custom} 使用 \opt{page/paper-width} 与 \opt{page/paper-height} 指定任意单页纸张尺寸。此设置只能放在导言区。
 \end{function}
+
+\begin{function}[added = 2026-07-11]{page/paper-width,page/paper-height,page/margin,page/headheight}
+  \begin{examzhsyntax}[emph={[1]paper-width,paper-height,margin,headheight}]
+    paper-width  = (*\meta{dimension}*)
+    paper-height = (*\meta{dimension}*)
+    margin       = (*\meta{dimension}*)
+    headheight   = (*\meta{dimension}*)
+  \end{examzhsyntax}
+  自定义纸张的宽、高、页边距和页眉高度。仅当 \kvopt{page/size}{custom} 时，\opt{paper-width} 与 \opt{paper-height} 生效且必须为正值；\opt{margin} 和 \opt{headheight} 分别默认为 |1in| 和 |0.7in|。自定义纸张采用普通单页页码和居中页脚模型，不会继承 \opt{a3paper} 的横向双页拼版、双栏和分栏页脚行为。
+\end{function}
+
+16K 油印的单页尺寸可按如下方式设置：
+\begin{latexcode}
+  \examsetup{
+    page = {
+      size = custom,
+      paper-width = 195mm,
+      paper-height = 270mm,
+      margin = 15mm,
+      headheight = 19.72mm,
+    },
+  }
+\end{latexcode}
 
 
 \begin{function}[added = 2022-09-12]{page/show-head}

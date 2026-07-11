@@ -47,8 +47,8 @@
 
 | Gitee | 最后更新 | 评论 | 审查结论 | GitHub |
 | --- | --- | ---: | --- | --- |
-| [IDBLDN](https://gitee.com/xkwxdyy/exam-zh/issues/IDBLDN) | 2025-12-28 | 6 | 需要安全的自定义纸张/多栏接口及对应页脚模型 | [#14](https://github.com/xkwxdyy/exam-zh/issues/14) open |
-| [ID7G2T](https://gitee.com/xkwxdyy/exam-zh/issues/ID7G2T) | 2025-11-19 | 1 | 16K 油印场景真实存在，需与自定义纸张接口协调 | [#19](https://github.com/xkwxdyy/exam-zh/issues/19) open |
+| [IDBLDN](https://gitee.com/xkwxdyy/exam-zh/issues/IDBLDN) | 2025-12-28 | 6 | 已完成任意单页纸张与页边距接口；2/3 栏及分栏页脚模型仍待后续独立设计 | [#14](https://github.com/xkwxdyy/exam-zh/issues/14) open |
+| [ID7G2T](https://gitee.com/xkwxdyy/exam-zh/issues/ID7G2T) | 2025-11-19 | 1 | 已修复：`page/size=custom` 可表达 195mm × 270mm 的 16K 油印纸张 | [#19](https://github.com/xkwxdyy/exam-zh/issues/19) completed |
 | [ID6D6C](https://gitee.com/xkwxdyy/exam-zh/issues/ID6D6C) | 2025-11-13 | 5 | 参考 cloze 语义重整 fillin；不能引入 LuaLaTeX 依赖 | [#22](https://github.com/xkwxdyy/exam-zh/issues/22) open |
 | [ICMVN4](https://gitee.com/xkwxdyy/exam-zh/issues/ICMVN4) | 2025-11-23 | 1 | 建立跨选择、判断、填空、解答的答案记录与渲染模型 | [#25](https://github.com/xkwxdyy/exam-zh/issues/25) open |
 | [I8QVL9](https://gitee.com/xkwxdyy/exam-zh/issues/I8QVL9) | 2024-02-11 | 7 | P1 部分已修复：question/problem 支持 verbatim/verb；choices 尚有 `lstinputlisting` 替代路径，降为 P2 继续设计 | [#30](https://github.com/xkwxdyy/exam-zh/issues/30) open |

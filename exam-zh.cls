@@ -425,8 +425,19 @@
 
 % 纸张和页面布局
 
-% 控制 a3paper 和 a4paper
+\msg_new:nnn { exam-zh } { custom-paper-width-required }
+  { page/paper-width~must~be~positive~when~page/size=custom. }
+\msg_new:nnn { exam-zh } { custom-paper-height-required }
+  { page/paper-height~must~be~positive~when~page/size=custom. }
+
+% 控制 a3paper 和常规单页纸张（a4paper 或 custom）
 \bool_new:c { g__examzh_page_size_a4paper_bool }
+% custom 纸张使用常规单页的页脚模型，而不是 a3paper 的双页拼版模型
+\bool_new:N \g__examzh_page_size_custom_bool
+\dim_new:N \g__examzh_page_paper_width_dim
+\dim_new:N \g__examzh_page_paper_height_dim
+\dim_new:N \g__examzh_page_margin_dim
+\dim_new:N \g__examzh_page_headheight_dim
 % a3paper 的页脚：两页共用一个或者仍然一页一个
 \bool_new:c { g__examzh_page_a3paper_foot_common_bool }
 
@@ -437,12 +448,23 @@
     size / a3paper .code:n =
       {
         \bool_gset_false:c { g__examzh_page_size_a4paper_bool }
+        \bool_gset_false:N \g__examzh_page_size_custom_bool
       },
     size / a4paper .code:n =
       {
         \bool_gset_true:c { g__examzh_page_size_a4paper_bool }
+        \bool_gset_false:N \g__examzh_page_size_custom_bool
+      },
+    size / custom .code:n =
+      {
+        \bool_gset_true:c { g__examzh_page_size_a4paper_bool }
+        \bool_gset_true:N \g__examzh_page_size_custom_bool
       },
     size .value_required:n = true,
+    paper-width .dim_gset:N = \g__examzh_page_paper_width_dim,
+    paper-height .dim_gset:N = \g__examzh_page_paper_height_dim,
+    margin .dim_gset:N = \g__examzh_page_margin_dim,
+    headheight .dim_gset:N = \g__examzh_page_headheight_dim,
     % 页脚的类型
     foot-type .choice:,
     foot-type / common .code:n =
@@ -459,6 +481,10 @@
 \keys_set:nn { exam-zh / page }
   {
     size = a4paper,
+    paper-width = 0pt,
+    paper-height = 0pt,
+    margin = 1in,
+    headheight = 0.7in,
     foot-type = separate,
   }
 
@@ -1216,7 +1242,27 @@
 
 \AtEndPreamble
   {
-    \bool_if:cTF { g__examzh_page_size_a4paper_bool }
+    \bool_if:NTF \g__examzh_page_size_custom_bool
+      {
+        \dim_compare:nNnTF { \g__examzh_page_paper_width_dim } > { 0pt }
+          {
+            \dim_compare:nNnTF { \g__examzh_page_paper_height_dim } > { 0pt }
+              {
+                % 自定义纸张始终是单页模式；不继承 a3paper 的横向双页拼版设置。
+                \geometry
+                  {
+                    paperwidth  = \g__examzh_page_paper_width_dim,
+                    paperheight = \g__examzh_page_paper_height_dim,
+                    margin      = \g__examzh_page_margin_dim,
+                    headheight  = \g__examzh_page_headheight_dim
+                  }
+              }
+              { \msg_error:nn { exam-zh } { custom-paper-height-required } }
+          }
+          { \msg_error:nn { exam-zh } { custom-paper-width-required } }
+      }
+      {
+        \bool_if:cTF { g__examzh_page_size_a4paper_bool }
       {
         % a4paper
         \bool_if:NTF \g__examzh_sealline_show_bool
@@ -1275,6 +1321,7 @@
                 headheight  = 0.7in
               }
           }
+      }
       }
   }
 
