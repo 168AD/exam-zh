@@ -9,7 +9,7 @@
 - 查询范围：`is:open` 与 `is:progressing`
 - 本轮结果：40 个 open（均为“待办的”），1 个 progressing（“进行中”），合计 41 项
 - GitHub 迁移：[#6](https://github.com/xkwxdyy/exam-zh/issues/6)–[#46](https://github.com/xkwxdyy/exam-zh/issues/46)
-- 当前状态：8 个保持开放，33 个已关闭（其中 2 个 P0、5 个 P1、4 个 P2 已于 2026-07-11 修复）
+- 当前状态：7 个保持开放，34 个已关闭（其中 2 个 P0、5 个 P1、5 个 P2 已于 2026-07-11 修复）
 
 优先级定义：
 
@@ -52,7 +52,6 @@
 | [ID6D6C](https://gitee.com/xkwxdyy/exam-zh/issues/ID6D6C) | 2025-11-13 | 5 | 参考 cloze 语义重整 fillin；不能引入 LuaLaTeX 依赖 | [#22](https://github.com/xkwxdyy/exam-zh/issues/22) open |
 | [ICMVN4](https://gitee.com/xkwxdyy/exam-zh/issues/ICMVN4) | 2025-11-23 | 1 | 建立跨选择、判断、填空、解答的答案记录与渲染模型 | [#25](https://github.com/xkwxdyy/exam-zh/issues/25) open |
 | [I8QVL9](https://gitee.com/xkwxdyy/exam-zh/issues/I8QVL9) | 2024-02-11 | 7 | P1 部分已修复：question/problem 支持 verbatim/verb；choices 尚有 `lstinputlisting` 替代路径，降为 P2 继续设计 | [#30](https://github.com/xkwxdyy/exam-zh/issues/30) open |
-| [I670KF](https://gitee.com/xkwxdyy/exam-zh/issues/I670KF) | 2022-12-21 | 0 | 师生两版不同卷头可先验证 `ExamPrintAnswerSet` 命令注入 | [#39](https://github.com/xkwxdyy/exam-zh/issues/39) open |
 | [I5ROOL](https://gitee.com/xkwxdyy/exam-zh/issues/I5ROOL) | 2025-12-28 | 0 | choices 的正确答案标记/着色仍是源码 TODO | [#43](https://github.com/xkwxdyy/exam-zh/issues/43) open |
 
 ## P2：已关闭
@@ -63,6 +62,7 @@
 | [IHQMPM](https://gitee.com/xkwxdyy/exam-zh/issues/IHQMPM) | 2026-03-26 | 1 | 已修复：仅在 calculations 直接作为 list 首段时抵消宿主 `itemindent`，统一 question/problem 位置 | [#10](https://github.com/xkwxdyy/exam-zh/issues/10) completed |
 | [ID823C](https://gitee.com/xkwxdyy/exam-zh/issues/ID823C) | 2026-05-30 | 3 | 已实现 `column-gap` 图片间距键，并补充第二个可选参数透传 `tblr` 的稳定 `colspec` 用法 | [#46](https://github.com/xkwxdyy/exam-zh/issues/46) completed |
 | [I63X3T](https://gitee.com/xkwxdyy/exam-zh/issues/I63X3T) | 2022-12-01 | 2 | 已增加 `paren/type=dotfill`，支持括号前点线填充；复杂自定义 leader 内容不纳入核心接口 | [#42](https://github.com/xkwxdyy/exam-zh/issues/42) completed |
+| [I670KF](https://gitee.com/xkwxdyy/exam-zh/issues/I670KF) | 2022-12-21 | 0 | 已文档化 `ExamPrintAnswerSet` 覆盖教师版标题、科目并隐藏 warning/notice 的稳定写法 | [#39](https://github.com/xkwxdyy/exam-zh/issues/39) completed |
 | [IDPOT4](https://gitee.com/xkwxdyy/exam-zh/issues/IDPOT4) | 2026-02-07 | 0 | 已抽取共享计数器实现，新增无歧义的 `\tikzcirclednumber` 并保留旧接口兼容 | [#12](https://github.com/xkwxdyy/exam-zh/issues/12) completed |
 | [ID7HWH](https://gitee.com/xkwxdyy/exam-zh/issues/ID7HWH) | 2025-11-20 | 3 | 已为 choices 新增独立控制多行选项内部行距的 `item-linesep` | [#18](https://github.com/xkwxdyy/exam-zh/issues/18) completed |
 | [ID6INO](https://gitee.com/xkwxdyy/exam-zh/issues/ID6INO) | 2025-11-13 | 0 | 已将文档默认值更正为 `normal`，并增加默认行为回归测试 | [#21](https://github.com/xkwxdyy/exam-zh/issues/21) completed |
