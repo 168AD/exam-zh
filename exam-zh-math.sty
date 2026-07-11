@@ -8,6 +8,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
 \RequirePackage{expl3}
+\RequirePackage { exam-zh-counter }
 
 \ProvidesExplPackage {exam-zh-math} {2026-06-13} {v0.2.7}
   {exam-zh math module}
@@ -398,12 +399,12 @@
 
 \NewDocumentCommand \AddCalculationsCounter { m m }
   {
-    % 生成用户层命令
-    \tl_put_right:Nn \l__examzh_calculations_counters_commands_set_tl
-      { \__examzh_process_counter:NNn #1 #2 { calculations } }
-    % 把核心函数存起来
-    \cs_set_eq:cN { __examzh_calculations_save_ \cs_to_str:N #1 : } #2
-    \cs_set_eq:cN { __examzh_calculations_save_ \cs_to_str:N #2 : } #2
+    \__examzh_counter_register:NNNnn
+      \l__examzh_calculations_counters_commands_set_tl #1 #2 { calculations }
+      {
+        \l__examzh_calculations_item_index_int
+        + \l__examzh_calculations_label_index_shift_int
+      }
   }
 
 \AddCalculationsCounter \arabic \@arabic
@@ -411,18 +412,3 @@
 \AddCalculationsCounter \Alph   \@Alph
 \AddCalculationsCounter \roman  \@roman
 \AddCalculationsCounter \Roman  \@Roman
-
-\cs_new:Npn \__examzh_calculations_process_counter_aux:Nn #1#2
-  {
-    \tl_if_eq:nnTF {#2} { * }
-      {
-        % \Alph*
-        \use:c { __examzh_calculations_save_ \cs_to_str:N #1 : }
-          { \int_eval:n { \l__examzh_calculations_item_index_int + \l__examzh_calculations_label_index_shift_int } }
-      }
-      {
-        % \Alph{...}
-        \use:c { __examzh_calculations_save_ \cs_to_str:N #1 : }
-          {#2}
-      }
-  }
