@@ -172,7 +172,7 @@
 \cs_new:Npn \__examzh_symbols_vec_detect_number_of_input_str:n #1
   {
     \int_set:Nn \l__examzh_symbols_vec_input_count_int
-      { \str_count:n { #1 } }
+      { \tl_count:n { #1 } }
   }
 
 % 平行四边形 \parallelogram

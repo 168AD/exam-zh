@@ -1,0 +1,25 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{unicode-math}
+\usepackage{exam-zh-symbols}
+
+\DeclareRobustCommand{\customsymbol}{x+y}
+
+\begin{document}
+\START
+
+\ExplSyntaxOn
+\cs_set:Npn \symbfit #1 { \TYPE{vec-style=single-token} }
+\cs_set:Npn \overrightarrow #1 { \TYPE{vec-style=multiple-tokens} }
+\ExplSyntaxOff
+
+$\vec{a}$
+$\vec{\beta}$
+$\vec{AB}$
+$\vec{\customsymbol}$
+$\vec{\mathbf{a}}$
+
+\END
+\end{document}
