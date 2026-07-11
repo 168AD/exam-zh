@@ -1,0 +1,32 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{exam-zh-question}
+\usepackage{exam-zh-textfigure}
+
+\begin{document}
+\START
+\showoutput
+
+\begin{problem}
+  \textfigure[text-width=\columnwidth,fig-pos=bottom-right]
+    {Plain text repeated to make two lines. Plain text repeated to make two lines.}
+    {\rule{3cm}{2cm}}
+\end{problem}
+
+\begin{problem}
+  \textfigure[text-width=\columnwidth,fig-pos=bottom-right]
+    {Inline math $E:\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ followed by plain text.}
+    {\rule{3cm}{2cm}}
+\end{problem}
+
+\begin{problem}
+  \textfigure[text-width=\columnwidth,fig-pos=bottom-right]
+    {Tall inline math $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$ followed by plain text.}
+    {\rule{3cm}{2cm}}
+\end{problem}
+
+\clearpage
+\END
+\end{document}

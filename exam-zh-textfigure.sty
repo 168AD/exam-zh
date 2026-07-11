@@ -389,7 +389,7 @@
 \keys_set:nn { exam-zh / textfigure }
   {
     fig-pos         = bottom-right,
-    yshift          = .5\baselineskip,
+    yshift          = 0pt,
     text-width      = \textwidth,
     figure-width    = \columnwidth,
     text-ratio      = 1,
@@ -474,7 +474,9 @@
   {
     \hcoffin_set:Nn \l__examzh_textfigure_text_coffin 
       {
-        \begin{varwidth}{ \l__examzh_textfigure_text_width_dim }
+        % 顶部对齐让 coffin 的 H pole 落在首行基线上；正文首行包含
+        % 分式等较高内容时，基线也不会随包围盒高度漂移。
+        \begin{varwidth}[t]{ \l__examzh_textfigure_text_width_dim }
           \dim_set:Nn \parindent { \l__examzh_textfigure_text_parindent_dim }
           \ignorespaces
           #1
@@ -500,7 +502,7 @@
 \cs_new:Npn \__examzh_textfigure_coffin_typeset:
   {
     \coffin_typeset:Nnnnn \l__examzh_textfigure_text_coffin
-      { l } { t } 
+      { l } { H }
       { \l__examzh_textfigure_xshift_dim } 
       { \l__examzh_textfigure_yshift_dim }
   }

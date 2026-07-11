@@ -1,0 +1,683 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+\l__list_leftmargin_i_dim=\dimen...
+Completed box being shipped out [1]
+\vbox(633.0+0.0)x407.0
+.\hbox(0.0+0.0)x0.0
+..\kern -72.26999
+..\vbox(0.0+0.0)x0.0, glue set 72.26999fil
+...\kern -72.26999
+...\hbox(0.0+0.0)x0.0
+....\hbox(0.0+0.0)x0.0, glue set 72.26999fil, shifted 72.26999
+.....\kern -72.26999
+.....\special{pdf:obj @pgfcolorspaces <<>>}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfshade1 width 100.375pt height 100.375pt}
+.....\special{pdf:put @resources << /Shading << /Sh << /ShadingType 2 /ColorSpace /DeviceRGB /Domain [0.0 100.00128] /Coords [0.0 0 100.00128 0] /Function << /FunctionType 3 /Domain [0.0 100.00128] /Functions [ << /FunctionType 2 /Domain [0.0 100.00128] /C0 [1 1 1] /C1 [1 1 1] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [1 1 1] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  ] /Bounds [ 25.00032 75.00096] /Encode [0 1  0 1 0 1] >> /Extend [false false] >> >> >>}
+.....\special{pdf:code /Sh sh}
+.....\special{pdf:exobj}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfshade2 width 100.375pt height 100.375pt}
+.....\special{pdf:put @resources << /Shading << /Sh << /ShadingType 2 /ColorSpace /DeviceRGB /Domain [0.0 100.00128] /Coords [0.0 0 100.00128 0] /Function << /FunctionType 3 /Domain [0.0 100.00128] /Functions [ << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0 0 0] /C1 [1 1 1] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [1 1 1] /C1 [1 1 1] /N 1 >>  ] /Bounds [ 25.00032 75.00096] /Encode [0 1  0 1 0 1] >> /Extend [false false] >> >> >>}
+.....\special{pdf:code /Sh sh}
+.....\special{pdf:exobj}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfshade3 width 100.375pt height 100.375pt}
+.....\special{pdf:put @resources << /Shading << /Sh << /ShadingType 2 /ColorSpace /DeviceRGB /Domain [0.0 100.00128] /Coords [0 0.0 0 100.00128] /Function << /FunctionType 3 /Domain [0.0 100.00128] /Functions [ << /FunctionType 2 /Domain [0.0 100.00128] /C0 [1 1 1] /C1 [1 1 1] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [1 1 1] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  ] /Bounds [ 25.00032 75.00096] /Encode [0 1  0 1 0 1] >> /Extend [false false] >> >> >>}
+.....\special{pdf:code /Sh sh}
+.....\special{pdf:exobj}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfshade4 width 100.375pt height 100.375pt}
+.....\special{pdf:put @resources << /Shading << /Sh << /ShadingType 2 /ColorSpace /DeviceRGB /Domain [0.0 100.00128] /Coords [0 0.0 0 100.00128] /Function << /FunctionType 3 /Domain [0.0 100.00128] /Functions [ << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0 0 0] /C1 [1 1 1] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [1 1 1] /C1 [1 1 1] /N 1 >>  ] /Bounds [ 25.00032 75.00096] /Encode [0 1  0 1 0 1] >> /Extend [false false] >> >> >>}
+.....\special{pdf:code /Sh sh}
+.....\special{pdf:exobj}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfsmask5 width 100.375pt height 100.375pt depth 0.0pt}
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{color push gray 1}
+......\hbox(100.375+0.0)x100.375, glue set 100.375fil
+.......\vbox(100.375+0.0)x0.0, glue set 100.375fil
+........\glue 0.0 plus 1.0fil
+........\special{pdf:uxobj @pgfshade1}
+.......\glue 0.0 plus 1.0fil
+......\special{pdf:code Q }
+......\special{color pop}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:exobj <</Group <</S/Transparency /CS/DeviceGray>> >>}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfsmask6 width 100.375pt height 100.375pt depth 0.0pt}
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{color push gray 1}
+......\hbox(100.375+0.0)x100.375, glue set 100.375fil
+.......\vbox(100.375+0.0)x0.0, glue set 100.375fil
+........\glue 0.0 plus 1.0fil
+........\special{pdf:uxobj @pgfshade2}
+.......\glue 0.0 plus 1.0fil
+......\special{pdf:code Q }
+......\special{color pop}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:exobj <</Group <</S/Transparency /CS/DeviceGray>> >>}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfsmask7 width 100.375pt height 100.375pt depth 0.0pt}
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{color push gray 1}
+......\hbox(100.375+0.0)x100.375, glue set 100.375fil
+.......\vbox(100.375+0.0)x0.0, glue set 100.375fil
+........\glue 0.0 plus 1.0fil
+........\special{pdf:uxobj @pgfshade3}
+.......\glue 0.0 plus 1.0fil
+......\special{pdf:code Q }
+......\special{color pop}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:exobj <</Group <</S/Transparency /CS/DeviceGray>> >>}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfsmask8 width 100.375pt height 100.375pt depth 0.0pt}
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{color push gray 1}
+......\hbox(100.375+0.0)x100.375, glue set 100.375fil
+.......\vbox(100.375+0.0)x0.0, glue set 100.375fil
+........\glue 0.0 plus 1.0fil
+........\special{pdf:uxobj @pgfshade4}
+.......\glue 0.0 plus 1.0fil
+......\special{pdf:code Q }
+......\special{color pop}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:exobj <</Group <</S/Transparency /CS/DeviceGray>> >>}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfshade9 width 100.375pt height 100.375pt}
+.....\special{pdf:put @resources << /Shading << /Sh << /ShadingType 3 /ColorSpace /DeviceRGB /Domain [0.0 50.00064] /Coords [50.00064 50.00064 0.0 50.00064 50.00064 50.00064] /Function << /FunctionType 3 /Domain [0.0 50.00064] /Functions [ << /FunctionType 2 /Domain [0.0 50.00064] /C0 [1 1 1] /C1 [1 1 1] /N 1 >>  << /FunctionType 2 /Domain [0.0 50.00064] /C0 [1 1 1] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 50.00064] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  ] /Bounds [ 22.50027 25.00032] /Encode [0 1  0 1 0 1] >> /Extend [true false] >> >> >>}
+.....\special{pdf:code /Sh sh}
+.....\special{pdf:exobj}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfsmask10 width 100.375pt height 100.375pt depth 0.0pt}
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{color push gray 1}
+......\hbox(100.375+0.0)x100.375, glue set 100.375fil
+.......\vbox(100.375+0.0)x0.0, glue set 100.375fil
+........\glue 0.0 plus 1.0fil
+........\special{pdf:uxobj @pgfshade9}
+.......\glue 0.0 plus 1.0fil
+......\special{pdf:code Q }
+......\special{color pop}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:exobj <</Group <</S/Transparency /CS/DeviceGray>> >>}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfshade11 width 100.375pt height 100.375pt}
+.....\special{pdf:put @resources << /Shading << /Sh << /ShadingType 3 /ColorSpace /DeviceRGB /Domain [0.0 50.00064] /Coords [50.00064 50.00064 0.0 50.00064 50.00064 50.00064] /Function << /FunctionType 3 /Domain [0.0 50.00064] /Functions [ << /FunctionType 2 /Domain [0.0 50.00064] /C0 [1 1 1] /C1 [1 1 1] /N 1 >>  << /FunctionType 2 /Domain [0.0 50.00064] /C0 [1 1 1] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 50.00064] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  ] /Bounds [ 21.25026 25.00032] /Encode [0 1  0 1 0 1] >> /Extend [true false] >> >> >>}
+.....\special{pdf:code /Sh sh}
+.....\special{pdf:exobj}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfsmask12 width 100.375pt height 100.375pt depth 0.0pt}
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{color push gray 1}
+......\hbox(100.375+0.0)x100.375, glue set 100.375fil
+.......\vbox(100.375+0.0)x0.0, glue set 100.375fil
+........\glue 0.0 plus 1.0fil
+........\special{pdf:uxobj @pgfshade11}
+.......\glue 0.0 plus 1.0fil
+......\special{pdf:code Q }
+......\special{color pop}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:exobj <</Group <</S/Transparency /CS/DeviceGray>> >>}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfshade13 width 100.375pt height 100.375pt}
+.....\special{pdf:put @resources << /Shading << /Sh << /ShadingType 3 /ColorSpace /DeviceRGB /Domain [0.0 50.00064] /Coords [50.00064 50.00064 0.0 50.00064 50.00064 50.00064] /Function << /FunctionType 3 /Domain [0.0 50.00064] /Functions [ << /FunctionType 2 /Domain [0.0 50.00064] /C0 [1 1 1] /C1 [1 1 1] /N 1 >>  << /FunctionType 2 /Domain [0.0 50.00064] /C0 [1 1 1] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 50.00064] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  ] /Bounds [ 20.00024 25.00032] /Encode [0 1  0 1 0 1] >> /Extend [true false] >> >> >>}
+.....\special{pdf:code /Sh sh}
+.....\special{pdf:exobj}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfsmask14 width 100.375pt height 100.375pt depth 0.0pt}
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{color push gray 1}
+......\hbox(100.375+0.0)x100.375, glue set 100.375fil
+.......\vbox(100.375+0.0)x0.0, glue set 100.375fil
+........\glue 0.0 plus 1.0fil
+........\special{pdf:uxobj @pgfshade13}
+.......\glue 0.0 plus 1.0fil
+......\special{pdf:code Q }
+......\special{color pop}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:exobj <</Group <</S/Transparency /CS/DeviceGray>> >>}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfshade15 width 100.375pt height 100.375pt}
+.....\special{pdf:put @resources << /Shading << /Sh << /ShadingType 3 /ColorSpace /DeviceRGB /Domain [0.0 50.00064] /Coords [50.00064 50.00064 0.0 50.00064 50.00064 50.00064] /Function << /FunctionType 3 /Domain [0.0 50.00064] /Functions [ << /FunctionType 2 /Domain [0.0 50.00064] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 50.00064] /C0 [0 0 0] /C1 [1 1 1] /N 1 >>  << /FunctionType 2 /Domain [0.0 50.00064] /C0 [1 1 1] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 50.00064] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  ] /Bounds [ 21.25026 23.12529 25.00032] /Encode [0 1  0 1 0 1 0 1] >> /Extend [true false] >> >> >>}
+.....\special{pdf:code /Sh sh}
+.....\special{pdf:exobj}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfsmask16 width 100.375pt height 100.375pt depth 0.0pt}
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{color push gray 1}
+......\hbox(100.375+0.0)x100.375, glue set 100.375fil
+.......\vbox(100.375+0.0)x0.0, glue set 100.375fil
+........\glue 0.0 plus 1.0fil
+........\special{pdf:uxobj @pgfshade15}
+.......\glue 0.0 plus 1.0fil
+......\special{pdf:code Q }
+......\special{color pop}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:exobj <</Group <</S/Transparency /CS/DeviceGray>> >>}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfshade17 width 100.375pt height 100.375pt}
+.....\special{pdf:put @resources << /Shading << /Sh << /ShadingType 2 /ColorSpace /DeviceRGB /Domain [0.0 100.00128] /Coords [0.0 0 100.00128 0] /Function << /FunctionType 3 /Domain [0.0 100.00128] /Functions [ << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0.5 0.5 0.5] /C1 [0.5 0.5 0.5] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0.5 0.5 0.5] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  ] /Bounds [ 25.00032 75.00096] /Encode [0 1  0 1 0 1] >> /Extend [false false] >> >> >>}
+.....\special{pdf:code /Sh sh}
+.....\special{pdf:exobj}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfshade18 width 100.375pt height 100.375pt}
+.....\special{pdf:put @resources << /Shading << /Sh << /ShadingType 2 /ColorSpace /DeviceRGB /Domain [0.0 100.00128] /Coords [0.0 0 100.00128 0] /Function << /FunctionType 3 /Domain [0.0 100.00128] /Functions [ << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0 0 0] /C1 [0.5 0.5 0.5] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0.5 0.5 0.5] /C1 [0.5 0.5 0.5] /N 1 >>  ] /Bounds [ 25.00032 75.00096] /Encode [0 1  0 1 0 1] >> /Extend [false false] >> >> >>}
+.....\special{pdf:code /Sh sh}
+.....\special{pdf:exobj}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfshade19 width 100.375pt height 100.375pt}
+.....\special{pdf:put @resources << /Shading << /Sh << /ShadingType 2 /ColorSpace /DeviceRGB /Domain [0.0 100.00128] /Coords [0 0.0 0 100.00128] /Function << /FunctionType 3 /Domain [0.0 100.00128] /Functions [ << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0.5 0.5 0.5] /C1 [0.5 0.5 0.5] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0.5 0.5 0.5] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  ] /Bounds [ 25.00032 75.00096] /Encode [0 1  0 1 0 1] >> /Extend [false false] >> >> >>}
+.....\special{pdf:code /Sh sh}
+.....\special{pdf:exobj}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfshade20 width 100.375pt height 100.375pt}
+.....\special{pdf:put @resources << /Shading << /Sh << /ShadingType 2 /ColorSpace /DeviceRGB /Domain [0.0 100.00128] /Coords [0 0.0 0 100.00128] /Function << /FunctionType 3 /Domain [0.0 100.00128] /Functions [ << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0 0 0] /C1 [0 0 0] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0 0 0] /C1 [0.5 0.5 0.5] /N 1 >>  << /FunctionType 2 /Domain [0.0 100.00128] /C0 [0.5 0.5 0.5] /C1 [0.5 0.5 0.5] /N 1 >>  ] /Bounds [ 25.00032 75.00096] /Encode [0 1  0 1 0 1] >> /Extend [false false] >> >> >>}
+.....\special{pdf:code /Sh sh}
+.....\special{pdf:exobj}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfsmask21 width 100.375pt height 100.375pt depth 0.0pt}
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{color push gray 1}
+......\hbox(100.375+0.0)x100.375, glue set 100.375fil
+.......\vbox(100.375+0.0)x0.0, glue set 100.375fil
+........\glue 0.0 plus 1.0fil
+........\special{pdf:uxobj @pgfshade17}
+.......\glue 0.0 plus 1.0fil
+......\special{pdf:code Q }
+......\special{color pop}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:exobj <</Group <</S/Transparency /CS/DeviceGray>> >>}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfsmask22 width 100.375pt height 100.375pt depth 0.0pt}
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{color push gray 1}
+......\hbox(100.375+0.0)x100.375, glue set 100.375fil
+.......\vbox(100.375+0.0)x0.0, glue set 100.375fil
+........\glue 0.0 plus 1.0fil
+........\special{pdf:uxobj @pgfshade18}
+.......\glue 0.0 plus 1.0fil
+......\special{pdf:code Q }
+......\special{color pop}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:exobj <</Group <</S/Transparency /CS/DeviceGray>> >>}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfsmask23 width 100.375pt height 100.375pt depth 0.0pt}
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{color push gray 1}
+......\hbox(100.375+0.0)x100.375, glue set 100.375fil
+.......\vbox(100.375+0.0)x0.0, glue set 100.375fil
+........\glue 0.0 plus 1.0fil
+........\special{pdf:uxobj @pgfshade19}
+.......\glue 0.0 plus 1.0fil
+......\special{pdf:code Q }
+......\special{color pop}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:exobj <</Group <</S/Transparency /CS/DeviceGray>> >>}
+.....\glue -144.54
+.....\glue 144.54
+.....\special{pdf:bxobj @pgfsmask24 width 100.375pt height 100.375pt depth 0.0pt}
+.....\hbox(0.0+0.0)x0.0
+......\special{pdf:code q }
+......\special{color push gray 1}
+......\hbox(100.375+0.0)x100.375, glue set 100.375fil
+.......\vbox(100.375+0.0)x0.0, glue set 100.375fil
+........\glue 0.0 plus 1.0fil
+........\special{pdf:uxobj @pgfshade20}
+.......\glue 0.0 plus 1.0fil
+......\special{pdf:code Q }
+......\special{color pop}
+.....\special{pdf:put @resources << /ColorSpace @pgfcolorspaces >>}
+.....\special{pdf:exobj <</Group <</S/Transparency /CS/DeviceGray>> >>}
+.....\glue -144.54
+.....\special{pdf:put @pgfcolorspaces <<  /pgfprgb [/Pattern /DeviceRGB]  >>}
+.....\glue 0.0 plus 1.0fil minus 1.0fil
+....\glue 0.0 plus 1.0fil minus 1.0fil
+...\glue 0.0 plus 1.0fil minus 1.0fil
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0
+....\special{color push gray 0}
+....\hbox(0.0+0.0)x345.0
+....\special{color pop}
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 255.50711fil
+...\write-{}
+...\special{color push gray 0}
+...\glue(\topskip) 10.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 0.0
+...\glue 0.0
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\baselineskip) 5.06
+...\hbox(6.94+68.84549)x345.0, glue set 5.69995fil
+....\kern -20.0
+....\hbox(6.66+0.0)x20.0
+.....\glue 20.0
+.....\glue -13.00003
+.....\glue -6.99997
+.....\hbox(6.66+0.0)x13.00003, glue set 6.50002fil
+......\special{color push gray 0}
+......\glue 0.0 plus 1.0fil
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(6.66+0.0)x0.0, glue set - 7.78fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/lmr/m/n/10 1.
+.......\kern -0.0002
+.......\kern 0.0002
+......\special{color pop}
+.....\glue 6.99997
+....\penalty 0
+....\hbox(6.94+68.84549)x339.30005
+.....\hbox(0.0+0.0)x0.0
+.....\kern 0.0
+.....\kern 0.0
+.....\hbox(6.94+68.84549)x339.30005
+......\hbox(6.94+1.93999)x339.30005
+.......\special{pdf:bc [0]}
+.......\vbox(6.94+1.93999)x339.30005
+........\hbox(6.94+1.93999)x339.30005
+.........\kern 0.0
+.........\hbox(0.0+0.0)x0.0
+.........\TU/lmr/m/n/10 Plain
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 text
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 repeated
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 to
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 make
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 two
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 lines.
+.........\glue 4.44 plus 4.99498 minus 0.37
+.........\TU/lmr/m/n/10 Plain
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 text
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 repeated
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 to
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 make
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 two
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 lines.
+.........\kern -0.0002
+.........\kern 0.0002
+.........\penalty 10000
+.........\glue(\parfillskip) 0.0 plus 1.0fil
+.........\glue(\rightskip) 0.0
+.........\kern 0.0
+.......\special{pdf:ec}
+......\kern -339.30005
+......\kern 253.94179
+......\hbox(30.95276+25.95274)x85.35826, shifted 42.89275
+.......\special{pdf:bc [0]}
+.......\mathon
+.......\vbox(30.95276+25.95274)x85.35826
+........\hbox(56.9055+0.0)x85.35826
+.........\kern 0.0
+.........\glue(\leftskip) 0.0 plus 1.0fil
+.........\hbox(0.0+0.0)x0.0
+.........\hbox(56.9055+0.0)x85.35826
+..........\rule(56.9055+0.0)x85.35826
+.........\penalty 10000
+.........\glue(\parfillskip) 0.0
+.........\glue(\rightskip) 0.0 plus 1.0fil
+.........\kern 0.0
+.......\mathoff
+.......\special{pdf:ec}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 6.465 plus 2.155 minus 2.155
+...\glue 0.0
+...\penalty -51
+...\glue 0.0
+...\glue 2.5 plus 2.5 minus 1.00006
+...\glue 0.0
+...\glue 2.5 plus 2.5 minus 1.00006
+...\glue 0.0
+...\penalty -51
+...\glue 0.0 plus 1.0
+...\glue 0.0
+...\penalty 10000
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 0.0
+...\glue 0.0
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\lineskip) 1.0
+...\hbox(10.70108+70.35391)x345.0, glue set 121.41597fil
+....\kern -20.0
+....\hbox(6.66+0.0)x20.0
+.....\glue 20.0
+.....\glue -13.00003
+.....\glue -6.99997
+.....\hbox(6.66+0.0)x13.00003, glue set 6.50002fil
+......\special{color push gray 0}
+......\glue 0.0 plus 1.0fil
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(6.66+0.0)x0.0, glue set - 7.78fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/lmr/m/n/10 2.
+.......\kern -0.0002
+.......\kern 0.0002
+......\special{color pop}
+.....\glue 6.99997
+....\penalty 0
+....\hbox(10.70108+70.35391)x223.58403
+.....\hbox(0.0+0.0)x0.0
+.....\kern 0.0
+.....\kern 0.0
+.....\hbox(10.70108+70.35391)x223.58403
+......\hbox(10.70108+3.44841)x223.58403
+.......\special{pdf:bc [0]}
+.......\vbox(10.70108+3.44841)x223.58403
+........\hbox(10.70108+3.44841)x223.58403
+.........\kern 0.0
+.........\hbox(0.0+0.0)x0.0
+.........\TU/lmr/m/n/10 Inline
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 math
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\mathon
+.........\OML/cmm/m/it/10 E
+.........\kern0.57637
+.........\glue(\thickmuskip) 2.77771 plus 2.77771
+.........\OT1/cmr/m/n/10 :
+.........\penalty 500
+.........\glue(\thickmuskip) 2.77771 plus 2.77771
+.........\hbox(10.17732+3.44841)x10.83755
+..........\hbox(10.17732+3.44841)x10.83755
+...........\hbox(0.0+0.0)x1.2, shifted -2.5
+...........\vbox(10.17732+3.44841)x8.43756
+............\hbox(6.24+0.0)x8.43756
+.............\OML/cmm/m/it/7 x
+.............\hbox(3.22221+0.0)x3.90283, shifted -3.01779
+..............\OT1/cmr/m/n/5 2
+............\kern1.23732
+............\rule(0.39998+0.0)x*
+............\kern0.52621
+............\hbox(5.2222+0.0)x8.43756, glue set 0.09854fil
+.............\glue 0.0 plus 1.0fil minus 1.0fil
+.............\OML/cmm/m/it/7 a
+.............\hbox(3.22221+0.0)x3.90283, shifted -1.99998
+..............\OT1/cmr/m/n/5 2
+.............\glue 0.0 plus 1.0fil minus 1.0fil
+...........\hbox(0.0+0.0)x1.2, shifted -2.5
+.........\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.........\OT1/cmr/m/n/10 +
+.........\penalty 700
+.........\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.........\hbox(10.70108+3.44841)x10.60957
+..........\hbox(10.70108+3.44841)x10.60957
+...........\hbox(0.0+0.0)x1.2, shifted -2.5
+...........\vbox(10.70108+3.44841)x8.20958
+............\hbox(6.24+1.3611)x8.20958
+.............\OML/cmm/m/it/7 y
+.............\kern0.25116
+.............\hbox(3.22221+0.0)x3.90283, shifted -3.01779
+..............\OT1/cmr/m/n/5 2
+............\kern0.39998
+............\rule(0.39998+0.0)x*
+............\kern0.52621
+............\hbox(5.2222+0.0)x8.20958, glue set 0.39505fil
+.............\glue 0.0 plus 1.0fil minus 1.0fil
+.............\OML/cmm/m/it/7 b
+.............\hbox(3.22221+0.0)x3.90283, shifted -1.99998
+..............\OT1/cmr/m/n/5 2
+.............\glue 0.0 plus 1.0fil minus 1.0fil
+...........\hbox(0.0+0.0)x1.2, shifted -2.5
+.........\glue(\thickmuskip) 2.77771 plus 2.77771
+.........\OT1/cmr/m/n/10 =
+.........\penalty 500
+.........\glue(\thickmuskip) 2.77771 plus 2.77771
+.........\OT1/cmr/m/n/10 1
+.........\mathoff
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 followed
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 by
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 plain
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 text.
+.........\kern -0.0002
+.........\kern 0.0002
+.........\penalty 10000
+.........\glue(\parfillskip) 0.0 plus 1.0fil
+.........\glue(\rightskip) 0.0
+.........\kern 0.0
+.......\special{pdf:ec}
+......\kern -223.58403
+......\kern 138.22577
+......\hbox(30.95276+25.95274)x85.35826, shifted 44.40117
+.......\special{pdf:bc [0]}
+.......\mathon
+.......\vbox(30.95276+25.95274)x85.35826
+........\hbox(56.9055+0.0)x85.35826
+.........\kern 0.0
+.........\glue(\leftskip) 0.0 plus 1.0fil
+.........\hbox(0.0+0.0)x0.0
+.........\hbox(56.9055+0.0)x85.35826
+..........\rule(56.9055+0.0)x85.35826
+.........\penalty 10000
+.........\glue(\parfillskip) 0.0
+.........\glue(\rightskip) 0.0 plus 1.0fil
+.........\kern 0.0
+.......\mathoff
+.......\special{pdf:ec}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 6.465 plus 2.155 minus 2.155
+...\glue 0.0
+...\penalty -51
+...\glue 0.0
+...\glue 2.5 plus 2.5 minus 1.00006
+...\glue 0.0
+...\glue 2.5 plus 2.5 minus 1.00006
+...\glue 0.0
+...\penalty -51
+...\glue 0.0 plus 1.0
+...\glue 0.0
+...\penalty 10000
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 0.0
+...\glue 0.0
+...\glue(\parskip) 0.0
+...\glue(\parskip) 0.0
+...\glue(\lineskip) 1.0
+...\hbox(14.9051+73.76501)x345.0, glue set 114.9555fil
+....\kern -20.0
+....\hbox(6.66+0.21999)x20.0
+.....\glue 20.0
+.....\glue -13.00003
+.....\glue -6.99997
+.....\hbox(6.66+0.21999)x13.00003, glue set 6.50002fil
+......\special{color push gray 0}
+......\glue 0.0 plus 1.0fil
+......\glue 0.0 plus 1.0fil minus 1.0fil
+......\hbox(6.66+0.21999)x0.0, glue set - 7.78fil
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+.......\TU/lmr/m/n/10 3.
+.......\kern -0.0002
+.......\kern 0.0002
+......\special{color pop}
+.....\glue 6.99997
+....\penalty 0
+....\hbox(14.9051+73.76501)x230.0445
+.....\hbox(0.0+0.0)x0.0
+.....\kern 0.0
+.....\kern 0.0
+.....\hbox(14.9051+73.76501)x230.0445
+......\hbox(14.9051+6.85951)x230.0445
+.......\special{pdf:bc [0]}
+.......\vbox(14.9051+6.85951)x230.0445
+........\hbox(14.9051+6.85951)x230.0445
+.........\kern 0.0
+.........\hbox(0.0+0.0)x0.0
+.........\TU/lmr/m/n/10 Tall
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 inline
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 math
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\mathon
+.........\hbox(14.9051+6.85951)x12.6014
+..........\hbox(14.9051+6.85951)x12.6014
+...........\hbox(14.9051+6.85951)x12.6014
+............\hbox(0.0+0.0)x1.2, shifted -2.5
+............\vbox(14.9051+6.85951)x10.2014
+.............\hbox(8.14003+0.0)x10.2014
+..............\OML/cmm/m/it/10 x
+..............\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...............\OT1/cmr/m/n/7 2
+.............\kern4.06508
+.............\rule(0.39998+0.0)x*
+.............\kern1.75952
+.............\hbox(7.4+0.0)x10.2014, glue set 0.21469fil
+..............\glue 0.0 plus 1.0fil minus 1.0fil
+..............\OML/cmm/m/it/10 a
+..............\hbox(4.51111+0.0)x4.48613, shifted -2.88889
+...............\OT1/cmr/m/n/7 2
+..............\glue 0.0 plus 1.0fil minus 1.0fil
+............\hbox(0.0+0.0)x1.2, shifted -2.5
+.........\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.........\OT1/cmr/m/n/10 +
+.........\penalty 700
+.........\glue(\medmuskip) 2.22217 plus 1.11108 minus 2.22217
+.........\hbox(14.9051+6.85951)x12.14772
+..........\hbox(14.9051+6.85951)x12.14772
+...........\hbox(14.9051+6.85951)x12.14772
+............\hbox(0.0+0.0)x1.2, shifted -2.5
+............\vbox(14.9051+6.85951)x9.74773
+.............\hbox(8.14003+1.94444)x9.74773
+..............\OML/cmm/m/it/10 y
+..............\kern0.35878
+..............\hbox(4.51111+0.0)x4.48613, shifted -3.62892
+...............\OT1/cmr/m/n/7 2
+.............\kern2.12064
+.............\rule(0.39998+0.0)x*
+.............\kern1.75952
+.............\hbox(7.4+0.0)x9.74773, glue set 0.48497fil
+..............\glue 0.0 plus 1.0fil minus 1.0fil
+..............\OML/cmm/m/it/10 b
+..............\hbox(4.51111+0.0)x4.48613, shifted -2.88889
+...............\OT1/cmr/m/n/7 2
+..............\glue 0.0 plus 1.0fil minus 1.0fil
+............\hbox(0.0+0.0)x1.2, shifted -2.5
+.........\glue(\thickmuskip) 2.77771 plus 2.77771
+.........\OT1/cmr/m/n/10 =
+.........\penalty 500
+.........\glue(\thickmuskip) 2.77771 plus 2.77771
+.........\OT1/cmr/m/n/10 1
+.........\mathoff
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 followed
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 by
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 plain
+.........\glue 3.33 plus 1.665 minus 1.11
+.........\TU/lmr/m/n/10 text.
+.........\kern -0.0002
+.........\kern 0.0002
+.........\penalty 10000
+.........\glue(\parfillskip) 0.0 plus 1.0fil
+.........\glue(\rightskip) 0.0
+.........\kern 0.0
+.......\special{pdf:ec}
+......\kern -230.0445
+......\kern 144.68623
+......\hbox(30.95276+25.95274)x85.35826, shifted 47.81227
+.......\special{pdf:bc [0]}
+.......\mathon
+.......\vbox(30.95276+25.95274)x85.35826
+........\hbox(56.9055+0.0)x85.35826
+.........\kern 0.0
+.........\glue(\leftskip) 0.0 plus 1.0fil
+.........\hbox(0.0+0.0)x0.0
+.........\hbox(56.9055+0.0)x85.35826
+..........\rule(56.9055+0.0)x85.35826
+.........\penalty 10000
+.........\glue(\parfillskip) 0.0
+.........\glue(\rightskip) 0.0 plus 1.0fil
+.........\kern 0.0
+.......\mathoff
+.......\special{pdf:ec}
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\rule(0.0+0.0)x*
+...\penalty 10000
+...\glue 6.465 plus 2.155 minus 2.155
+...\glue 0.0
+...\penalty -51
+...\glue 0.0
+...\glue 2.5 plus 2.5 minus 1.00006
+...\glue 0.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 23.34
+..\hbox(6.66+0.0)x345.0
+...\special{color push gray 0}
+...\hbox(6.66+0.0)x345.0, glue set 170.0fil
+....\glue 0.0 plus 1.0fil
+....\TU/lmr/m/n/10 1
+....\kern -0.0002
+....\kern 0.0002
+....\glue 0.0 plus 1.0fil
+...\special{color pop}
+.\kern 0.0
