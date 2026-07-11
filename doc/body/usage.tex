@@ -90,6 +90,14 @@
 
 中国的初高中教材中一些数学符号和 \LaTeX{} 默认的或者是 \pkg{amsmath} 等宏包提供的符号有差异，于是 \cls{exam-zh} 用 \TikZ 重新绘制了部分符号。
 
+\begin{function}{\varnothing}
+  空集符号。为使不同数学字体下的字形保持一致，\cls{exam-zh} 会在文档开始时
+  单独使用 Asana Math 的字形覆盖 |\varnothing|；该处理不改变其余数学符号，
+  也不表示模板加载或完整支持商业宏包 \pkg{mtpro2}。如需完全沿用所选数学字体，
+  可在 |\begin{document}| 之后再次用 \pkg{unicode-math} 的 |\setmathfont|
+  按范围覆盖该符号。
+\end{function}
+
 \begin{function}{\parallelogram}
   平行四边形。$\parallelogram$
 \end{function}

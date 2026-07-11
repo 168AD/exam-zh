@@ -516,6 +516,10 @@
 
 \textbf{原因：}数学字体配置问题。
 
+\textbf{补充：}\cls{exam-zh} 默认从 Asana Math 单独取用 |\varnothing| 的字形，
+以避免切换 |math-font| 时空集符号外观随之改变。这只是一项单符号覆盖，
+并不代表模板加载或完整支持 \pkg{mtpro2}。
+
 \textbf{解决方案：}
 
 \begin{enumerate}
@@ -530,7 +534,7 @@
 
   \item \textbf{使用替代符号}
     \begin{itemize}
-      \item |\varnothing| 显示异常时，使用 |\emptyset|
+      \item |\varnothing| 显示异常时，先确认 TeX 发行版包含 Asana Math；也可使用 |\emptyset|
       \item 先确认自己处在数学模式中，例如 |\$\\Omega\$|
     \end{itemize}
 \end{enumerate}

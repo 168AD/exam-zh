@@ -16,6 +16,7 @@
 
 - 解答题内第二层小题默认改用小写罗马数字编号，第三层改用小写字母编号，以匹配 2026 年高考试卷层级样式（Gitee #IK0BLV）
 - 抽取 question、fillin、choices 与 calculations 共用的计数器注册层；新增 `\tikzcirclednumber`，并弃用有歧义的直接调用 `\circlednumber*{...}`（Gitee #IDPOT4）
+- 文档明确 `\varnothing` 固定使用 Asana Math 字形的范围，并澄清该单符号覆盖不等同于完整支持 `mtpro2`（Gitee #ID83OW）
 
 ### Fixed
 
