@@ -474,6 +474,28 @@
   \item |solution| 环境包含解答过程（默认隐藏）
 \end{itemize}
 
+\textbf{推荐结构：}请把 |solution| 放在它所对应的 |problem| 或
+|question| 环境内部，并置于题干之后。这样题目与解答的对应关系最清楚，
+局部设置的作用域也与该题保持一致。下面是一个可直接编译的最小示例：
+
+\begin{latexcode}[deletetexcs={\documentclass},morekeywords={\documentclass}]
+  \documentclass{exam-zh}
+  \examsetup{solution/show-solution = show-stay}
+  \begin{document}
+    \begin{question}
+      $\uppi \approx$ \fillin[3.14]（保留两位小数）。
+      \begin{solution}
+        $\uppi \approx 3.14$。
+      \end{solution}
+    \end{question}
+  \end{document}
+\end{latexcode}
+
+为兼容旧文档，紧跟在题目环境之后的外置 |solution| 目前仍可用于
+|hide|、|show-stay| 和 |show-move|。但外置写法没有结构上的归属关系，
+若中间插入另一道题，移动到文末的解答题号也会关联到后一道题；因此不建议在
+新文档中使用。无论采用哪种写法，都应让 |solution| 紧邻其对应题目。
+
 \subsubsection{显示解答}
 
 控制解答的显示方式：
