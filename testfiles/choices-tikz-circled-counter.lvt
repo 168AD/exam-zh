@@ -1,0 +1,18 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{exam-zh-choices}
+
+\begin{document}
+\START
+
+\begin{choices}[label=\tikzcirclednumber*]
+  \item First choice.
+  \item Second choice.
+  \item Third choice.
+\end{choices}
+\TYPE{standalone-choices-tikz-counter=rendered}
+
+\END
+\end{document}

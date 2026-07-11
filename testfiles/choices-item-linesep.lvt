@@ -1,0 +1,29 @@
+\documentclass{article}
+
+\input{regression-test}
+\usepackage{exam-zh-choices}
+
+\begin{document}
+\START
+
+\ExplSyntaxOn
+\group_begin:
+  \skip_set:Nn \baselineskip { 12pt }
+  \skip_set:Nn \lineskip { 1pt }
+  \keys_set:nn { exam-zh / choices } { item-linesep = 3pt }
+  \__examzh_choices_set_item_line_spacing:
+  \TYPE{item-baselineskip=\the\baselineskip}
+  \TYPE{item-lineskip=\the\lineskip}
+\group_end:
+\ExplSyntaxOff
+
+\begin{choices}[columns=2,item-linesep=3pt]
+  \item A long text choice that wraps onto a second line inside its coffin.
+  \item A formula choice $\displaystyle\frac{a}{b}$ with text that wraps.
+  \item A single-line choice.
+  \item \rule{2em}{3\baselineskip}
+\end{choices}
+\TYPE{item-linesep-layout=rendered}
+
+\END
+\end{document}

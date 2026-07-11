@@ -13,6 +13,8 @@
 \ProvidesExplPackage {exam-zh-choices} {2026-06-13} {v0.2.7}
   {exam-zh choices module}
 
+\RequirePackage { exam-zh-counter }
+
 \dim_new:N \l__examzh_choices_column_sep_dim
 \int_new:N \l__examzh_choices_columns_int
 \tl_new:N \l__examzh_choices_label_tl
@@ -21,6 +23,9 @@
 \dim_new:N \l__examzh_choices_label_sep_dim
 \dim_new:N \l__examzh_choices_label_width_dim
 \int_new:N \l__examzh_choices_max_columns_int
+\skip_new:N \l__examzh_choices_item_line_sep_skip
+\dim_new:N \l__examzh_choices_left_indent_dim
+\dim_new:N \l__examzh_choices_right_indent_dim
 
 \keys_define:nn { exam-zh }
   { choices .meta:nn = { exam-zh / choices } {#1} }
@@ -43,7 +48,12 @@
     % 环境下方的额外距离
     bottom-sep .skip_set:N = \l__examzh_choices_bottom_sep_skip,
     % 若不是单行排版，则可以控制行之间的额外间距
-    linesep .skip_set:N = \l__examzh_choices_line_sep_skip
+    linesep .skip_set:N = \l__examzh_choices_line_sep_skip,
+    % 多行选项内部相邻文本行的额外间距
+    item-linesep .skip_set:N = \l__examzh_choices_item_line_sep_skip,
+    left-indent .dim_set:N = \l__examzh_choices_left_indent_dim,
+    right-indent .dim_set:N = \l__examzh_choices_right_indent_dim,
+    margin .meta:n = { left-indent = #1, right-indent = #1 }
   }
 
 \keys_set:nn { exam-zh / choices }
@@ -59,7 +69,10 @@
     index       = 1,
     top-sep     = 0pt,
     bottom-sep  = 0pt,
-    linesep     = 0pt plus .5ex
+    linesep     = 0pt plus .5ex,
+    item-linesep = 0pt,
+    left-indent  = 0pt,
+    right-indent = 0pt
   }
 
 \NewDocumentCommand \setchoices { m }
@@ -72,13 +85,9 @@
   % #1: \Alph（用户接口）
   % #2: \@Alph（具体实现的命令或函数（开发层））
   {
-    % TODO 这一步的作用是什么，为什么要把函数放在 tl 变量里而不是直接在某处使用？
-    % 猜测：put_right 而不是 set，是为了保证操作 label 的输入值前
-    %      几个函数都被 set
-    \tl_put_right:Nn \l__examzh_choices_counters_tl
-      { \__examzh_choices_process_counter:NN #1 #2 }
-    \cs_set_eq:cN { __examzh_choices_save_ \cs_to_str:N #1 : } #2
-    \cs_set_eq:cN { __examzh_choices_save_ \cs_to_str:N #2 : } #2
+    \__examzh_counter_register:NNNnn
+      \l__examzh_choices_counters_tl #1 #2 { choices }
+      { \l__examzh_choices_index_int }
   }
 
 \AddChoicesCounter \arabic \@arabic
@@ -91,6 +100,16 @@
 \dim_new:N \l__examzh_choices_total_width_dim
 \seq_new:N \l__examzh_choices_seq
 
+\cs_new_protected:Npn \__examzh_choices_set_total_width:
+  {
+    \dim_set:Nn \l__examzh_choices_total_width_dim
+      {
+        \linewidth - \leftskip - \rightskip
+        - \l__examzh_choices_left_indent_dim
+        - \l__examzh_choices_right_indent_dim
+      }
+  }
+
 \NewDocumentEnvironment { choices } { O { } +b }
   {
     \keys_set:nn { exam-zh / choices } {#1}
@@ -102,8 +121,9 @@
     \int_set:Nn \interlinepenalty { 301 }
     \vspace* { \l__examzh_choices_top_sep_skip }
     \noindent
-    % \dim_set_eq:NN \l__examzh_choices_total_width_dim \linewidth
-    \dim_set:Nn \l__examzh_choices_total_width_dim { \linewidth - \leftskip - \rightskip }
+    \dim_compare:nNnF { \l__examzh_choices_left_indent_dim } = { 0pt }
+      { \skip_horizontal:N \l__examzh_choices_left_indent_dim }
+    \__examzh_choices_set_total_width:
     \int_zero:N \l__examzh_choices_columns_int
     \dim_zero:N \l__examzh_choices_label_width_dim
   }
@@ -264,32 +284,6 @@
       \l__examzh_choices_label_tl
     \group_end:
   }
-
-\cs_new:Npn \__examzh_choices_process_counter:NN #1#2
-  % #1: \Alph
-  % #2: \@Alph
-  {
-    % 用户可以同时使用 #1 和 #2 两个函数（命令）作为 label 的操作函数
-    % #1 的内核原理函数是 #2
-    \cs_set:Npn #1 { \__examzh_choices_process_counter_aux:Nn #2 }
-    \cs_set:Npn #2 { \__examzh_choices_process_counter_aux:Nn #2 }
-  }
-
-\cs_new:Npn \__examzh_choices_process_counter_aux:Nn #1#2
-  % #1: \@Alph
-  {
-    \str_if_eq:nnTF {#2} { * }
-      {
-        % 如果是 \alph* 类型的，效果为 \alph{ \l__examzh_choices_index_int }
-        \use:c { __examzh_choices_save_ \cs_to_str:N #1 : }
-          { \l__examzh_choices_index_int }
-      }
-      {
-        % 否则就是 \alph{...} 效果
-        \use:c { __examzh_choices_save_ \cs_to_str:N #1 : } {#2}
-      }
-  }
-
 
 % 超过这一高度阈值的选项视为插图模式
 % 注意使用 tl
@@ -531,6 +525,12 @@
 
 \bool_new:N \l__examzh_choices_figure_mode_bool
 
+\cs_new_protected:Npn \__examzh_choices_set_item_line_spacing:
+  {
+    \skip_add:Nn \baselineskip { \l__examzh_choices_item_line_sep_skip }
+    \skip_add:Nn \lineskip { \l__examzh_choices_item_line_sep_skip }
+  }
+
 % 将选项内容存入 coffin
 \cs_new:Npn \__examzh_choices_make_item_coffin:n #1
 % 将选项内容存入 box
@@ -554,6 +554,7 @@
           { \l__examzh_choices_item_width_dim }
         % \vbox_set:Nn \l_tmpa_box
           {
+            \__examzh_choices_set_item_line_spacing:
             % \dim_set_eq:NN \parskip \c_zero_dim
             % \dim_set_eq:NN \parindent \listparindent
             \dim_set_eq:NN \hsize \l__examzh_choices_item_width_dim
@@ -593,49 +594,8 @@
   }
 
 
-% 使用中文字体直接输出 unicode 带圈数字
-% \circlednumber 的参数既可以接受 LaTeX2e 的 <counter>，也可以直接接受 <intexpr>。
-% \NewDocumentCommand \circlednumber { m }
-%   {
-%     \int_if_exist:cTF { c@ #1 }
-%       { \int_set_eq:Nc \l_tmpa_int { c@#1 } }
-%       { \int_set:Nn \l_tmpa_int { #1 } }
-%     \exp_args:Nx \__examzh_choices_circled_number:n { \int_use:N \l_tmpa_int }
-%   }
-
-\cs_new:Npn \__examzh_choices_circled_number:n #1
-  {
-    \int_set:Nn \l_tmpa_int {#1}
-    \int_compare:nNnTF { \l_tmpa_int } = { 0 }
-      { \int_set:Nn \l_tmpa_int { "24EA } }
-      {
-        \int_compare:nNnTF { \l_tmpa_int } < { 21 }
-          { \int_add:Nn \l_tmpa_int { "245F } }
-          {
-            \int_compare:nNnTF { \l_tmpa_int } < { 36 }
-              { \int_add:Nn \l_tmpa_int { "3250 } }
-              {
-                \int_compare:nNnTF { \l_tmpa_int } < { 51 }
-                  { \int_add:Nn \l_tmpa_int { "32B0 } }
-                  {
-                    \msg_error:nnn { exam-zh / choices }
-                      { invalid-circled-number } { \int_use:N \l_tmpa_int }
-                  }
-              }
-          }
-      }
-    \group_begin:
-      % TODO 为何要用 \CJKfamily+ { }
-      % xeCJK 宏包文档：当 \CJKfamily+ 参数为空时，则使用当前的 CJK 字体族。
-      \CJKfamily+ { }
-      \symbol { \l_tmpa_int }
-    \group_end:
-  }
-
-\msg_new:nnn { exam-zh / choices } { invalid-circled-number }
-  { Invalid~ circled~ number~ #1. }
-
-\AddChoicesCounter \circlednumber \__examzh_choices_circled_number:n
+\AddChoicesCounter \circlednumber \__examzh_font_circled_number:n
+\AddChoicesCounter \tikzcirclednumber \__examzh_tikz_circled_number:n
 
 
 % TODO 答案控制

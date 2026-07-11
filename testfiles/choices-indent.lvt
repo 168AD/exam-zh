@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\input{regression-test}
+\usepackage{enumitem}
+\usepackage{exam-zh-choices}
+
+\begin{document}
+\START
+
+\ExplSyntaxOn
+\group_begin:
+  \dim_set:Nn \linewidth { 300pt }
+  \skip_set:Nn \leftskip { 10pt }
+  \skip_set:Nn \rightskip { 5pt }
+  \keys_set:nn { exam-zh / choices }
+    { left-indent = 20pt, right-indent = 15pt }
+  \__examzh_choices_set_total_width:
+  \TYPE{choices-indented-width=\dim_use:N\l__examzh_choices_total_width_dim}
+\group_end:
+
+\group_begin:
+  \keys_set:nn { exam-zh / choices } { margin = 12pt }
+  \TYPE{choices-margin-left=\dim_use:N\l__examzh_choices_left_indent_dim}
+  \TYPE{choices-margin-right=\dim_use:N\l__examzh_choices_right_indent_dim}
+\group_end:
+\ExplSyntaxOff
+
+\begin{enumerate}[leftmargin=4em]
+  \item Nested choices:
+    \begin{choices}[left-indent=2em,right-indent=1em]
+      \item Short.
+      \item A medium choice.
+      \item \rule{.3\linewidth}{3\baselineskip}
+      \item Last choice.
+    \end{choices}
+\end{enumerate}
+\TYPE{choices-nested-indent=rendered}
+
+\END
+\end{document}
