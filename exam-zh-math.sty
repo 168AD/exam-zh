@@ -38,6 +38,10 @@
 \str_new:N \l__examzh_calculations_figure_position_str
 % coffin type 的对齐方式
 \str_new:N \l__examzh_calculations_coffin_align_str
+% tblr 单元格按首行/中部/末行基线对齐
+\str_new:N \l__examzh_calculations_tblr_valign_str
+% calculations 是否直接作为 list item 的首个段落内容出现
+\bool_new:N \l__examzh_calculations_first_item_paragraph_bool
 
 
 \keys_define:nn { exam-zh / calculations }
@@ -109,6 +113,9 @@
       \seq_clear:N \l__examzh_calculations_store_seq
       \tl_clear:N \l__examzh_calculations_tblr_content_tl
       \keys_set:nn { exam-zh / calculations } {#1}
+      \legacy_if:nTF { @inlabel }
+        { \bool_set_true:N \l__examzh_calculations_first_item_paragraph_bool }
+        { \bool_set_false:N \l__examzh_calculations_first_item_paragraph_bool }
   }
   {
       % 结束收集
@@ -149,8 +156,8 @@
   {
     \coffin_typeset:cnnnn
       { l__examzh_calculations_figure_ \int_to_roman:n { #1 } _coffin }
-      { l } { t }  % align = t
-      { \l__examzh_calculations_xshift_dim } { \l__examzh_calculations_yshift_dim + 1em }
+      { l } { H }  % align = t：首行基线
+      { \l__examzh_calculations_xshift_dim } { \l__examzh_calculations_yshift_dim }
   }
 \cs_new:Npn \__examzh_calculations_coffin_align_set_m:n #1
   {
@@ -257,37 +264,55 @@
       }
     \par 
     \vspace*{ \l__examzh_calculations_top_sep_skip }
-    \noindent 
+    \noindent
+    % list 的首段会额外应用 \itemindent；calculations 自身已有 xshift，
+    % 因此在环境直接跟在 \item 后时抵消这一次首段缩进，使其与题干后使用一致。
+    \bool_if:NT \l__examzh_calculations_first_item_paragraph_bool
+      { \hspace*{ -\itemindent } }
     % \centering
     % \SetTblrInner
     %   {
     %     rowsep = 4pt,
     %     % colsep = 0pt
     %   }
+    \str_set:Nx \l__examzh_calculations_tblr_valign_str
+      {
+        \str_case:Vn \l__examzh_calculations_coffin_align_str
+          {
+            {t} {h}
+            {m} {m}
+            {b} {f}
+          }
+      }
+    \exp_args:NV \__examzh_calculations_tblr_typeset:nn
+      \l__examzh_calculations_tblr_valign_str {#1}
+    \vspace*{ \l__examzh_calculations_bottom_sep_skip }
+    \par
+  }
+\cs_new_protected:Npn \__examzh_calculations_tblr_typeset:nn #1#2
+  {
     \begin{tblr}
       [ expand = \l__examzh_calculations_tblr_content_tl ]
       {
         width = \linewidth,
-        columns = 
+        columns =
           {
             l,
             leftsep = 0em,
             rightsep = 0pt,
           },
-        rows = 
+        rows =
           {
-            m,
-            ht=\baselineskip,
+            #1,
+            ht = \baselineskip,
             abovesep = 0pt,
             belowsep = 0pt,
           },
-        stretch=0,
-        #1
+        stretch = 0,
+        #2
       }
       \l__examzh_calculations_tblr_content_tl
     \end{tblr}
-    \vspace*{ \l__examzh_calculations_bottom_sep_skip }
-    \par
   }
 \int_new:N \l__examzh_calculations_item_num_mod_column_left_int
 \cs_new:Npn \__examzh_calculations_coffin_typeset_count:
@@ -346,7 +371,7 @@
       % \begin{varwidth}{\hsize}
     % 根据 columns 个数设置宽度
     \__examzh_calculations_item_varwidth_width_set:
-      \begin{varwidth}{\l__examzh_calculations_item_varwidth_width_dim}
+      \begin{varwidth}[t]{\l__examzh_calculations_item_varwidth_width_dim}
       % \begin{minipage}{8cm}
         \ignorespaces
         \makebox[0em]{\rule{0pt}{\baselineskip}}

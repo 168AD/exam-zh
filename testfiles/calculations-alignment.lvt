@@ -1,0 +1,64 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{exam-zh-question}
+\usepackage{exam-zh-math}
+
+\begin{document}
+\START
+
+\ExplSyntaxOn
+
+\cs_new_eq:NN \__examzh_calculations_tblr_typeset_saved:nn
+  \__examzh_calculations_tblr_typeset:nn
+\cs_set_protected:Npn \__examzh_calculations_tblr_typeset:nn #1#2
+  {
+    \TYPE{row-valign=#1}
+    \bool_if:NTF \l__examzh_calculations_first_item_paragraph_bool
+      { \TYPE{first-item-paragraph=true} }
+      { \TYPE{first-item-paragraph=false} }
+  }
+
+\begin{calculations}[align=m,top-sep=0pt]
+  \item Direct use.
+  \item Tall direct use: $\left\{\begin{aligned}x&=1,\\y&=2.\end{aligned}\right.$
+\end{calculations}
+
+\begin{question}
+  \begin{calculations}[align=t,top-sep=0pt]
+    \item Question item.
+    \item Tall question item: $\left\{\begin{aligned}x&=1,\\y&=2.\end{aligned}\right.$
+  \end{calculations}
+\end{question}
+
+\begin{problem}
+  \begin{calculations}[align=b,top-sep=0pt]
+    \item Problem item.
+    \item Tall problem item: $\left\{\begin{aligned}x&=1,\\y&=2.\end{aligned}\right.$
+  \end{calculations}
+\end{problem}
+
+\begin{problem}
+  Introductory text before the environment.
+  \begin{calculations}[align=t,top-sep=0pt]
+    \item Problem item after text.
+    \item Second problem item after text.
+  \end{calculations}
+\end{problem}
+
+\cs_set_eq:NN \__examzh_calculations_tblr_typeset:nn
+  \__examzh_calculations_tblr_typeset_saved:nn
+
+\begin{problem}
+  \begin{calculations}[align=t,top-sep=0pt][hlines,vlines]
+    \item Short formula: $x=1$.
+    \item Tall formula: $\left\{\begin{aligned}x&=1,\\y&=2.\end{aligned}\right.$
+  \end{calculations}
+\end{problem}
+\TYPE{calculations-baseline-layout=rendered}
+
+\ExplSyntaxOff
+
+\END
+\end{document}

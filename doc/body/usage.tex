@@ -2194,11 +2194,12 @@
   设置 \tn{paren} 中答案的颜色。
 \end{function}
 
-\begin{function}[added = 2022-07-15]{paren/type}
-  \begin{examzhsyntax}[emph={[1]text-color}]
-    type = (*<(hfill)|none>*)
+\begin{function}[added = 2022-07-15,updated = 2026-07-11]{paren/type}
+  \begin{examzhsyntax}[emph={[1]type}]
+    type = (*<(hfill)|dotfill|none>*)
   \end{examzhsyntax}
-  \tn{paren} 产生的括号是否自动排到行尾。\opt{hfill} 表示自动根据行的长度排到行尾；\opt{none} 表示括号紧跟前面内容。
+  \tn{paren} 产生的括号是否自动排到行尾。\opt{hfill} 表示使用空白自动排到行尾；
+  \opt{dotfill} 表示使用点线填充后再放置括号；\opt{none} 表示括号紧跟前面内容。
 \end{function}
 
 \examsetup{
@@ -3051,6 +3052,34 @@
   \env{multifigures} 环境下方额外弹性间距。默认为 |0pt|。
 \end{function}
 
+\begin{function}[added = 2026-07-11]{multifigures/column-gap}
+  \begin{examzhsyntax}[emph={[1]column-gap}]
+    column-gap = (*\meta{dimension}*)
+  \end{examzhsyntax}
+  设置同一行图片之间的列间距。该键只调整网格间距，不会像
+  \kvopt{multifigures/hshift} 那样逐项平移图片；默认为 |6pt|。
+\end{function}
+
+多行图片需要进一步控制列宽或整体对齐时，可以使用环境的第二个可选参数，
+该参数会直接透传给底层的 \pkg{tabularray} \env{tblr}。例如，下面的写法
+在增大列间距的同时保持三列等宽并居中：
+
+\begin{verbatim}
+\begin{multifigures}[columns=3,column-gap=12pt]
+  ...
+\end{multifigures}
+\end{verbatim}
+
+如果需要显式指定列规格，可写成
+\begin{verbatim}
+\begin{multifigures}[columns=3][colspec={*{3}{X[4.5cm,c]}}]
+  ...
+\end{multifigures}
+\end{verbatim}
+其中第二个参数属于 \pkg{tabularray} 的高级接口，\opt{c} 用于保持各列内容居中；
+图片数量不足一整行时仍由
+\env{multifigures} 自动补齐空单元格。
+
 \begin{function}[added = 2022-08-28]{multifigures/align}
   \begin{examzhsyntax}[emph={[1]align}]
     align = (*<t|m|(b)>*)
@@ -3244,11 +3273,14 @@
   \emph{注：v0.2.6 起，内部实现优化了双列布局时的列宽计算（从 0.3 倍文本宽度调整为 0.45 倍），改善了排版效果。用户无需修改已有代码。}
 \end{function}
 
-\begin{function}[added = 2024-02-11]{calculations/align}
+\begin{function}[added = 2024-02-11, updated = 2026-07-11]{calculations/align}
   \begin{examzhsyntax}[emph={[1]align}]
     align = (*<(t)|m|b>*)
   \end{examzhsyntax}
-  题干和标签的整体对齐方式。\opt{t} 表示顶部对齐、\opt{m} 表示居中对齐、\opt{b} 表示底部对齐。
+  题干和标签的整体对齐方式。\opt{t} 表示首行基线对齐、\opt{m} 表示居中对齐、
+  \opt{b} 表示末行基线对齐。
+  该设置同时用于同一行各项目的垂直对齐，因此项目中公式高度不同时无需再用
+  \tn{vphantom} 手工补齐；默认使用顶部对齐。
 \end{function}
 
 \begin{function}[added = 2024-02-11]{calculations/xshift,calculations/hshift,calculations/yshift,calculations/vshift}

@@ -11,12 +11,15 @@
 ### Added
 
 - 为 `problem` 新增 `hang` 键，并为 `choices` 新增 `item-linesep`、`left-indent`、`right-indent` 与 `margin` 键（Gitee #I6HQ2S、#ID7HWH、#I67JXY）
+- 为 `paren/type` 新增 `dotfill` 点线填充模式（Gitee #I63X3T）
+- 为 `multifigures` 新增 `column-gap` 图片列间距键，并文档化底层 `tblr` 的 `colspec` 参数透传方式（Gitee #ID823C）
 
 ### Changed
 
 - 解答题内第二层小题默认改用小写罗马数字编号，第三层改用小写字母编号，以匹配 2026 年高考试卷层级样式（Gitee #IK0BLV）
 - 抽取 question、fillin、choices 与 calculations 共用的计数器注册层；新增 `\tikzcirclednumber`，并弃用有歧义的直接调用 `\circlednumber*{...}`（Gitee #IDPOT4）
 - 文档明确 `\varnothing` 固定使用 Asana Math 字形的范围，并澄清该单符号覆盖不等同于完整支持 `mtpro2`（Gitee #ID83OW）
+- `calculations/align=t|m|b` 现在同时控制同行项目的首行基线、居中和末行基线对齐
 
 ### Fixed
 
@@ -29,6 +32,8 @@
 - 修复 `\vec{\beta}` 等单控制序列被按命令名称字符数判断，错误使用箭头样式的问题（Gitee #IDDOCK）
 - 为独立加载的 `exam-zh-choices` 注册 `tikzcirclednumber` 计数器，并抽取共享的 TikZ 带圈数字实现（Gitee #IDPPJR）
 - 修正文档中 `fillin/width-type` 的默认值标记，使其与源码的 `normal` 一致（Gitee #ID6INO）
+- 修复 `calculations` 同行项目公式高度不同时基线不一致的问题（Gitee #IHXNX9）
+- 修复 `calculations` 在 `question` 与 `problem` 首段中的位置受宿主 `itemindent` 影响而不一致的问题（Gitee #IHQMPM）
 
 
 ## [0.2.7] - 2026-06-13

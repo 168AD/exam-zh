@@ -38,6 +38,8 @@
 \str_new:N \l__examzh_multifigures_figure_position_str
 % coffin type 的对齐方式
 \str_new:N \l__examzh_multifigures_coffin_align_str
+% 图片网格列间距（透传为 tabularray 的 colsep）
+\dim_new:N \l__examzh_multifigures_column_gap_dim
 
 
 \keys_define:nn { exam-zh / multifigures }
@@ -52,6 +54,8 @@
     top-sep .skip_set:N = \l__examzh_multifigures_top_sep_skip,
     % 环境下方的额外距离
     bottom-sep .skip_set:N = \l__examzh_multifigures_bottom_sep_skip,
+    % 图片网格的列间距；与 hshift 不同，不会逐项平移图片
+    column-gap .dim_set:N = \l__examzh_multifigures_column_gap_dim,
     % 整体的偏移量
     xshift .dim_set:N = \l__examzh_multifigures_xshift_dim,
     hshift .dim_set:N = \l__examzh_multifigures_xshift_dim,
@@ -76,6 +80,7 @@
     align        = b,
     top-sep      = 1ex plus .5ex minus .5ex,
     bottom-sep   = 0pt,
+    column-gap   = 6pt,
   }
 
 % item 的 index 指标（即第几个 item）
@@ -241,6 +246,7 @@
       {
         width = \textwidth,
         cells = {c},
+        colsep = \l__examzh_multifigures_column_gap_dim,
         column{1} = {leftsep = 0pt},
         column{Z} = {rightsep = 0pt},
         rows = 

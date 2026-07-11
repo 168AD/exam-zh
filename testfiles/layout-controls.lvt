@@ -1,0 +1,54 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{exam-zh-question}
+\usepackage{exam-zh-textfigure}
+
+\begin{document}
+\START
+
+\ExplSyntaxOn
+
+\keys_set:nn { exam-zh / paren } { type = hfill }
+\bool_if:NTF \l__examzh_paren_type_hfill_bool
+  { \TYPE{paren-hfill=true} }
+  { \TYPE{paren-hfill=false} }
+\bool_if:NTF \l__examzh_paren_type_dotfill_bool
+  { \TYPE{paren-dotfill=true} }
+  { \TYPE{paren-dotfill=false} }
+
+\keys_set:nn { exam-zh / paren } { type = dotfill }
+\bool_if:NTF \l__examzh_paren_type_hfill_bool
+  { \TYPE{dotfill-hfill=true} }
+  { \TYPE{dotfill-hfill=false} }
+\bool_if:NTF \l__examzh_paren_type_dotfill_bool
+  { \TYPE{dotfill-enabled=true} }
+  { \TYPE{dotfill-enabled=false} }
+
+\keys_set:nn { exam-zh / paren } { type = none }
+\bool_if:NTF \l__examzh_paren_type_hfill_bool
+  { \TYPE{none-hfill=true} }
+  { \TYPE{none-hfill=false} }
+\bool_if:NTF \l__examzh_paren_type_dotfill_bool
+  { \TYPE{none-dotfill=true} }
+  { \TYPE{none-dotfill=false} }
+
+\keys_set:nn { exam-zh / multifigures } { column-gap = 12pt }
+\TYPE{multifigures-column-gap=\dim_use:N \l__examzh_multifigures_column_gap_dim}
+
+\ExplSyntaxOff
+
+\ExplSyntaxOn
+\keys_set:nn { exam-zh / paren } { type = dotfill }
+\ExplSyntaxOff
+\par Text before a dotted answer leader.\paren
+
+\begin{multifigures}[columns=2,column-gap=12pt][hlines,vlines,colspec={*{2}{X[c]}}]
+  \item \rule{2cm}{1cm}
+  \item \rule{1cm}{2cm}
+\end{multifigures}
+\TYPE{layout-controls-rendered}
+
+\END
+\end{document}

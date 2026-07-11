@@ -853,6 +853,8 @@
 % 选择题括号
 % 控制括号是否右对齐
 \bool_new:N \l__examzh_paren_type_hfill_bool
+% 控制右对齐时使用点线填充
+\bool_new:N \l__examzh_paren_type_dotfill_bool
 \keys_define:nn { exam-zh / paren }
   {
     show-answer .bool_set:N = \l__examzh_question_show_paren_answer_bool,
@@ -863,10 +865,17 @@
     type / hfill .code:n =
       {
         \bool_set_true:N \l__examzh_paren_type_hfill_bool
+        \bool_set_false:N \l__examzh_paren_type_dotfill_bool
+      },
+    type / dotfill .code:n =
+      {
+        \bool_set_true:N \l__examzh_paren_type_hfill_bool
+        \bool_set_true:N \l__examzh_paren_type_dotfill_bool
       },
     type / none .code:n =
       {
         \bool_set_false:N \l__examzh_paren_type_hfill_bool
+        \bool_set_false:N \l__examzh_paren_type_dotfill_bool
       },
   }
 \keys_set:nn { exam-zh / paren }
@@ -897,8 +906,16 @@
         % 控制是否 hfill 到行尾
         \bool_if:NT \l__examzh_paren_type_hfill_bool
           {
-            \nobreak \hfill \allowbreak
-            \null \nobreak \hfill \nobreak
+            \nobreak
+            \bool_if:NTF \l__examzh_paren_type_dotfill_bool
+              { \dotfill }
+              { \hfill }
+            \allowbreak
+            \null \nobreak
+            \bool_if:NTF \l__examzh_paren_type_dotfill_bool
+              { \dotfill }
+              { \hfill }
+            \nobreak
           }
         \hbox:n
           {
