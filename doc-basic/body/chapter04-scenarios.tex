@@ -160,6 +160,23 @@ xelatex "\def\SHOWANSWER{1}\input{exam-main.tex}"
   }
 \end{latexcode}
 
+图片位于文字左、右侧时，可以显式启用按图片实宽分配文字宽度：
+
+\begin{latexcode}
+  \textfigure[
+    fig-pos = right-top,
+    auto-text-width = true,
+    min-text-width = .4\linewidth,
+    column-gap = 1em
+  ]{
+    如图所示，求阴影部分的面积。
+  }{
+    \includegraphics[width=3cm]{figure.pdf}
+  }
+\end{latexcode}
+
+该功能默认关闭，不会覆盖既有的 |text-width| 行为；图片过宽时，文字部分会回退到 |min-text-width|，而不会继续压窄。
+
 \textbf{说明：}
 \begin{itemize}
   \item 第一个大括号是文字内容

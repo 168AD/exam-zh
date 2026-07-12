@@ -324,6 +324,9 @@
 \dim_new:N \l__examzh_textfigure_text_width_dim            % 文本的宽度
 \dim_new:N \l__examzh_textfigure_text_coffin_width_dim     % 文本c offin 的宽度
 \dim_new:N \l__examzh_textfigure_figure_width_dim      % 图片的 varwidth 环境的宽度
+\dim_new:N \l__examzh_textfigure_min_text_width_dim    % 自动分栏时文本的最小宽度
+\dim_new:N \l__examzh_textfigure_column_gap_dim        % 左右图文之间的距离
+\bool_new:N \l__examzh_textfigure_auto_text_width_bool % 是否按图片实宽计算文本宽度
 
 % 用于 top-center, top-right, bottom-center, bottom-right 的水平偏移量储存
 \dim_new:N \l__examzh_textfigure_figure_coffin_horizontal_transform_dim
@@ -378,6 +381,10 @@
     hshift .dim_set:N = \l__examzh_textfigure_xshift_dim,
     % text-width：手动设置文本的 varwidth 环境的宽度
     text-width .dim_set:N = \l__examzh_textfigure_text_width_dim,
+    % 自动按图片实际宽度分配左右布局的文本宽度
+    auto-text-width .bool_set:N = \l__examzh_textfigure_auto_text_width_bool,
+    min-text-width .dim_set:N = \l__examzh_textfigure_min_text_width_dim,
+    column-gap .dim_set:N = \l__examzh_textfigure_column_gap_dim,
     % figure-width：手动设置 figure 的 varwidth 环境的宽度
     figure-width .dim_set:N = \l__examzh_textfigure_figure_width_dim,
     % ratio / text-ratio：文本 coffin 占行宽的比例，范围0-1
@@ -397,6 +404,9 @@
     fig-pos         = bottom-right,
     yshift          = 0pt,
     text-width      = \textwidth,
+    auto-text-width = false,
+    min-text-width  = .35\linewidth,
+    column-gap      = 1em,
     figure-width    = \columnwidth,
     text-ratio      = 1,
     top-sep         = 0pt,
@@ -432,13 +442,14 @@
 % 最终的拼接命令
 \cs_new:Npn \__examzh_textfigure_output:nnn #1#2#3
   {
-    \__examzh_textfigure_text_width_dim_set:n {#1}
     % issue：https://gitee.com/xkwxdyy/text-figure/issues/I4RVQX
     % 关键点在于要离开垂直模式
     % https://ask.latexstudio.net/ask/question/7238.html
     \mode_leave_vertical:
-    % 将内容存到 coffin 中
-    \__examzh_textfigure_coffin_store:nn {#2}{#3}
+    % 先存储并测量图片；auto-text-width 模式会使用图片的实际宽度。
+    \__examzh_textfigure_figure_coffin_store:n {#3}
+    \__examzh_textfigure_text_width_dim_set:n {#1}
+    \__examzh_textfigure_text_coffin_store:n {#2}
     % coffin 的拼接
     \__examzh_textfigure_coffin_join:
     % coffin 的 typeset
@@ -475,8 +486,43 @@
       {
         \l__examzh_textfigure_tmpa_dim * \dim_ratio:nn { \fp_use:N \l__examzh_textfigure_text_ratio_fp pt } { 1 pt }
       }
+    \bool_if:NT \l__examzh_textfigure_auto_text_width_bool
+      {
+        \str_case:VnT \l__examzh_textfigure_current_figure_position_str
+          {
+            {left}         {}
+            {right}        {}
+            {left-center}  {}
+            {right-center} {}
+            {left-top}     {}
+            {right-top}    {}
+            {left-bottom}  {}
+            {right-bottom} {}
+          }
+          { \__examzh_textfigure_auto_text_width_dim_set: }
+      }
   }
-\cs_new:Npn \__examzh_textfigure_coffin_store:nn #1#2
+\cs_new_protected:Npn \__examzh_textfigure_auto_text_width_dim_set:
+  {
+    \dim_set:Nn \l__examzh_textfigure_text_width_dim
+      {
+        \linewidth
+        - \coffin_wd:N \l__examzh_textfigure_figure_coffin
+        - \l__examzh_textfigure_column_gap_dim
+      }
+    \dim_compare:nNnT
+      { \l__examzh_textfigure_text_width_dim }
+      < { \l__examzh_textfigure_min_text_width_dim }
+      {
+        \dim_set_eq:NN
+          \l__examzh_textfigure_text_width_dim
+          \l__examzh_textfigure_min_text_width_dim
+      }
+    \dim_compare:nNnT
+      { \l__examzh_textfigure_text_width_dim } > { \linewidth }
+      { \dim_set:Nn \l__examzh_textfigure_text_width_dim { \linewidth } }
+  }
+\cs_new:Npn \__examzh_textfigure_text_coffin_store:n #1
   {
     \hcoffin_set:Nn \l__examzh_textfigure_text_coffin 
       {
@@ -489,12 +535,15 @@
           \unskip
         \end{varwidth}
       }
+  }
+\cs_new:Npn \__examzh_textfigure_figure_coffin_store:n #1
+  {
     \hcoffin_set:Nn \l__examzh_textfigure_figure_coffin 
       {
         \begin{varwidth}{ \l__examzh_textfigure_figure_width_dim }
           \centering
           \ignorespaces
-          #2
+          #1
           \unskip
         \end{varwidth}
       }
@@ -570,7 +619,7 @@
     \coffin_join:NnnNnnnn
       #1 { vc } { l }
       #2 { vc } { r }
-      { -1em + \l__examzh_textfigure_figure_xshift_dim }
+      { -\l__examzh_textfigure_column_gap_dim + \l__examzh_textfigure_figure_xshift_dim }
       { \l__examzh_textfigure_figure_yshift_dim }
   }
 \cs_set_eq:cc { __examzh_textfigure_fig_pos_set_left-center:NN } { __examzh_textfigure_fig_pos_set_left:NN }
@@ -581,7 +630,7 @@
     \coffin_join:NnnNnnnn
       #1 { t } { l }
       #2 { t } { r }
-      { -1em + \l__examzh_textfigure_figure_xshift_dim }
+      { -\l__examzh_textfigure_column_gap_dim + \l__examzh_textfigure_figure_xshift_dim }
       { - \l__examzh_textfigure_tmpa_dim + \l__examzh_textfigure_figure_yshift_dim }
   }
 \cs_new_protected:cpn { __examzh_textfigure_fig_pos_set_left-bottom:NN } #1#2
@@ -589,7 +638,7 @@
     \coffin_join:NnnNnnnn
       #1 { b } { l }
       #2 { b } { r }
-      { -1em + \l__examzh_textfigure_figure_xshift_dim } 
+      { -\l__examzh_textfigure_column_gap_dim + \l__examzh_textfigure_figure_xshift_dim }
       { 0pt + \l__examzh_textfigure_figure_yshift_dim }
   }
 \cs_new_protected:cpn { __examzh_textfigure_fig_pos_set_right-top:NN } #1#2
@@ -599,7 +648,7 @@
     \coffin_join:NnnNnnnn
       #1 { t } { r }
       #2 { t } { l }
-      { 1em + \l__examzh_textfigure_figure_xshift_dim }
+      { \l__examzh_textfigure_column_gap_dim + \l__examzh_textfigure_figure_xshift_dim }
       { - \l__examzh_textfigure_tmpa_dim + \l__examzh_textfigure_figure_yshift_dim }
   }
 \cs_new_protected:cpn { __examzh_textfigure_fig_pos_set_right-center:NN } #1#2
@@ -607,7 +656,7 @@
     \coffin_join:NnnNnnnn
       #1 { vc } { r }
       #2 { vc } { l }
-      { 1em + \l__examzh_textfigure_figure_xshift_dim } 
+      { \l__examzh_textfigure_column_gap_dim + \l__examzh_textfigure_figure_xshift_dim }
       { 0pt + \l__examzh_textfigure_figure_yshift_dim }
   }
 \cs_new_protected:cpn { __examzh_textfigure_fig_pos_set_right-bottom:NN } #1#2
@@ -615,7 +664,7 @@
     \coffin_join:NnnNnnnn
       #1 { b } { r }
       #2 { b } { l }
-      { 1em + \l__examzh_textfigure_figure_xshift_dim }
+      { \l__examzh_textfigure_column_gap_dim + \l__examzh_textfigure_figure_xshift_dim }
       { 0pt + \l__examzh_textfigure_figure_yshift_dim }
   }
 \cs_set_eq:cc { __examzh_textfigure_fig_pos_set_right:NN } { __examzh_textfigure_fig_pos_set_right-center:NN }

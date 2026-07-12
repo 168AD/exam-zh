@@ -1,0 +1,8 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+width-ok=240pt
+width-ok=\linewidth -112pt
+width-ok=90pt
+width-ok=210pt
+\l__list_leftmargin_i_dim=\dimen...
+textfigure-auto-width-rendered

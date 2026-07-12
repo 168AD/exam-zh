@@ -1,0 +1,84 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{exam-zh-question}
+\usepackage{exam-zh-textfigure}
+
+\begin{document}
+\START
+
+\ExplSyntaxOn
+
+\cs_new_protected:Npn \__examzh_test_textfigure_width:nnn #1#2#3
+  {
+    \group_begin:
+      \keys_set:nn { exam-zh / textfigure } {#1}
+      \__examzh_textfigure_figure_coffin_store:n { \rule{#2}{10pt} }
+      \__examzh_textfigure_text_width_dim_set:n {#1}
+      \dim_compare:nNnTF { \l__examzh_textfigure_text_width_dim } = {#3}
+        { \TYPE{width-ok=#3} }
+        {
+          \TYPE
+            {
+              width-failed=\dim_use:N \l__examzh_textfigure_text_width_dim;
+              expected=#3
+            }
+        }
+    \group_end:
+  }
+
+\__examzh_test_textfigure_width:nnn
+  { fig-pos=right,text-width=240pt,text-ratio=1 }
+  { 100pt }
+  { 240pt }
+
+\__examzh_test_textfigure_width:nnn
+  {
+    fig-pos=right,
+    auto-text-width=true,
+    min-text-width=80pt,
+    column-gap=12pt
+  }
+  { 100pt }
+  { \linewidth - 112pt }
+
+\__examzh_test_textfigure_width:nnn
+  {
+    fig-pos=left-top,
+    auto-text-width=true,
+    min-text-width=90pt,
+    column-gap=20pt
+  }
+  { 300pt }
+  { 90pt }
+
+\__examzh_test_textfigure_width:nnn
+  {
+    fig-pos=bottom,
+    text-width=210pt,
+    text-ratio=1,
+    auto-text-width=true,
+    min-text-width=90pt,
+    column-gap=20pt
+  }
+  { 100pt }
+  { 210pt }
+
+\ExplSyntaxOff
+
+\begin{problem}
+  \textfigure
+    [
+      fig-pos=right-top,
+      auto-text-width=true,
+      min-text-width=.4\linewidth,
+      column-gap=1em
+    ]
+    {Auto-sized text beside a measured figure.}
+    {\rule{3cm}{2cm}}
+\end{problem}
+\TYPE{textfigure-auto-width-rendered}
+
+\END
+\end{document}
