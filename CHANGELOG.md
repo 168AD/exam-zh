@@ -8,6 +8,8 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-07-12
+
 ### Added
 
 - 为 `textfigure` 增加可选的 `auto-text-width` 图片实宽测量，并提供 `min-text-width` 与 `column-gap` 控制，避免宽图把正文压成窄列（Gitee #I7QT33）
@@ -28,6 +30,7 @@
 
 ### Fixed
 
+- 完善 GitHub/Gitee 双平台发布流程：Gitee Release 支持幂等更新与附件替换，完整构建脚本同步更新 `build.lua`、类、宏包和手册版本元数据
 - 修复题目列表参数被辅助分组提前还原，导致题目后出现额外行间距及缩进异常的问题（Gitee #IK0A55）
 - 修复多份试卷使用 `solution/show-solution=show-move` 时，章节题号重置导致前面试卷答案文件被覆盖的问题（Gitee #IJR78Q）
 - 修复 `question` 和 `problem` 捕获环境正文，导致其中不能使用 `verbatim`、`\verb` 等代码内容的问题（Gitee #I8QVL9）
