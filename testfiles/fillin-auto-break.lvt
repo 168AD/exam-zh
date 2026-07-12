@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{exam-zh-question}
+
+\begin{document}
+\START
+
+\fillinsetup{show-answer=true}
+
+\ExplSyntaxOn
+\cs_set:Npn \__examzh_fillin_output_T:
+  { \TYPE{fillin-route=single-line} }
+\cs_set:Npn \__examzh_fillin_output_breakline_T:
+  {
+    \dim_compare:nNnTF
+      { \l__examzh_fillin_effective_line_depth_dim }
+      > { \l__examzh_fillin_line_depth_dim }
+      { \TYPE{fillin-route=multi-line,depth=adjusted} }
+      { \TYPE{fillin-route=multi-line,depth=default} }
+  }
+\ExplSyntaxOff
+
+\setlength{\hsize}{100pt}
+\setlength{\linewidth}{100pt}
+
+\fillin[short]
+\fillin[This answer is deliberately wider than the available line width.]
+\fillin*[short]
+\fillin*[$\dfrac{1}{x^2}+\dfrac{2}{y^2}=\dfrac{3}{z^2}$]
+
+\begin{question}
+  \fillin[This answer is deliberately wider than the available line width,
+    and it remains deliberately long inside a question.]
+\end{question}
+
+\begin{problem}
+  \fillin[This answer is deliberately wider than the available line width,
+    and it remains deliberately long inside a problem.]
+\end{problem}
+
+\END
+\end{document}

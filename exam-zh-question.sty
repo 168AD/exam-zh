@@ -1027,6 +1027,37 @@
 
 
 \dim_new:N \l__examzh_question_answer_depth_dim
+\dim_new:N \l__examzh_fillin_effective_line_depth_dim
+
+\prg_new_conditional:Npnn \__examzh_fillin_answer_should_break: { TF }
+  {
+    \str_case:VnTF \l__examzh_fillin_type_str
+      {
+        { line  } { }
+        { paren } { }
+        { blank } { }
+      }
+      {
+        \dim_compare:nNnTF { \box_wd:N \l_tmpa_box } > { \linewidth }
+          { \prg_return_true: }
+          { \prg_return_false: }
+      }
+      { \prg_return_false: }
+  }
+
+\cs_new_protected:Npn \__examzh_fillin_set_effective_line_depth:
+  {
+    \dim_set_eq:NN
+      \l__examzh_fillin_effective_line_depth_dim
+      \l__examzh_fillin_line_depth_dim
+    \dim_compare:nNnT
+      { \l__examzh_question_answer_depth_dim + 0.2em }
+      > { \l__examzh_fillin_effective_line_depth_dim }
+      {
+        \dim_set:Nn \l__examzh_fillin_effective_line_depth_dim
+          { \l__examzh_question_answer_depth_dim + 0.2em }
+      }
+  }
 
 % 填空命令
 % \fillin \fillin[] \fillin[][] 在 show-answer = false 的情况下
@@ -1156,7 +1187,13 @@
         \hbox_set:Nn \l_tmpa_box { \__examzh_fillin_print_answer:n {#1} }
         \dim_set:Nn \l__examzh_question_answer_depth_dim
           { \box_dp:N \l_tmpa_box }
-        \__examzh_fillin_output_T:
+        \__examzh_fillin_answer_should_break:TF
+          {
+            \tl_set:Nn \l_tmpa_tl { \__examzh_fillin_print_answer:n {#1} }
+            \__examzh_fillin_set_effective_line_depth:
+            \__examzh_fillin_output_breakline_T:
+          }
+          { \__examzh_fillin_output_T: }
       }
       {
         \__examzh_fillin_output_unbreakable_F:
@@ -1168,7 +1205,11 @@
       { \bool_if_p:N \l__examzh_question_show_fillin_answer_bool }
       { \bool_not_p:n { \tl_if_empty_p:n {#1} } }
       {
+        \hbox_set:Nn \l_tmpa_box { \__examzh_fillin_print_answer:n {#1} }
+        \dim_set:Nn \l__examzh_question_answer_depth_dim
+          { \box_dp:N \l_tmpa_box }
         \tl_set:Nn \l_tmpa_tl { \__examzh_fillin_print_answer:n {#1} }
+        \__examzh_fillin_set_effective_line_depth:
         \__examzh_fillin_output_breakline_T:
       }
       {
@@ -1302,7 +1343,7 @@
 \cs_new:Npn \__examzh_fillin_uline_breakline_T:
   {
     \CJKunderline*
-      [ depth = \l__examzh_fillin_line_depth_dim ]
+      [ depth = \l__examzh_fillin_effective_line_depth_dim ]
     % \uline
     % \__examzh_fillin_uline:
       {
