@@ -215,9 +215,43 @@ def update_doc_version(file_path: Path, version: str, date: str) -> None:
     log_info(f"  Updated: {file_path.name}")
 
 
+def update_build_lua_version(file_path: Path, version: str, date: str) -> None:
+    """更新 l3build 使用的版本和日期。"""
+    if not file_path.exists():
+        log_error(f"Critical file not found: {file_path}")
+        sys.exit(1)
+
+    content = file_path.read_text(encoding='utf-8')
+    content, version_count = re.subn(
+        r'^(version\s*=\s*")[^"]+(".*)$',
+        rf'\g<1>v{version}\g<2>',
+        content,
+        count=1,
+        flags=re.MULTILINE,
+    )
+    content, date_count = re.subn(
+        r'^(date\s*=\s*")[^"]+(".*)$',
+        rf'\g<1>{date}\g<2>',
+        content,
+        count=1,
+        flags=re.MULTILINE,
+    )
+
+    if version_count != 1 or date_count != 1:
+        log_error("Failed to locate version/date fields in build.lua")
+        sys.exit(1)
+
+    file_path.write_text(content, encoding='utf-8')
+    log_info(f"  Updated: {file_path.name}")
+
+
 def update_all_versions(version: str, date: str) -> None:
     """更新所有文件的版本信息"""
     log_step(1, 5, "Updating version information...")
+
+    # 更新 l3build 元数据
+    log_info("Updating build.lua...")
+    update_build_lua_version(BUILD_LUA, version, date)
 
     # 更新 .sty 文件
     sty_files = list(PROJECT_ROOT.glob("*.sty"))
