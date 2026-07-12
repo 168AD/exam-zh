@@ -468,7 +468,7 @@
 
 \subsubsection{填空题}
 
-\begin{function}[updated = 2025-11-07]{\fillin}
+\begin{function}[updated = 2026-07-12]{\fillin}
   \begin{examzhsyntax}[emph={[2]\fillin}]
     \fillin(*\oarg{键值列表}*)(*\oarg{答案}*)
     \fillin*(*\oarg{键值列表}*)(*\oarg{答案}*)
@@ -482,22 +482,23 @@
   \begin{itemize}
     \item \textbf{显示答案时}（\kvopt{show-answer}{true}）：
       \begin{itemize}
-        \item \tn{fillin}：答案内容\textbf{不可换行}，但会自动根据内容深度提升基线（如排版分数不会"压线"）
-        \item \tn{fillin*}：答案内容同样\textbf{不可换行}
+        \item \tn{fillin}：短答案保持单行并自动提升高公式；当答案自然宽度超过当前 \tn{linewidth} 时，\opt{line}、\opt{paren} 和 \opt{blank} 类型自动切换到可换行排版
+        \item \tn{fillin*}：无论答案长短都强制使用可换行排版，保留为兼容和显式控制接口
+        \item 两种写法进入多行排版后，都会根据答案最大深度自动下移装饰线，避免分式等高公式压线；公式内部若没有可断点，仍需用户手动拆分
       \end{itemize}
 
     \item \textbf{不显示答案时}（\kvopt{show-answer}{false}）：
       \begin{itemize}
         \item \tn{fillin}：生成固定长度的占位符（下划线/括号等），默认\textbf{不换行}。\emph{v0.2.6 起}，当 \kvopt{no-answer-type}{none} 且宽度超出行宽时，会自动换行
-        \item \tn{fillin*}：\textbf{可以自动换行}，但没有基线提升功能。换行功能仅适用于 \kvopt{fillin/type}{line}、\kvopt{fillin/type}{paren} 和 \kvopt{fillin/type}{blank}
+        \item \tn{fillin*}：强制使用可换行占位符。换行功能仅适用于 \kvopt{fillin/type}{line}、\kvopt{fillin/type}{paren} 和 \kvopt{fillin/type}{blank}
       \end{itemize}
   \end{itemize}
 
   \paragraph{使用建议}
 
   \begin{itemize}
-    \item 短答案（如数字、单词）：使用 \tn{fillin}
-    \item 长答案需要换行：使用 \tn{fillin*}，并设置 \kvopt{show-answer}{false}
+    \item 一般情况统一使用 \tn{fillin}；显示答案时会根据内容宽度自动选择单行或多行排版
+    \item 需要明确强制可换行时使用 \tn{fillin*}
     \item 宽度超出行宽的占位符：使用 \tn{fillin} 配合 \kvopt{no-answer-type}{none}（v0.2.6+）
   \end{itemize}
 \end{function}
@@ -520,14 +521,14 @@
 
 \begin{latexexample}{\tn{fillin} 和 \tn{fillin*} 的换行行为对比}
   \examsetup{fillin/no-answer-type=none}
-  % 情况 1：显示答案时（都不换行）
+  % 情况 1：显示答案时
   \examsetup{question/show-answer = true}
 
   短答案：\fillin[42]
 
-  长答案（不换行）：\fillin[$\frac{1}{2}$ 这是一个很长的答案内容，这是一个很长的答案内容，这是一个很长的答案内容，这是一个很长的答案内容。]
+  长答案（自动换行）：\fillin[$\frac{1}{2}$ 这是一个很长的答案内容，这是一个很长的答案内容，这是一个很长的答案内容，这是一个很长的答案内容。]
 
-  长答案（换行）：\fillin*[$\frac{1}{2}$ 这是一个很长的答案内容，这是一个很长的答案内容，这是一个很长的答案内容，这是一个很长的答案内容。]
+  强制可换行：\fillin*[短答案]
 
   \vspace{1em}
 
@@ -2020,6 +2021,23 @@
   \end{choices}
 \end{latexexample}
 
+\begin{function}[added = 2026-07-12]{choices/show-answer,choices/answer-color}
+  \begin{examzhsyntax}[emph={[1]show-answer,answer-color}]
+    show-answer = (*\TFF*)
+    answer-color = (*\meta{color}*)
+  \end{examzhsyntax}
+  在 \env{choices} 中使用 \tn{item} 后紧跟星号（|\item*|）标记正确选项。默认的 \kvopt{show-answer}{false} 会移除源码中的星号但不改变选项外观；设置为 \opt{true} 后，正确选项的标签和内容使用 \opt{answer-color} 着色，默认颜色为 \opt{red}。该接口只负责当前选项列表的答案显隐，不会收集或移动答案，也不与 \opt{question/show-answer} 自动联动。
+\end{function}
+
+\begin{latexexample}{使用 \tn{item*} 标记并显示正确选项}
+  \begin{choices}[show-answer = true, answer-color = blue]
+    \item 错误选项
+    \item* 正确选项
+    \item 错误选项
+    \item* 另一个正确选项
+  \end{choices}
+\end{latexexample}
+
 
 \begin{function}{choices/column-sep}
   \begin{examzhsyntax}[emph={[1]column-sep}]
@@ -2419,6 +2437,13 @@
     paren-type = (*<(banjiao)|quanjiao>*)
   \end{examzhsyntax}
   设置 \tn{fillin} 中 \kvopt{type}{paren} 时的括号类型。\opt{banjiao} 表示半角括号；\opt{quanjiao} 表示全角括号。
+\end{function}
+
+\begin{function}[added = 2022-07-30, updated = 2026-07-12]{fillin/depth}
+  \begin{examzhsyntax}[emph={[1]depth}]
+    depth = (*\meta{dimension}*)
+  \end{examzhsyntax}
+  设置 \kvopt{fillin/type}{line} 的基础下划线深度。显示多行答案时，模板会以该值为下限，并根据答案内容的最大深度自动增加距离；一般无需为分式手动调整。
 \end{function}
 
 
@@ -3231,7 +3256,16 @@
   \begin{examzhsyntax}[emph={[1]text-width}]
     text-width = (*\meta{dimension}*)
   \end{examzhsyntax}
-  文本部分的 \env{varwidth} 宽度。默认为 |\columnwidth|。但有时需要手动输入 \kvopt{text-width}{\textbackslash columnwidth} 才会变成整行，比如解答题。
+  文本部分的 \env{varwidth} 宽度。默认为 |\textwidth|。默认情况下该显式宽度保持原有优先级；只有启用 \opt{auto-text-width} 时，左右布局才改按图片实宽自动计算。
+\end{function}
+
+\begin{function}[added = 2026-07-12]{textfigure/auto-text-width,textfigure/min-text-width,textfigure/column-gap}
+  \begin{examzhsyntax}[emph={[1]auto-text-width,min-text-width,column-gap}]
+    auto-text-width = (*\TTF*)
+    min-text-width = (*\meta{dimension}*)
+    column-gap = (*\meta{dimension}*)
+  \end{examzhsyntax}
+  \opt{auto-text-width} 默认为 |false|。启用后，\opt{left}、\opt{right} 及其顶部、居中、底部变体会先测量图片的实际排版宽度，再令文字宽度等于行宽减去图片宽度和 \opt{column-gap}；默认列间距为 |1em|。若剩余空间小于 \opt{min-text-width}（默认 |.35\linewidth|），则稳定回退到该最小宽度，避免正文被宽图压成过窄的一列。上下布局不参与自动计算，仍使用 \opt{text-width}。
 \end{function}
 
 \begin{function}[added = 2022-08-28]{textfigure/figure-width}

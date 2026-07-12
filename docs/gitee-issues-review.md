@@ -4,12 +4,12 @@
 
 ## 审查快照
 
-- 审查时间：2026-07-11（Asia/Shanghai）
+- 审查时间：2026-07-12（Asia/Shanghai）
 - Gitee 仓库：<https://gitee.com/xkwxdyy/exam-zh>
 - 查询范围：`is:open` 与 `is:progressing`
 - 本轮结果：40 个 open（均为“待办的”），1 个 progressing（“进行中”），合计 41 项
 - GitHub 迁移：[#6](https://github.com/xkwxdyy/exam-zh/issues/6)–[#46](https://github.com/xkwxdyy/exam-zh/issues/46)
-- 当前状态：6 个保持开放，35 个已关闭（其中 2 个 P0、5 个 P1、6 个 P2 已于 2026-07-11 修复）
+- 当前状态：3 个保持开放，38 个已关闭（其中 2 个 P0、5 个 P1、8 个 P2、1 个 P3 已于 2026-07-11 至 2026-07-12 修复）
 
 优先级定义：
 
@@ -48,16 +48,16 @@
 | Gitee | 最后更新 | 评论 | 审查结论 | GitHub |
 | --- | --- | ---: | --- | --- |
 | [IDBLDN](https://gitee.com/xkwxdyy/exam-zh/issues/IDBLDN) | 2025-12-28 | 6 | 已完成任意单页纸张与页边距接口；2/3 栏及分栏页脚模型仍待后续独立设计 | [#14](https://github.com/xkwxdyy/exam-zh/issues/14) open |
-| [ID7G2T](https://gitee.com/xkwxdyy/exam-zh/issues/ID7G2T) | 2025-11-19 | 1 | 已修复：`page/size=custom` 可表达 195mm × 270mm 的 16K 油印纸张 | [#19](https://github.com/xkwxdyy/exam-zh/issues/19) completed |
-| [ID6D6C](https://gitee.com/xkwxdyy/exam-zh/issues/ID6D6C) | 2025-11-13 | 5 | 参考 cloze 语义重整 fillin；不能引入 LuaLaTeX 依赖 | [#22](https://github.com/xkwxdyy/exam-zh/issues/22) open |
 | [ICMVN4](https://gitee.com/xkwxdyy/exam-zh/issues/ICMVN4) | 2025-11-23 | 1 | 建立跨选择、判断、填空、解答的答案记录与渲染模型 | [#25](https://github.com/xkwxdyy/exam-zh/issues/25) open |
 | [I8QVL9](https://gitee.com/xkwxdyy/exam-zh/issues/I8QVL9) | 2024-02-11 | 7 | P1 部分已修复：question/problem 支持 verbatim/verb；choices 尚有 `lstinputlisting` 替代路径，降为 P2 继续设计 | [#30](https://github.com/xkwxdyy/exam-zh/issues/30) open |
-| [I5ROOL](https://gitee.com/xkwxdyy/exam-zh/issues/I5ROOL) | 2025-12-28 | 0 | choices 的正确答案标记/着色仍是源码 TODO | [#43](https://github.com/xkwxdyy/exam-zh/issues/43) open |
 
 ## P2：已关闭
 
 | Gitee | 最后更新 | 评论 | 关闭结论 | GitHub |
 | --- | --- | ---: | --- | --- |
+| [I5ROOL](https://gitee.com/xkwxdyy/exam-zh/issues/I5ROOL) | 2025-12-28 | 0 | 已修复：`\item*` 标记正确选项，`choices/show-answer` 与 `answer-color` 控制标签和内容着色；不耦合卷末答案汇总 | [#43](https://github.com/xkwxdyy/exam-zh/issues/43) completed |
+| [ID6D6C](https://gitee.com/xkwxdyy/exam-zh/issues/ID6D6C) | 2025-11-13 | 5 | 已修复：保持 XeLaTeX，普通 `\fillin` 按答案宽度自动换行，多行高公式自动调整下划线深度 | [#22](https://github.com/xkwxdyy/exam-zh/issues/22) completed |
+| [ID7G2T](https://gitee.com/xkwxdyy/exam-zh/issues/ID7G2T) | 2025-11-19 | 1 | 已修复：`page/size=custom` 可表达 195mm × 270mm 的 16K 油印纸张 | [#19](https://github.com/xkwxdyy/exam-zh/issues/19) completed |
 | [IHXNX9](https://gitee.com/xkwxdyy/exam-zh/issues/IHXNX9) | 2026-04-02 | 1 | 已修复：同行项目按首行/中部/末行基线统一对齐，高低公式无需再用 `\vphantom` 补齐 | [#9](https://github.com/xkwxdyy/exam-zh/issues/9) completed |
 | [IHQMPM](https://gitee.com/xkwxdyy/exam-zh/issues/IHQMPM) | 2026-03-26 | 1 | 已修复：仅在 calculations 直接作为 list 首段时抵消宿主 `itemindent`，统一 question/problem 位置 | [#10](https://github.com/xkwxdyy/exam-zh/issues/10) completed |
 | [ID823C](https://gitee.com/xkwxdyy/exam-zh/issues/ID823C) | 2026-05-30 | 3 | 已实现 `column-gap` 图片间距键，并补充第二个可选参数透传 `tblr` 的稳定 `colspec` 用法 | [#46](https://github.com/xkwxdyy/exam-zh/issues/46) completed |
@@ -69,16 +69,11 @@
 | [I6HQ2S](https://gitee.com/xkwxdyy/exam-zh/issues/I6HQ2S) | 2025-12-28 | 0 | 已为 problem 新增默认关闭的 `hang` 键并覆盖嵌套场景 | [#37](https://github.com/xkwxdyy/exam-zh/issues/37) completed |
 | [I67JXY](https://gitee.com/xkwxdyy/exam-zh/issues/I67JXY) | 2025-12-28 | 2 | 已为 choices 新增 `left-indent`、`right-indent` 与 `margin` | [#38](https://github.com/xkwxdyy/exam-zh/issues/38) completed |
 
-## P3：保持开放
-
-| Gitee | 最后更新 | 评论 | 审查结论 | GitHub |
-| --- | --- | ---: | --- | --- |
-| [I7QT33](https://gitee.com/xkwxdyy/exam-zh/issues/I7QT33) | 2025-12-28 | 1 | 可评估 opt-in 图片宽度自动测量，必须有最小文字宽度回退 | [#33](https://github.com/xkwxdyy/exam-zh/issues/33) open |
-
 ## P3：已关闭
 
 | Gitee | 最后更新 | 评论 | 关闭结论 | GitHub |
 | --- | --- | ---: | --- | --- |
+| [I7QT33](https://gitee.com/xkwxdyy/exam-zh/issues/I7QT33) | 2025-12-28 | 1 | 已增加 opt-in 图片实宽测量、可配置列间距和最小文字宽度回退；默认及上下布局保持原行为 | [#33](https://github.com/xkwxdyy/exam-zh/issues/33) completed |
 | [ID9MTP](https://gitee.com/xkwxdyy/exam-zh/issues/ID9MTP) | 2025-11-30 | 0 | 已明确推荐内置 `solution`，记录外置写法兼容边界并补充最小示例 | [#15](https://github.com/xkwxdyy/exam-zh/issues/15) completed |
 | [ID83OW](https://gitee.com/xkwxdyy/exam-zh/issues/ID83OW) | 2025-11-23 | 0 | 已说明 `\varnothing` 的 Asana Math 单符号覆盖，并澄清这不等同于完整支持 mtpro2 | [#17](https://github.com/xkwxdyy/exam-zh/issues/17) completed |
 | [ID7B6Z](https://gitee.com/xkwxdyy/exam-zh/issues/ID7B6Z) | 2025-11-18 | 0 | 完整手册和基础手册均已补充 `exam-zh-math.sty` 及其职责 | [#20](https://github.com/xkwxdyy/exam-zh/issues/20) completed |

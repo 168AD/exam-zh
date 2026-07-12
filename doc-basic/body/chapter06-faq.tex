@@ -329,15 +329,16 @@
 
 \subsubsection{Q17: 填空题下划线超出页面边界}
 
-\textbf{问题：}填空内容较长时，普通 |\fillin| 不适合直接放很长的答案。
+\textbf{问题：}填空内容较长时，如何避免答案或占位线超出页面边界？
 
-\textbf{临时解决方案：}
+\textbf{解决方案：}
 
 \begin{enumerate}
-  \item \textbf{长答案使用 |\fillin*|}
+  \item \textbf{显示长答案时直接使用 |\fillin|}
     \begin{latexcode}
-  计算结果为 \fillin*[这是一个比较长的答案内容，需要换行显示]
+  计算结果为 \fillin[这是一个比较长的答案内容，需要换行显示]
     \end{latexcode}
+    当答案自然宽度超过当前行宽时，模板会自动换行；如需无条件使用可换行排版，可改用 |\fillin*|。
 
   \item \textbf{手动控制占位宽度}
     \begin{latexcode}

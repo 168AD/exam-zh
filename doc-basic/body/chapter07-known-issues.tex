@@ -69,14 +69,16 @@
 
 \subsection{填空题边界}
 
-\subsubsection{长答案要区分 \textbackslash fillin 和 \textbackslash fillin*}
+\subsubsection{长答案会自动换行，星号用于强制换行}
 
-普通 |\fillin| 更适合短答案；需要换行时，应使用带星号的 |\fillin*|。
+普通 |\fillin| 在显示答案且内容超过当前行宽时会自动换行；|\fillin*| 保留为强制采用可换行排版的写法。
 
 \begin{latexcode}
   短答案：\fillin[42]
 
-  长答案：\fillin*[这是一个比较长的答案内容，需要换行显示]
+  长答案：\fillin[这是一个比较长的答案内容，需要换行显示]
+
+  强制可换行：\fillin*[短答案]
 \end{latexcode}
 
 \subsubsection{答案中有未配对方括号时要加保护}

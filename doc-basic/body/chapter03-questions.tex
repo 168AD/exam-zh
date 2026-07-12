@@ -105,7 +105,7 @@
     下列哪个数是质数？\paren[B]
     \begin{choices}
       \item $4$
-      \item $5$   % 正确答案
+      \item* $5$  % 用星号标记正确答案
       \item $6$
       \item $8$
     \end{choices}
@@ -117,8 +117,28 @@
   \item |\begin{question}...\end{question}| 创建题目
   \item |\paren[B]| 添加答案括号，|[B]| 表示正确答案是选项 B（默认隐藏）
   \item |\begin{choices}...\end{choices}| 创建选项列表
-  \item 每个 |\item| 是一个选项，自动标号为 A、B、C、D...
+  \item 每个 |\item| 是一个选项，自动标号为 A、B、C、D...；正确选项可以写成 |\item*|
 \end{enumerate}
+
+\subsubsection{标记和显示正确选项}
+
+|\item*| 只在源码中记录正确选项，默认不会改变学生版外观。需要显示答案时，可以统一着色正确选项：
+
+\begin{latexcode}
+  \examsetup{
+    choices/show-answer = true,
+    choices/answer-color = red
+  }
+
+  \begin{choices}
+    \item 错误选项
+    \item* 正确选项
+    \item 错误选项
+    \item* 另一个正确选项
+  \end{choices}
+\end{latexcode}
+
+关闭 |choices/show-answer| 后，星号仍会被识别并移除，但标签和内容恢复普通颜色。该设置独立于 |question/show-answer|，方便在 |\ExamPrintAnswerSet| 中单独配置教师版。
 
 \subsubsection{显示分值}
 
@@ -197,9 +217,9 @@
     下列哪些数是质数？（多选）\paren[BD]
     \begin{choices}
       \item $4$
-      \item $5$   % 正确答案之一
+      \item* $5$
       \item $6$
-      \item $7$   % 正确答案之一
+      \item* $7$
     \end{choices}
   \end{question}
 \end{latexcode}
@@ -391,16 +411,19 @@
   答案是 \fillin[$x^2 + 1$]
 \end{latexcode}
 
-\textbf{长答案问题：}
+\textbf{长答案换行：}
 
-普通 |\fillin| 适合较短答案；如果答案较长，需要换行时请使用带星号的 |\fillin*|：
+显示答案时，普通 |\fillin| 会在答案自然宽度超过当前行宽后自动切换为可换行排版。带星号的 |\fillin*| 用于无论内容长短都强制采用可换行排版：
 
 \begin{latexcode}
-  % 短答案：普通 fillin
+  % 短答案：保持单行
   填空：\fillin[3.14]
 
-  % 长答案：使用星号变体
-  填空：\fillin*[这是一个比较长的答案内容，需要在题目中换行显示]
+  % 长答案：普通命令自动换行
+  填空：\fillin[这是一个比较长的答案内容，需要在题目中换行显示]
+
+  % 显式强制可换行
+  填空：\fillin*[短答案]
 
   % 不显示答案时，也可以配合 width 控制占位宽度
   填空：\fillin[width = 8em][长答案]

@@ -10,6 +10,8 @@
 
 ### Added
 
+- 为 `textfigure` 增加可选的 `auto-text-width` 图片实宽测量，并提供 `min-text-width` 与 `column-gap` 控制，避免宽图把正文压成窄列（Gitee #I7QT33）
+- 为 `choices` 增加 `\item*` 正确选项标记以及 `show-answer`、`answer-color` 显示控制；默认隐藏标记，启用后同时着色正确选项标签和内容（Gitee #I5ROOL）
 - 为 `problem` 新增 `hang` 键，并为 `choices` 新增 `item-linesep`、`left-indent`、`right-indent` 与 `margin` 键（Gitee #I6HQ2S、#ID7HWH、#I67JXY）
 - 为 `paren/type` 新增 `dotfill` 点线填充模式（Gitee #I63X3T）
 - 为 `multifigures` 新增 `column-gap` 图片列间距键，并文档化底层 `tblr` 的 `colspec` 参数透传方式（Gitee #ID823C）
@@ -17,6 +19,7 @@
 
 ### Changed
 
+- `\fillin` 在显示长答案时会按自然宽度自动切换到可换行排版，`\fillin*` 继续作为强制换行兼容写法；多行答案会根据内容深度自动调整下划线，避免高公式压线（Gitee #ID6D6C）
 - 解答题内第二层小题默认改用小写罗马数字编号，第三层改用小写字母编号，以匹配 2026 年高考试卷层级样式（Gitee #IK0BLV）
 - 抽取 question、fillin、choices 与 calculations 共用的计数器注册层；新增 `\tikzcirclednumber`，并弃用有歧义的直接调用 `\circlednumber*{...}`（Gitee #IDPOT4）
 - 文档明确 `\varnothing` 固定使用 Asana Math 字形的范围，并澄清该单符号覆盖不等同于完整支持 `mtpro2`（Gitee #ID83OW）
