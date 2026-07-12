@@ -1,0 +1,46 @@
+\documentclass{article}
+
+\input{regression-test}
+
+\usepackage{exam-zh-choices}
+
+\begin{document}
+\START
+
+\ExplSyntaxOn
+
+\seq_new:N \l__examzh_test_choices_seq
+\seq_set_from_clist:Nn \l__examzh_test_choices_seq
+  { first, * second, third, * fourth }
+\__examzh_choices_collect_correct_choices:N \l__examzh_test_choices_seq
+
+\TYPE{choices-items=\seq_use:Nn \l__examzh_test_choices_seq {|}}
+\TYPE{correct-indices=\seq_use:Nn
+  \l__examzh_choices_correct_choices_index_seq {,}}
+
+\__examzh_choices_answer_visible:nTF { 2 }
+  { \TYPE{hidden-correct=visible} }
+  { \TYPE{hidden-correct=normal} }
+
+\keys_set:nn { exam-zh / choices }
+  { show-answer = true, answer-color = blue }
+
+\__examzh_choices_answer_visible:nTF { 1 }
+  { \TYPE{shown-wrong=visible} }
+  { \TYPE{shown-wrong=normal} }
+\__examzh_choices_answer_visible:nTF { 2 }
+  { \TYPE{shown-correct=visible} }
+  { \TYPE{shown-correct=normal} }
+\TYPE{answer-color=\tl_use:N \l__examzh_choices_answer_color_tl}
+
+\ExplSyntaxOff
+
+\begin{choices}[show-answer = true, answer-color = blue]
+  \item Wrong
+  \item* Correct
+  \item Wrong
+  \item* Also correct
+\end{choices}
+
+\END
+\end{document}

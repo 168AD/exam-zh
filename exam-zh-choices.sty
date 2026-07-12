@@ -9,6 +9,7 @@
 
 \RequirePackage{expl3}
 \RequirePackage{xparse}
+\RequirePackage { xcolor }
 
 \ProvidesExplPackage {exam-zh-choices} {2026-06-13} {v0.2.7}
   {exam-zh choices module}
@@ -26,6 +27,8 @@
 \skip_new:N \l__examzh_choices_item_line_sep_skip
 \dim_new:N \l__examzh_choices_left_indent_dim
 \dim_new:N \l__examzh_choices_right_indent_dim
+\bool_new:N \l__examzh_choices_show_answer_bool
+\tl_new:N \l__examzh_choices_answer_color_tl
 
 \keys_define:nn { exam-zh }
   { choices .meta:nn = { exam-zh / choices } {#1} }
@@ -53,7 +56,9 @@
     item-linesep .skip_set:N = \l__examzh_choices_item_line_sep_skip,
     left-indent .dim_set:N = \l__examzh_choices_left_indent_dim,
     right-indent .dim_set:N = \l__examzh_choices_right_indent_dim,
-    margin .meta:n = { left-indent = #1, right-indent = #1 }
+    margin .meta:n = { left-indent = #1, right-indent = #1 },
+    show-answer .bool_set:N = \l__examzh_choices_show_answer_bool,
+    answer-color .tl_set:N = \l__examzh_choices_answer_color_tl
   }
 
 \keys_set:nn { exam-zh / choices }
@@ -72,7 +77,9 @@
     linesep     = 0pt plus .5ex,
     item-linesep = 0pt,
     left-indent  = 0pt,
-    right-indent = 0pt
+    right-indent = 0pt,
+    show-answer = false,
+    answer-color = red
   }
 
 \NewDocumentCommand \setchoices { m }
@@ -160,6 +167,32 @@
 \seq_new:N \l__examzh_choices_correct_choices_label_seq
 % 用来存正确选项的内容
 \seq_new:N \l__examzh_choices_correct_choices_item_seq
+% 用来存正确选项在当前 choices 环境中的序号
+\seq_new:N \l__examzh_choices_correct_choices_index_seq
+
+\prg_new_conditional:Npnn \__examzh_choices_answer_visible:n #1 { TF }
+  {
+    \bool_if:NTF \l__examzh_choices_show_answer_bool
+      {
+        \seq_if_in:NnTF
+          \l__examzh_choices_correct_choices_index_seq {#1}
+          { \prg_return_true: }
+          { \prg_return_false: }
+      }
+      { \prg_return_false: }
+  }
+
+\cs_new_protected:Npn \__examzh_choices_format_answer:nn #1#2
+  {
+    \__examzh_choices_answer_visible:nTF {#1}
+      {
+        \group_begin:
+          \exp_args:NV \color \l__examzh_choices_answer_color_tl
+          #2
+        \group_end:
+      }
+      {#2}
+  }
 
 % 收集正确的选项，保存在 \l__examzh_choices_correct_choices_seq
 \cs_new:Npn \__examzh_choices_collect_correct_choices:N #1
@@ -167,6 +200,7 @@
   {
     \seq_clear:N \l__examzh_choices_correct_choices_label_seq
     \seq_clear:N \l__examzh_choices_correct_choices_item_seq
+    \seq_clear:N \l__examzh_choices_correct_choices_index_seq
     \seq_clear:N \l_tmpa_seq
     \seq_map_indexed_inline:Nn #1
       {
@@ -176,6 +210,8 @@
         %（即用 \item* 来标记正确答案）
         \tl_if_head_eq_meaning:nNTF {##2} *
           {
+            \seq_put_right:Nn
+              \l__examzh_choices_correct_choices_index_seq {##1}
             \seq_put_right:Nn \l__examzh_choices_correct_choices_label_seq 
               { \__examzh_choices_correct_choices_label_transfrom:n {##1} }
             % 将去掉 * 号后的内容保存进 \l_tmpa_tl
@@ -405,7 +441,7 @@
     \__examzh_choices_make_label_coffin:n {#1}
     % \__examzh_choices_make_label_box:n {#1}
     % 选项内容
-    \__examzh_choices_make_item_coffin:n {#2}
+    \__examzh_choices_make_item_coffin:nn {#1} {#2}
     % \__examzh_choices_make_item_box:n {#2}
     % 合并选项的标签和内容
     \str_case:Vn \l__examzh_choices_label_pos_tl
@@ -509,7 +545,11 @@
     % \hbox_set:Nn \l__examzh_choices_label_box
       {
         \hbox_to_wd:nn { \l__examzh_choices_label_width_dim }
-          { \__examzh_choices_make_label:n {#1} \strut }
+          {
+            \__examzh_choices_format_answer:nn {#1}
+              { \__examzh_choices_make_label:n {#1} }
+            \strut
+          }
       }
   }
 
@@ -532,7 +572,7 @@
   }
 
 % 将选项内容存入 coffin
-\cs_new:Npn \__examzh_choices_make_item_coffin:n #1
+\cs_new:Npn \__examzh_choices_make_item_coffin:nn #1#2
 % 将选项内容存入 box
 % \cs_new:Npn \__examzh_choices_make_item_box:n #1
   {
@@ -541,7 +581,8 @@
       {
         % 优先尝试使用 hbox，这是因为在 \vbox_set 外部能保留原来的 \linewidth 和
         % \textwidth，方便用户在 \includegraphics 中使用
-        \hbox_set:Nn \l_tmpa_box {#1}
+        \hbox_set:Nn \l_tmpa_box
+          { \__examzh_choices_format_answer:nn {#1} {#2} }
         % 若盒子的自然高度大于 2 行，且深度为 0pt，设置为插图模式
         \bool_lazy_and:nnT
           {
@@ -571,7 +612,7 @@
               { \centering }
             \dim_compare:nNnTF
               { \box_wd:N \l_tmpa_box } > { \l__examzh_choices_item_width_dim }
-              { #1 }
+              { \__examzh_choices_format_answer:nn {#1} {#2} }
               { \box_use_drop:N \l_tmpa_box }
             % 使用 \strut 将行距撑开，防止跟下一行选项的间距过小
             \mode_if_horizontal:T { \strut }
@@ -598,18 +639,7 @@
 \AddChoicesCounter \tikzcirclednumber \__examzh_tikz_circled_number:n
 
 
-% TODO 答案控制
-
-% 选择题答案控制
-% - 直接在后面显示
-% - 在括号内显示
-%   - 手动输入
-%   - 能否通过写中途文件方式使得答案可以出现在前面的括号内
-% - 统一移动到最后
-%   - 也是 choices 的形式
-%   - 表格形式
-
-% 答案确定
-% 通过 \item 是否带 * 判断，有的话则标记为正确答案
+% \item* 只负责当前 choices 环境中的正确选项标记和显隐着色。
+% 括号答案、答案收集与移动由统一答案模型另行处理。
 
 \endinput
