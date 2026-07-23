@@ -3,13 +3,15 @@
 % !TeX spellcheck = en_US
 
 
-\documentclass{exam-zh}
+\documentclass{../exam-zh}
 \usepackage{siunitx}
 
 \examsetup{
   page = {
     size            = a3paper,
-    show-columnline = false
+    show-columnline = false,
+    show-chapter    = false,
+    foot-content    = {数学试题第;页（共4页）}  % 硬编码总页数为4
   },
   style/fullwidth-stop = catcode,
   sealline = {
@@ -39,23 +41,16 @@
 % 行内公式统一按照行间的样式
 \everymath{\displaystyle}
 
-\title{2028届高一第二学期数学限时作业（10）}
-
-% \subject{数学（理科）
-
+% \title{2028届高一第二学期数学限时作业（10）}
 
 \begin{document}
 
 \tableofcontents
 
 \chapter{2028届高一第二学期数学限时作业（10）}
-
 \title{2028届高一第二学期数学限时作业（10）}
 
-% \subject{数学（理科）}
-
 \secret
-
 \maketitle
 
 本试卷共 4 页，22 题。全卷满分 150 分。考试用时 120 分钟。
@@ -68,6 +63,22 @@
 %   \item 非选择题必须用黑色字迹的钢笔或签字笔作答，答案必须写在答题卡各题目指定区域内相应位置上；如需改动，先划掉原来的答案，然后再写上新答案；不准使用铅笔和涂改液。不按以上要求作答无效。
 %   \item 考生必须保持答题卡的整洁。考试结束后，将试卷和答题卡一并交回。
 % \end{notice}
+
+\input{problems/select.tex}
+\input{problems/fillin.tex}
+\input{problems/problem.tex}
+
+\chapter{2028届高一第二学期数学限时作业（10）}
+\title{2028届高一第二学期数学限时作业（10）}
+\setcounter{page}{1}
+\examsetup{
+  page/foot-content = {数学试题第;页（共6页）},   % 这份试卷 6 页
+}
+
+\secret
+\maketitle
+
+本试卷共 4 页，22 题。全卷满分 150 分。考试用时 120 分钟。
 
 \input{problems/select.tex}
 \input{problems/fillin.tex}
